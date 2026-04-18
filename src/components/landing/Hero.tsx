@@ -12,7 +12,7 @@ export const Hero = () => {
       <div className="container relative z-10 text-center max-w-4xl mx-auto">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-soft border border-primary/20 text-primary text-xs font-semibold tracking-wide uppercase mb-8 animate-fade-in-up shadow-soft">
           <Sparkles className="h-3.5 w-3.5" />
-          Powering Business Conversations on WhatsApp
+          Powering Business Sales on WhatsApp
         </div>
 
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight animate-fade-in-up [animation-delay:120ms]">
@@ -20,14 +20,14 @@ export const Hero = () => {
           <span className="relative inline-block">
             <span className="bg-gradient-primary bg-clip-text text-transparent">WhatsApp</span>
           </span>{" "}
-          Marketing
+          Sales
           <br className="hidden sm:block" />
           Platform for{" "}
           <span className="italic font-serif text-primary">Growing</span> Businesses
         </h1>
 
         <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in-up [animation-delay:240ms]">
-          Everything you need to market, sell, and support customers on WhatsApp in one place.
+          Everything you need to sell, support, and grow customers on WhatsApp in one place.
         </p>
 
         <div className="mt-9 flex items-center justify-center gap-3 animate-fade-in-up [animation-delay:360ms]">
