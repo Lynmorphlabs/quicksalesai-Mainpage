@@ -22,7 +22,7 @@ export const Hero = () => {
           </span>{" "}
           Sales
           <br className="hidden sm:block" />
-          Platform for{" "}
+          {" "}Platform for{" "}
           <span className="italic font-serif text-primary">Growing</span> Businesses
         </h1>
 
