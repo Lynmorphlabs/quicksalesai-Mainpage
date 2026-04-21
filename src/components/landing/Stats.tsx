@@ -1,8 +1,8 @@
 const stats = [
-  { value: "1,500+", label: "Businesses growing on Quicksales" },
-  { value: "12M+", label: "Messages delivered every month" },
+  { value: "12M+", label: "Messages delivered to date" },
   { value: "94%", label: "Average customer response rate" },
   { value: "4.9★", label: "Rated by 450+ customers" },
+  { value: "#1", label: "WhatsApp AI Sales Platform in Southeast Asia" },
 ];
 
 export const Stats = () => (
