@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo-full.png";
 
 const links = ["Home", "Product", "Platform", "Pricing", "Contact"];
@@ -19,7 +20,9 @@ export const Navbar = () => (
         ))}
       </ul>
       <div className="flex items-center gap-2">
-        <Button variant="ghost" size="sm" className="hidden sm:inline-flex">Sign In</Button>
+        <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex">
+          <Link to="/dashboard">Sign In</Link>
+        </Button>
         <Button size="sm" className="bg-gradient-primary hover:opacity-90 shadow-soft rounded-full px-5">
           Get Started
         </Button>
