@@ -17,10 +17,8 @@ export const Hero = () => {
 
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight animate-fade-in-up [animation-delay:120ms]">
           The #1 Trusted{" "}
-          <span className="relative inline-block">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">WhatsApp</span>
-          </span>{" "}
-          AI SALES PLATFORM
+          <span className="italic font-serif text-primary">WhatsApp</span>{" "}
+          AI Sales Platform
           <br className="hidden sm:block" />
           {" "}for{" "}
           <span className="italic font-serif text-primary">Growing</span> Businesses
