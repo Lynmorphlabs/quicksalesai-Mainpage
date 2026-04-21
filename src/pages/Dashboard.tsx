@@ -224,6 +224,13 @@ const Dashboard = () => {
                 </span>
               </div>
 
+              <button className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors group">
+                <span className="h-6 w-6 rounded-full bg-primary-soft flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <Play className="h-3 w-3 text-primary fill-primary ml-0.5" />
+                </span>
+                Watch 2-min walkthrough
+              </button>
+
               <div className="mt-4 h-2 rounded-full bg-secondary overflow-hidden">
                 <div
                   className="h-full bg-gradient-primary rounded-full transition-all"
