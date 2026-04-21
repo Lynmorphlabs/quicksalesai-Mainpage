@@ -110,7 +110,10 @@ const SectionLabel = ({ children }: { children: React.ReactNode }) => (
 );
 
 const Dashboard = () => {
-  const [progress] = useState(50);
+  const completedSteps = checklist.filter((s) => s.done).length;
+  const totalSteps = checklist.length;
+  const progress = Math.round((completedSteps / totalSteps) * 100);
+  const [showWelcome, setShowWelcome] = useState(true);
 
   return (
     <div className="min-h-screen flex w-full bg-background">
