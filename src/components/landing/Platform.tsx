@@ -1,9 +1,9 @@
 import { useState } from "react";
-import chatbot from "@/assets/platform-chatbot.jpg";
-import broadcast from "@/assets/platform-broadcast.jpg";
-import analytics from "@/assets/feature-analytics.jpg";
-import catalog from "@/assets/feature-catalog.jpg";
-import inbox from "@/assets/feature-inbox.jpg";
+import aiAgent from "@/assets/platform-ai-agent.jpg";
+import onboard from "@/assets/platform-onboard.jpg";
+import followup from "@/assets/platform-followup.jpg";
+import broadcast from "@/assets/platform-broadcast-new.jpg";
+import leadscraper from "@/assets/platform-leadscraper.jpg";
 import { Check } from "lucide-react";
 
 const slides = [
@@ -12,35 +12,35 @@ const slides = [
     title: "AI Agent That Sells While You Sleep",
     desc: "Your AI replies, qualifies, and converts customers on WhatsApp 24/7 — no human needed.",
     points: ["Instant replies to every message", "Qualifies leads automatically", "Handles FAQs, pricing, and bookings", "Works outside business hours"],
-    img: chatbot,
+    img: aiAgent,
   },
   {
     tag: "Onboard",
     title: "Up and Running in Under 10 Minutes",
     desc: "Connect your WhatsApp, add your business details, and your AI agent is live — no coding, no IT guy, no stress.",
     points: ["One-click WhatsApp connection", "Simple setup walkthrough", "No technical skills required", "Live before your next customer messages"],
-    img: inbox,
+    img: onboard,
   },
   {
     tag: "Automation",
     title: "Follow Ups That Never Fall Through",
     desc: "Your AI remembers every lead and follows up automatically — so no customer slips through the cracks.",
     points: ["Automated reminders and check-ins", "Smart follow-up sequences", "Stops when customer replies", "Re-engages cold leads on its own"],
-    img: broadcast,
+    img: followup,
   },
   {
     tag: "Convert & scale",
     title: "Broadcast to Everyone. Convert the Right Ones.",
     desc: "Send targeted WhatsApp campaigns to hundreds or thousands of contacts in one click — and let AI handle the replies.",
     points: ["Bulk messaging with personalisation", "AI responds to every reply instantly", "Track opens, clicks, and conversions", "Schedule campaigns in advance"],
-    img: catalog,
+    img: broadcast,
   },
   {
     tag: "Grow faster",
     title: "Find New Customers on Our Lead Scraper",
     desc: "Stop waiting for leads to come to you. Discover verified businesses straight from Google Business — complete with contact details and active WhatsApp numbers ready to reach out to.",
     points: ["Pulls verified business listings from Google Business", "Detects active WhatsApp numbers", "Export or push directly into your campaigns", "Build your outreach list in minutes"],
-    img: analytics,
+    img: leadscraper,
   },
 ];
 
