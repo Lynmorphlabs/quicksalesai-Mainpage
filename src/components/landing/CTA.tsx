@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import qrCode from "@/assets/whatsapp-qr.png";
+import { useState } from "react";
+import { ChatWidget } from "./ChatWidget";
 
-export const CTA = () => (
+export const CTA = () => {
+  const [open, setOpen] = useState(false);
+  return (
   <section id="contact" className="py-24">
     <div className="container">
       <div className="relative rounded-[2.5rem] bg-card border border-border/60 shadow-elevated p-10 sm:p-16 text-center overflow-hidden">
@@ -18,24 +21,13 @@ export const CTA = () => (
             Every customer that messages you and doesn't get a reply instantly is a lead your competitor is closing. Quicksales makes sure that never happens again.
           </p>
           <div className="mt-8 flex items-center justify-center gap-3 flex-wrap">
-            <Button size="lg" className="bg-gradient-primary hover:opacity-90 shadow-soft rounded-full px-7 h-12">
-              Get Started Free <ArrowRight className="ml-1 h-4 w-4" />
+            <Button
+              size="lg"
+              onClick={() => setOpen(true)}
+              className="bg-gradient-primary hover:opacity-90 shadow-soft rounded-full px-7 h-12"
+            >
+              Try out our AI Agent <ArrowRight className="ml-1 h-4 w-4" />
             </Button>
-          </div>
-
-          {/* QR Code */}
-          <div className="mt-10 flex flex-col items-center">
-            <p className="text-sm font-semibold text-foreground mb-4">Contact us on WhatsApp</p>
-            <div className="rounded-2xl bg-background border border-border/60 shadow-soft p-3">
-              <img
-                src={qrCode}
-                alt="Scan QR code to contact Quicksales on WhatsApp"
-                width={180}
-                height={180}
-                loading="lazy"
-                className="h-44 w-44 rounded-xl"
-              />
-            </div>
           </div>
 
           <p className="mt-8 text-xs text-muted-foreground">
@@ -44,5 +36,7 @@ export const CTA = () => (
         </div>
       </div>
     </div>
+    <ChatWidget open={open} onOpenChange={setOpen} />
   </section>
-);
+  );
+};
