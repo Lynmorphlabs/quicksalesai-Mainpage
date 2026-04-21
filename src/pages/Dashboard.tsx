@@ -266,17 +266,18 @@ const Dashboard = () => {
 
               <ol className="mt-6 relative">
                 {checklist.map((step, idx) => (
-                  <li
-                    key={step.title}
-                    className={`relative flex items-start gap-4 p-4 rounded-2xl mb-2 ${
-                      step.highlight
-                        ? "bg-primary-soft/40 border border-primary/20"
-                        : ""
-                    }`}
-                  >
+                  <li key={step.title} className="relative mb-2">
                     {idx < checklist.length - 1 && !step.highlight && (
                       <span className="absolute left-[31px] top-[52px] bottom-[-8px] w-px bg-border" />
                     )}
+                    <button
+                      type="button"
+                      className={`group w-full text-left flex items-start gap-4 p-4 rounded-2xl transition-colors ${
+                        step.highlight
+                          ? "bg-primary-soft/40 border border-primary/20 hover:bg-primary-soft/60"
+                          : "hover:bg-secondary/60 border border-transparent"
+                      }`}
+                    >
                     <div
                       className={`relative z-10 mt-0.5 h-8 w-8 rounded-full flex items-center justify-center shrink-0 ${
                         step.done
@@ -301,6 +302,10 @@ const Dashboard = () => {
                     {step.done && (
                       <Check className="h-5 w-5 text-primary mt-1.5" />
                     )}
+                    {!step.done && (
+                      <ArrowRight className="h-4 w-4 text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
+                    )}
+                    </button>
                   </li>
                 ))}
               </ol>
