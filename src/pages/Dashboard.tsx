@@ -28,7 +28,6 @@ import {
   Zap,
   ArrowRight,
   Play,
-  X,
 } from "lucide-react";
 import logo from "@/assets/logo-full.png";
 
