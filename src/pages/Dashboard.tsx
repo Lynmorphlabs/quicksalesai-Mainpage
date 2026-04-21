@@ -189,6 +189,57 @@ const Dashboard = () => {
               Set up your AI assistant in minutes and start replying to customers automatically.
             </p>
 
+            {/* Top-level progress summary */}
+            <div className="mt-6 flex items-center gap-4 p-4 rounded-2xl border border-border/60 bg-card/60">
+              <div className="flex-1">
+                <div className="flex items-center justify-between text-sm mb-2">
+                  <span className="font-semibold">
+                    {completedSteps} of {totalSteps} steps completed
+                  </span>
+                  <span className="text-muted-foreground">{progress}%</span>
+                </div>
+                <div className="h-2 rounded-full bg-secondary overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-primary rounded-full transition-all"
+                    style={{ width: `${progress}%` }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Dismissible welcome video card */}
+            {showWelcome && (
+              <div className="mt-6 relative rounded-3xl border border-border/60 bg-gradient-to-br from-primary-soft/60 to-card p-5 md:p-6 shadow-soft overflow-hidden">
+                <button
+                  onClick={() => setShowWelcome(false)}
+                  aria-label="Dismiss welcome"
+                  className="absolute top-3 right-3 h-8 w-8 rounded-full bg-card/80 hover:bg-card border border-border/60 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+                <div className="flex items-center gap-5">
+                  <button className="group relative shrink-0 h-24 w-40 rounded-2xl bg-gradient-primary overflow-hidden shadow-elevated">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="h-12 w-12 rounded-full bg-card/95 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Play className="h-5 w-5 text-primary fill-primary ml-0.5" />
+                      </span>
+                    </div>
+                  </button>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs font-semibold tracking-wider text-primary uppercase">
+                      Quick Start · 2 min
+                    </div>
+                    <h3 className="mt-1 text-lg md:text-xl font-bold">
+                      Watch how QuickSales AI works
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-0.5">
+                      A quick walkthrough of setting up your AI assistant from scratch.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Essential setup card */}
             <div className="mt-8 rounded-3xl border border-border/60 bg-card p-6 md:p-8 shadow-soft">
               <div className="flex items-center justify-between gap-4">
