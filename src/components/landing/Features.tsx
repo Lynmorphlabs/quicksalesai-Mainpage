@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 
 const features = [
-  { img: templates, title: "Template Library", desc: "Browse and use pre-built message templates." },
-  { img: inbox, title: "Chat Inbox", desc: "Manage all customer chats in one place." },
-  { img: ai, title: "AI Template Generator", desc: "Create WhatsApp templates instantly using AI." },
+  { img: templates, title: "AI WhatsApp Agent", subtitle: "Your 24/7 sales rep on WhatsApp", desc: "Replies to customers instantly, answers questions, qualifies leads, and closes deals — automatically, even while you sleep. Reads and shares files and documents too." },
+  { img: inbox, title: "AI Call Agent", subtitle: "Never miss a call, never lose a lead", desc: "An AI that answers, qualifies, and follows up on calls for you — so every enquiry gets a response, day or night." },
+  { img: ai, title: "AI Knowledge Base", subtitle: "Simply train your AI in minutes", desc: "Just upload your menu, catalogue, or any document — your AI learns from it instantly and uses it to answer every customer question accurately." },
   { img: tasks, title: "Agent Task Management", desc: "Assign, track, and manage team conversations." },
   { img: contacts, title: "Contact Import", desc: "Bulk upload and organize customer contacts." },
   { img: catalog, title: "WABA Catalog", desc: "Showcase products directly inside WhatsApp chats." },
@@ -56,6 +56,9 @@ export const Features = () => (
             </div>
             <div className="p-5">
               <h3 className="text-lg font-bold tracking-tight">{f.title}</h3>
+              {f.subtitle && (
+                <p className="mt-1 text-sm font-medium text-primary">{f.subtitle}</p>
+              )}
               <p className="mt-1 text-sm text-muted-foreground">{f.desc}</p>
             </div>
           </article>
