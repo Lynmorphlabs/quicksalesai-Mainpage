@@ -17,15 +17,19 @@ export const LogoCloud = () => (
         Trusted By Global Industry Leaders
       </p>
       <div className="relative overflow-hidden">
-        <div className="flex items-center gap-16 sm:gap-24 animate-marquee w-max">
+        <div className="flex items-center animate-marquee w-max">
           {[...logos, ...logos].map((logo, i) => (
-            <img
+            <div
               key={`${logo.alt}-${i}`}
-              src={logo.src}
-              alt={logo.alt}
-              className={`${logo.className} w-auto object-contain shrink-0 opacity-70 hover:opacity-100 transition-opacity`}
-              loading="lazy"
-            />
+              className="flex items-center justify-center shrink-0 w-[25vw] min-w-[220px]"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className={`${logo.className} w-auto object-contain opacity-70 hover:opacity-100 transition-opacity`}
+                loading="lazy"
+              />
+            </div>
           ))}
         </div>
         <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-card/80 to-transparent" />
