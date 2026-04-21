@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-v2.png";
 
 const links = ["Home", "Product", "Platform", "Pricing", "Contact"];
 
@@ -7,7 +7,7 @@ export const Navbar = () => (
   <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/70 border-b border-border/40">
     <nav className="container flex items-center justify-between h-16">
       <a href="#" className="flex items-center gap-2 font-bold text-lg">
-        <img src={logo} alt="Quicksales.ai logo" className="h-8 w-auto" />
+        <img src={logo} alt="Quicksales.ai logo" className="h-9 w-auto" />
         Quicksales<span className="text-primary">.ai</span>
       </a>
       <ul className="hidden md:flex items-center gap-1 bg-card/60 border border-border/60 rounded-full px-2 py-1 shadow-soft">
