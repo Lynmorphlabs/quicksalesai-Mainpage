@@ -12,12 +12,12 @@ const features = [
   { img: templates, title: "AI WhatsApp Agent", subtitle: "Your 24/7 sales rep on WhatsApp", desc: "Replies to customers instantly, answers questions, qualifies leads, and closes deals — automatically, even while you sleep. Reads and shares files and documents too." },
   { img: inbox, title: "AI Call Agent", subtitle: "Never miss a call, never lose a lead", desc: "An AI that answers, qualifies, and follows up on calls for you — so every enquiry gets a response, day or night." },
   { img: ai, title: "AI Knowledge Base", subtitle: "Simply train your AI in minutes", desc: "Just upload your menu, catalogue, or any document — your AI learns from it instantly and uses it to answer every customer question accurately." },
-  { img: tasks, title: "Agent Task Management", desc: "Assign, track, and manage team conversations." },
-  { img: contacts, title: "Contact Import", desc: "Bulk upload and organize customer contacts." },
-  { img: catalog, title: "WABA Catalog", desc: "Showcase products directly inside WhatsApp chats." },
-  { img: templates, title: "Sync from Meta", desc: "Auto-sync approved templates from your Meta account." },
-  { img: inbox, title: "E-commerce Webhooks", desc: "Automate messages from store events instantly." },
-  { img: analytics, title: "Performance Analytics", desc: "Track messages, campaigns, and engagement live." },
+  { img: tasks, title: "Multi AI Agent", subtitle: "The right agent for every job", desc: "Run multiple specialised AI agents at once — one for sales, one for support, one for bookings — each focused and sharp." },
+  { img: contacts, title: "Appointment Scheduling", subtitle: "From chat to calendar in seconds", desc: "Your AI suggests time slots, confirms bookings, and syncs to Google Calendar automatically — no back and forth needed." },
+  { img: catalog, title: "Website Chat Widget", subtitle: "Turn website visitors into WhatsApp conversations", desc: "Drop a chat widget on your site and instantly move visitors into WhatsApp — where deals actually get closed." },
+  { img: templates, title: "Broadcast Messaging", subtitle: "Reach everyone. Miss no one.", desc: "Send targeted WhatsApp campaigns to your entire customer list in one go — promotions, updates, and follow-ups at scale." },
+  { img: inbox, title: "Lead Scraper", subtitle: "Find your next customer before they find you", desc: "Automatically discover business leads from Google, Facebook, and LinkedIn — complete with verified WhatsApp numbers ready to contact." },
+  { img: analytics, title: "WhatsApp Group AI", subtitle: "Your AI works in groups too", desc: "Add your AI agent into any WhatsApp group — it knows who's who, answers questions, reads documents, and keeps every conversation moving." },
 ];
 
 export const Features = () => (
