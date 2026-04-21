@@ -173,14 +173,15 @@ const Dashboard = () => {
         {/* Content */}
         <main className="flex-1 overflow-y-auto p-6 md:p-10">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-3xl md:text-4xl font-bold flex items-center gap-3">
-              <span>👋</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border/60 bg-card/60 text-xs font-medium text-muted-foreground tracking-wide uppercase">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+              Workspace Overview
+            </div>
+            <h1 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-br from-foreground to-foreground/60 bg-clip-text text-transparent">
               Welcome to QuickSales AI
-              <span>👋</span>
             </h1>
-            <p className="mt-3 text-muted-foreground text-lg">
-              Set up your AI assistant in minutes and start replying to customers
-              automatically.
+            <p className="mt-3 text-muted-foreground text-lg max-w-2xl">
+              Set up your AI assistant in minutes and start replying to customers automatically.
             </p>
 
             {/* Essential setup card */}
