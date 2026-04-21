@@ -16,13 +16,13 @@ export const Hero = () => {
         </div>
 
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight animate-fade-in-up [animation-delay:120ms]">
-          Trusted{" "}
+          The #1 Trusted{" "}
           <span className="relative inline-block">
             <span className="bg-gradient-primary bg-clip-text text-transparent">WhatsApp</span>
           </span>{" "}
-          Sales
+          AI SALES PLATFORM
           <br className="hidden sm:block" />
-          {" "}Platform for{" "}
+          {" "}for{" "}
           <span className="italic font-serif text-primary">Growing</span> Businesses
         </h1>
 
@@ -41,7 +41,7 @@ export const Hero = () => {
         </div>
 
         <div className="mt-4 text-xs text-muted-foreground animate-fade-in-up [animation-delay:480ms]">
-          No credit card required · Free 14-day trial
+          No credit card required · Free 14-day trial · Live in under 60 seconds
         </div>
       </div>
 
