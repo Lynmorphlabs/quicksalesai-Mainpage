@@ -27,10 +27,10 @@ export const Features = () => (
         <div className="max-w-2xl">
           <span className="inline-block text-xs font-bold tracking-widest text-primary uppercase mb-3">Features</span>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
-            Tools that turn <span className="italic font-serif text-primary">chats</span> into customers
+            One platform. <span className="italic font-serif text-primary">Infinite</span> possibilities.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            From automation to analytics, explore tools designed to simplify communication and boost conversions on WhatsApp.
+            No tech team needed. No complicated setup. Just plug in, train your AI, and let it sell for you.
           </p>
         </div>
         <Button variant="outline" className="rounded-full self-start md:self-end">
