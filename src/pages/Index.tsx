@@ -15,8 +15,8 @@ const Index = () => (
     <h1 className="sr-only">Quicksales.ai — Trusted WhatsApp Sales Platform for Growing Businesses</h1>
     <Hero />
     <LogoCloud />
-    <Features />
     <HowItWorks />
+    <Features />
     <Platform />
     <Stats />
     <Pricing />
