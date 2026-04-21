@@ -115,8 +115,8 @@ const Dashboard = () => {
       {/* Sidebar */}
       <aside className="w-72 shrink-0 border-r border-border/60 bg-card flex flex-col">
         <div className="h-16 flex items-center justify-between px-4 border-b border-border/60">
-          <Link to="/" className="flex items-center">
-            <img src={logo} alt="Quicksales.ai" className="h-10 w-auto" />
+          <Link to="/" className="relative flex items-center h-16 flex-1 overflow-hidden">
+            <img src={logo} alt="Quicksales.ai" className="absolute left-0 top-1/2 h-32 w-auto max-w-none -translate-y-1/2" />
           </Link>
           <button className="p-1.5 rounded-md hover:bg-secondary text-muted-foreground">
             <ChevronLeft className="h-4 w-4" />
