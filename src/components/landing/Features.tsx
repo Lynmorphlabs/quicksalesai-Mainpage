@@ -56,6 +56,9 @@ export const Features = () => (
             </div>
             <div className="p-5">
               <h3 className="text-lg font-bold tracking-tight">{f.title}</h3>
+              {f.subtitle && (
+                <p className="mt-1 text-sm font-medium text-primary">{f.subtitle}</p>
+              )}
               <p className="mt-1 text-sm text-muted-foreground">{f.desc}</p>
             </div>
           </article>
