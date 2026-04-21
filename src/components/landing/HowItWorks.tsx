@@ -1,4 +1,6 @@
-import { ScanLine, Settings, Rocket } from "lucide-react";
+import stepConnect from "@/assets/step-connect.jpg";
+import stepConfigure from "@/assets/step-configure.jpg";
+import stepGoLive from "@/assets/step-golive.jpg";
 
 const steps = [
   {
@@ -6,21 +8,24 @@ const steps = [
     title: "Connect",
     subtitle: "Scan. Done.",
     desc: "Open Quicksales, scan the QR code, and your WhatsApp is connected instantly. No forms, no waiting, no IT support needed.",
-    icon: ScanLine,
+    image: stepConnect,
+    tint: "bg-[hsl(142_65%_92%)]",
   },
   {
     num: "02",
     title: "Configure",
     subtitle: "Pick a template. Add your business info.",
     desc: "Choose an AI agent template that fits your business, upload your catalogue or menu, and your AI learns everything it needs to know in seconds.",
-    icon: Settings,
+    image: stepConfigure,
+    tint: "bg-[hsl(45_95%_92%)]",
   },
   {
     num: "03",
     title: "Go Live",
     subtitle: "Your AI is now open for business.",
     desc: "From this moment, your AI replies to every customer, captures every lead, and works toward every sale — while you focus on everything else.",
-    icon: Rocket,
+    image: stepGoLive,
+    tint: "bg-[hsl(142_65%_92%)]",
   },
 ];
 
@@ -43,26 +48,33 @@ export const HowItWorks = () => (
         {steps.map((step, i) => (
           <div
             key={i}
-            className="relative rounded-3xl bg-card border border-border/60 p-8 shadow-soft hover:shadow-elevated transition-smooth group"
+            className="relative rounded-3xl bg-card border border-border/60 shadow-soft hover:shadow-elevated transition-smooth group overflow-hidden flex flex-col"
           >
             {/* Step number badge */}
-            <div className="absolute -top-3 left-8">
+            <div className="absolute top-4 left-4 z-10">
               <span className="inline-flex items-center justify-center h-7 px-3 rounded-full bg-gradient-primary text-primary-foreground text-xs font-bold shadow-soft">
                 Step {step.num}
               </span>
             </div>
 
-            {/* Icon */}
-            <div className="mt-4 mb-5">
-              <div className="h-12 w-12 rounded-2xl bg-primary-soft grid place-items-center text-primary group-hover:scale-105 transition-transform">
-                <step.icon className="h-6 w-6" />
-              </div>
+            {/* Illustration */}
+            <div className={`${step.tint} aspect-[4/3] overflow-hidden`}>
+              <img
+                src={step.image}
+                alt={`${step.title} — ${step.subtitle}`}
+                width={768}
+                height={576}
+                loading="lazy"
+                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
 
             {/* Content */}
-            <h3 className="text-xl font-bold tracking-tight mb-1">{step.title}</h3>
-            <p className="text-sm font-semibold text-primary mb-3">{step.subtitle}</p>
-            <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+            <div className="p-7 flex-1">
+              <h3 className="text-xl font-bold tracking-tight mb-1">{step.title}</h3>
+              <p className="text-sm font-semibold text-primary mb-3">{step.subtitle}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+            </div>
           </div>
         ))}
       </div>
