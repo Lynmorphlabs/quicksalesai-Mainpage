@@ -209,7 +209,6 @@ const Dashboard = () => {
               </div>
 
               <ol className="mt-6 relative">
-                <div className="absolute left-[15px] top-4 bottom-4 w-px bg-border" />
                 {checklist.map((step, idx) => (
                   <li
                     key={step.title}
@@ -219,6 +218,9 @@ const Dashboard = () => {
                         : ""
                     }`}
                   >
+                    {idx < checklist.length - 1 && !step.highlight && (
+                      <span className="absolute left-[31px] top-[52px] bottom-[-8px] w-px bg-border" />
+                    )}
                     <div
                       className={`relative z-10 mt-0.5 h-8 w-8 rounded-full flex items-center justify-center shrink-0 ${
                         step.done
