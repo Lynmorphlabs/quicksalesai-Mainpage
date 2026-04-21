@@ -2,6 +2,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { LogoCloud } from "@/components/landing/LogoCloud";
 import { Features } from "@/components/landing/Features";
+import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Platform } from "@/components/landing/Platform";
 import { Stats } from "@/components/landing/Stats";
 import { Pricing } from "@/components/landing/Pricing";
@@ -15,6 +16,7 @@ const Index = () => (
     <Hero />
     <LogoCloud />
     <Features />
+    <HowItWorks />
     <Platform />
     <Stats />
     <Pricing />
