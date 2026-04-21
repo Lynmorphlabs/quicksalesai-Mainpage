@@ -115,7 +115,7 @@ export const FeaturesComparisonDialog = ({ open, onOpenChange }: Props) => {
           </div>
 
           <p className="mt-5 text-xs text-center text-muted-foreground">
-            All plans include unlimited contacts, 24/7 support, and a 14-day free trial.
+            Please contact us for customised solution.
           </p>
         </div>
       </DialogContent>
