@@ -7,6 +7,8 @@ import catalog from "@/assets/feature-catalog.jpg";
 import analytics from "@/assets/feature-analytics.jpg";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import { FeaturesComparisonDialog } from "./FeaturesComparisonDialog";
 
 const features = [
   { img: templates, title: "AI WhatsApp Agent", subtitle: "Your 24/7 sales rep on WhatsApp", desc: "Replies to customers instantly, answers questions, qualifies leads, and closes deals — automatically, even while you sleep. Reads and shares files and documents too." },
@@ -20,7 +22,9 @@ const features = [
   { img: analytics, title: "WhatsApp Group AI", subtitle: "Your AI works in groups too", desc: "Add your AI agent into any WhatsApp group — it knows who's who, answers questions, reads documents, and keeps every conversation moving." },
 ];
 
-export const Features = () => (
+export const Features = () => {
+  const [open, setOpen] = useState(false);
+  return (
   <section id="product" className="py-24 sm:py-32 relative">
     <div className="container">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
@@ -33,7 +37,11 @@ export const Features = () => (
             No tech team needed. No complicated setup. Just plug in, train your AI, and let it sell for you.
           </p>
         </div>
-        <Button variant="outline" className="rounded-full self-start md:self-end">
+        <Button
+          variant="outline"
+          onClick={() => setOpen(true)}
+          className="rounded-full self-start md:self-end"
+        >
           Explore Features <ArrowUpRight className="ml-1 h-4 w-4" />
         </Button>
       </div>
@@ -65,5 +73,7 @@ export const Features = () => (
         ))}
       </div>
     </div>
+    <FeaturesComparisonDialog open={open} onOpenChange={setOpen} />
   </section>
-);
+  );
+};
