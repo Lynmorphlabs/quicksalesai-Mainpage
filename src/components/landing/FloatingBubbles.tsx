@@ -14,7 +14,7 @@ type Bubble = {
 const bubbles: Bubble[] = [
   {
     name: "Priya",
-    msg: "Order shipped 🚀",
+    msg: "Appointment Booked 📅",
     color: "hsl(var(--bubble-pink))",
     pos: "left-[2%] top-[44%]",
     anim: "animate-float-slow",
@@ -32,7 +32,7 @@ const bubbles: Bubble[] = [
   },
   {
     name: "Sara",
-    msg: "Catalog viewed",
+    msg: "New enquiry",
     color: "hsl(var(--bubble-amber))",
     pos: "right-[2%] top-[48%]",
     anim: "animate-float-medium",
@@ -51,7 +51,7 @@ const bubbles: Bubble[] = [
   },
   {
     name: "Campaign",
-    msg: "12,480 sent",
+    msg: "1283 Leads Found",
     color: "hsl(var(--bubble-teal))",
     pos: "left-[8%] top-[8%] hidden lg:block",
     anim: "animate-drift",
@@ -60,7 +60,7 @@ const bubbles: Bubble[] = [
   },
   {
     name: "Lead",
-    msg: "New 🎉",
+    msg: "New Leads 🎉",
     color: "hsl(var(--primary))",
     pos: "right-[8%] top-[6%] hidden lg:block",
     anim: "animate-float-fast",
