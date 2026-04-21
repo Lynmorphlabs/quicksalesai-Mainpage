@@ -7,7 +7,7 @@ export const Navbar = () => (
   <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/70 border-b border-border/40">
     <nav className="container flex items-center justify-between h-16">
       <a href="#" className="flex items-center gap-2 font-bold text-lg">
-        <img src={logo} alt="Quicksales.ai logo" className="h-56 md:h-64 w-auto translate-y-3 md:translate-y-4" />
+        <img src={logo} alt="Quicksales.ai logo" className="h-20 md:h-24 w-auto" />
       </a>
       <ul className="hidden md:flex items-center gap-1 bg-card/60 border border-border/60 rounded-full px-2 py-1 shadow-soft">
         {links.map((l) => (
