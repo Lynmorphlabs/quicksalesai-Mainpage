@@ -73,5 +73,7 @@ export const Features = () => {
         ))}
       </div>
     </div>
+    <FeaturesComparisonDialog open={open} onOpenChange={setOpen} />
   </section>
-);
+  );
+};
