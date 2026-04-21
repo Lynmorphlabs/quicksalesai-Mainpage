@@ -8,7 +8,6 @@ export const Navbar = () => (
     <nav className="container flex items-center justify-between h-16">
       <a href="#" className="flex items-center gap-2 font-bold text-lg">
         <img src={logo} alt="Quicksales.ai logo" className="h-9 w-auto" />
-        Quicksales<span className="text-primary">.ai</span>
       </a>
       <ul className="hidden md:flex items-center gap-1 bg-card/60 border border-border/60 rounded-full px-2 py-1 shadow-soft">
         {links.map((l) => (
