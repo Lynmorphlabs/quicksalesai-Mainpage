@@ -42,15 +42,7 @@ const messages: Msg[] = [
   { sender: "user", text: "zen@gmail.com, Next Wednesday 3pm" },
   {
     sender: "agent",
-    text: "Thank you. Your demo session has been scheduled for Wednesday 3pm.",
-  },
-  {
-    sender: "agent",
-    text: "Google Meet: https://meet.google.com/zfb-mtuh-orz",
-  },
-  {
-    sender: "agent",
-    text: "A calendar invitation has been sent to your email. We will walk you through the full setup during the 15 minute session, see you very soon, Zen!",
+    text: "Thank you. Your demo session has been scheduled for Wednesday 3pm.\n\nGoogle Meet: https://meet.google.com/zfb-mtuh-orz\n\nA calendar invitation has been sent to your email. We will walk you through the full setup during the 15 minute session, see you very soon, Zen!",
   },
 ];
 
@@ -275,6 +267,7 @@ const ChatBubble: React.FC<{
                 color: textColor,
                 lineHeight: 1.3,
                 letterSpacing: -0.3,
+                whiteSpace: "pre-wrap",
               }}
             >
               {text}
