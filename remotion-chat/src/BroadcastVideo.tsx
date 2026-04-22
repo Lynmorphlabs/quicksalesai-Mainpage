@@ -98,7 +98,7 @@ const Footer: React.FC<{ leftLabel?: string; rightLabel?: string; rightActive?: 
 );
 
 const Card: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div style={{ width: "100%", height: "100%", background: "#FFF", borderRadius: 32, border: `1px solid ${BORDER}`, padding: 48, boxShadow: "0 10px 40px rgba(0,0,0,0.06)", display: "flex", flexDirection: "column", gap: 28 }}>
+  <div style={{ width: "100%", height: "100%", background: "#FFF", borderRadius: 32, border: `1px solid ${BORDER}`, padding: 40, boxShadow: "0 10px 40px rgba(0,0,0,0.06)", display: "flex", flexDirection: "column", gap: 20, overflow: "hidden" }}>
     {children}
   </div>
 );
