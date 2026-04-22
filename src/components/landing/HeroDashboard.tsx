@@ -5,7 +5,7 @@ const contacts = [
   { name: "Emily Carter", msg: "Thanks! Order confirmed 🙌", time: "2m", unread: 2, color: "hsl(var(--bubble-pink))", initial: "EC", active: true },
   { name: "Nurul Aisyah", msg: "Can you share the catalog?", time: "8m", unread: 0, color: "hsl(var(--bubble-blue))", initial: "NA" },
   { name: "Wei Ming Tan", msg: "Looks great, send invoice", time: "12m", unread: 1, color: "hsl(var(--bubble-amber))", initial: "WT" },
-  { name: "Ahmad Faizal", msg: "Typing…", time: "now", unread: 0, color: "hsl(var(--bubble-violet))", initial: "AF" },
+  { name: "James Wilson", msg: "Typing…", time: "now", unread: 0, color: "hsl(var(--bubble-violet))", initial: "JW" },
   { name: "Li Hua Lim", msg: "Perfect, thank you!", time: "1h", unread: 0, color: "hsl(var(--bubble-teal))", initial: "LL" },
 ];
 
