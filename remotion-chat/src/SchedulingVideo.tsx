@@ -43,7 +43,10 @@ const messages: Msg[] = [
   {
     sender: "agent",
     text: "Thank you. Your demo session has been scheduled for Wednesday 3pm.",
-    extra: "meet",
+  },
+  {
+    sender: "agent",
+    text: "Google Meet: https://meet.google.com/zfb-mtuh-orz",
   },
   {
     sender: "agent",
