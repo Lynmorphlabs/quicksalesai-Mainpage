@@ -3,6 +3,7 @@ import { ChatVideo } from "./ChatVideo";
 import { SchedulingVideo, SCHEDULE_TOTAL } from "./SchedulingVideo";
 import { AgentSelectVideo, AGENT_SELECT_DURATION } from "./AgentSelectVideo";
 import { KnowledgeBaseVideo, KB_DURATION } from "./KnowledgeBaseVideo";
+import { ChatWidgetVideo, CW_DURATION } from "./ChatWidgetVideo";
 
 export const RemotionRoot = () => (
   <>
@@ -34,6 +35,14 @@ export const RemotionRoot = () => (
     id="knowledge-base"
     component={KnowledgeBaseVideo}
     durationInFrames={KB_DURATION}
+    fps={30}
+    width={1600}
+    height={1200}
+  />
+  <Composition
+    id="chat-widget"
+    component={ChatWidgetVideo}
+    durationInFrames={CW_DURATION}
     fps={30}
     width={1600}
     height={1200}
