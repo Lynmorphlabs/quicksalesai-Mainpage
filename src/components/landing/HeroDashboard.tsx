@@ -128,7 +128,7 @@ export const HeroDashboard = () => {
           />
           <StatCard
             icon={<Users className="h-4 w-4" />}
-            label="New contacts"
+            label="New Leads"
             value="248"
             trend="+9%"
             color="hsl(var(--bubble-blue))"
