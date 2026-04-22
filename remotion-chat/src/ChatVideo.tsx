@@ -246,17 +246,18 @@ const AgentLogo: React.FC = () => (
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      fontFamily: "Georgia, serif",
       color: CREAM,
-      fontSize: 42,
-      fontWeight: 700,
-      lineHeight: 0.9,
-      letterSpacing: -1,
-      flexDirection: "column",
-      paddingTop: 6,
     }}
   >
-    <div style={{ marginRight: 16 }}>e</div>
-    <div style={{ marginLeft: 16, marginTop: -8 }}>d</div>
+    <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke={CREAM} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="4" y="7" width="16" height="12" rx="3" />
+      <path d="M12 7V3" />
+      <circle cx="12" cy="3" r="1" fill={CREAM} />
+      <circle cx="9" cy="12" r="1.3" fill={CREAM} stroke="none" />
+      <circle cx="15" cy="12" r="1.3" fill={CREAM} stroke="none" />
+      <path d="M9 16h6" />
+      <path d="M2 12v2" />
+      <path d="M22 12v2" />
+    </svg>
   </div>
 );
