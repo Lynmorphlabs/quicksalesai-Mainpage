@@ -9,7 +9,14 @@ const cols = [
   },
   {
     title: "Company",
-    links: [{ label: "Contact", href: "#contact", disabled: false }],
+    links: [
+      {
+        label: "Contact",
+        href: "https://api.whatsapp.com/send/?phone=6580225588&text&type=phone_number&app_absent=0",
+        disabled: false,
+        external: true,
+      },
+    ],
   },
   {
     title: "Resources",
@@ -39,6 +46,9 @@ export const Footer = () => (
                 ) : (
                   <a
                     href={l.href}
+                    {...((l as { external?: boolean }).external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
                     className="text-sm text-muted-foreground hover:text-foreground transition-smooth"
                   >
                     {l.label}
