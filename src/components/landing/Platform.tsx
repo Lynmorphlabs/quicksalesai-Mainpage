@@ -101,19 +101,7 @@ export const Platform = () => {
                 </ul>
               </div>
               <div className="bg-secondary/40 order-1 md:order-2 grid place-items-center p-6">
-                {s.isVideo ? (
-                  <video
-                    src={s.img}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="rounded-2xl shadow-bubble animate-scale-in w-full h-auto"
-                    key={active}
-                  />
-                ) : (
-                  <img src={s.img} alt={s.title} loading="lazy" width={896} height={640} className="rounded-2xl shadow-bubble animate-scale-in w-full h-auto" key={active} />
-                )}
+                <img src={s.img} alt={s.title} loading="lazy" width={896} height={640} className="rounded-2xl shadow-bubble animate-scale-in w-full h-auto" key={active} />
               </div>
             </div>
           </div>
