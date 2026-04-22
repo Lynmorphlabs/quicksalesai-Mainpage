@@ -7,6 +7,7 @@ import { ChatWidgetVideo, CW_DURATION } from "./ChatWidgetVideo";
 import { LeadScraperVideo, LS_DURATION } from "./LeadScraperVideo";
 import { CallAgentVideo, CA_DURATION } from "./CallAgentVideo";
 import { BroadcastVideo, BC_DURATION } from "./BroadcastVideo";
+import { GroupAIVideo, GROUP_AI_DURATION } from "./GroupAIVideo";
 
 export const RemotionRoot = () => (
   <>
@@ -72,6 +73,14 @@ export const RemotionRoot = () => (
     durationInFrames={BC_DURATION}
     fps={30}
     width={1600}
+    height={1200}
+  />
+  <Composition
+    id="group-ai"
+    component={GroupAIVideo}
+    durationInFrames={GROUP_AI_DURATION}
+    fps={30}
+    width={1200}
     height={1200}
   />
   </>
