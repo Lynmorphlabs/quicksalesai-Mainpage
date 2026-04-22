@@ -54,7 +54,7 @@ export const Features = () => {
             key={i}
             className="group rounded-3xl bg-card border border-border/60 overflow-hidden shadow-soft hover:shadow-elevated hover:-translate-y-1 transition-smooth"
           >
-            <div className="aspect-[4/3] overflow-hidden bg-secondary/40">
+            <div className="aspect-[4/3] overflow-hidden bg-[#E8E5DE]">
               {f.isVideo ? (
                 <video
                   src={f.img}
@@ -62,7 +62,7 @@ export const Features = () => {
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                  className="w-full h-full object-contain"
                 />
               ) : (
                 <img
