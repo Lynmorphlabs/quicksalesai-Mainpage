@@ -6,6 +6,7 @@ import { KnowledgeBaseVideo, KB_DURATION } from "./KnowledgeBaseVideo";
 import { ChatWidgetVideo, CW_DURATION } from "./ChatWidgetVideo";
 import { LeadScraperVideo, LS_DURATION } from "./LeadScraperVideo";
 import { CallAgentVideo, CA_DURATION } from "./CallAgentVideo";
+import { BroadcastVideo, BC_DURATION } from "./BroadcastVideo";
 
 export const RemotionRoot = () => (
   <>
@@ -61,6 +62,14 @@ export const RemotionRoot = () => (
     id="call-agent"
     component={CallAgentVideo}
     durationInFrames={CA_DURATION}
+    fps={30}
+    width={1600}
+    height={1200}
+  />
+  <Composition
+    id="broadcast"
+    component={BroadcastVideo}
+    durationInFrames={BC_DURATION}
     fps={30}
     width={1600}
     height={1200}
