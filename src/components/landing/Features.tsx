@@ -5,6 +5,7 @@ import multiAgentVideo from "@/assets/feature-multi-agent.mp4";
 import knowledgeBaseVideo from "@/assets/feature-knowledge-base.mp4";
 import chatWidgetVideo from "@/assets/feature-chat-widget.mp4";
 import leadScraperVideo from "@/assets/feature-lead-scraper.mp4";
+import callAgentVideo from "@/assets/feature-call-agent.mp4";
 import inbox from "@/assets/feature-inbox.jpg";
 import ai from "@/assets/feature-ai.jpg";
 import tasks from "@/assets/feature-tasks.jpg";
@@ -18,7 +19,7 @@ import { FeaturesComparisonDialog } from "./FeaturesComparisonDialog";
 
 const features = [
   { img: aiAgentVideo, isVideo: true, title: "AI WhatsApp Agent", subtitle: "Your 24/7 sales rep on WhatsApp", desc: "Replies to customers instantly, answers questions, qualifies leads, and closes deals — automatically, even while you sleep. Reads and shares files and documents too." },
-  { img: inbox, title: "AI Call Agent", subtitle: "Never miss a call, never lose a lead", desc: "An AI that answers, qualifies, and follows up on calls for you — so every enquiry gets a response, day or night." },
+  { img: callAgentVideo, isVideo: true, title: "AI Call Agent", subtitle: "Never miss a call, never lose a lead", desc: "An AI that answers, qualifies, and follows up on calls for you — so every enquiry gets a response, day or night." },
   { img: knowledgeBaseVideo, isVideo: true, title: "AI Knowledge Base", subtitle: "Simply train your AI in minutes", desc: "Just upload your menu, catalogue, or any document — your AI learns from it instantly and uses it to answer every customer question accurately." },
   { img: multiAgentVideo, isVideo: true, title: "Multi AI Agent", subtitle: "The right agent for every job", desc: "Run multiple specialised AI agents at once — one for sales, one for support, one for bookings — each focused and sharp." },
   { img: schedulingVideo, isVideo: true, title: "Appointment Scheduling", subtitle: "From chat to calendar in seconds", desc: "Your AI suggests time slots, confirms bookings, and syncs to Google Calendar automatically — no back and forth needed." },
