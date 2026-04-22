@@ -225,12 +225,12 @@ const ChatBubble: React.FC<{
       style={{
         background: bg,
         borderRadius: 26,
-        padding: "20px 26px",
+        padding: "26px 32px",
         display: "flex",
-        gap: 18,
+        gap: 22,
         alignItems: "flex-start",
         boxShadow: isUser ? "none" : "0 6px 20px rgba(0,0,0,0.04)",
-        maxWidth: 920,
+        maxWidth: 1120,
         flexDirection: isUser ? "row-reverse" : "row",
       }}
     >
@@ -238,7 +238,7 @@ const ChatBubble: React.FC<{
         {isUser ? (
           <Img
             src={staticFile("customer.jpg")}
-            style={{ width: 72, height: 72, borderRadius: 16, objectFit: "cover" }}
+            style={{ width: 84, height: 84, borderRadius: 18, objectFit: "cover" }}
           />
         ) : (
           <AgentLogo />
@@ -247,7 +247,7 @@ const ChatBubble: React.FC<{
       <div style={{ flex: 1, paddingTop: 2, textAlign: isUser ? "right" : "left" }}>
         <div
           style={{
-            fontSize: 22,
+            fontSize: 26,
             fontWeight: 500,
             color: nameColor,
             marginBottom: 6,
@@ -262,10 +262,10 @@ const ChatBubble: React.FC<{
           <>
             <div
               style={{
-                fontSize: 28,
+                fontSize: 36,
                 fontWeight: 500,
                 color: textColor,
-                lineHeight: 1.3,
+                lineHeight: 1.35,
                 letterSpacing: -0.3,
                 whiteSpace: "pre-wrap",
               }}
