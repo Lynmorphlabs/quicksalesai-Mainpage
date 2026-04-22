@@ -33,8 +33,14 @@ export const Hero = () => {
             Get Started
             <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
           </Button>
-          <Button size="lg" variant="outline" className="rounded-full px-7 text-base h-12 border-border/80">
-            Book a Demo
+          <Button asChild size="lg" variant="outline" className="rounded-full px-7 text-base h-12 border-border/80">
+            <a
+              href="https://api.whatsapp.com/send/?phone=6580225588&text&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Demo
+            </a>
           </Button>
         </div>
 
