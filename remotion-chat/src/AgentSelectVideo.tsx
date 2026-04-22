@@ -249,7 +249,7 @@ const Cursor: React.FC<{ y: number; pulse: number }> = ({ y, pulse }) => {
         filter: "drop-shadow(0 4px 6px rgba(0,0,0,0.18))",
       }}
     >
-      <svg width="56" height="64" viewBox="0 0 32 36" fill="none">
+      <svg width="72" height="84" viewBox="0 0 32 36" fill="none">
         {/* hand pointer */}
         <path
           d="M12 4c0-1.1.9-2 2-2s2 .9 2 2v12h1V8c0-1.1.9-2 2-2s2 .9 2 2v8h1v-3c0-1.1.9-2 2-2s2 .9 2 2v3h1v-2c0-1.1.9-2 2-2s2 .9 2 2v8c0 5-4 9-9 9h-3c-3 0-5-1-7-3l-6-7c-.7-.8-.6-2 .2-2.6.9-.7 2.1-.5 2.8.4L12 22V4z"
