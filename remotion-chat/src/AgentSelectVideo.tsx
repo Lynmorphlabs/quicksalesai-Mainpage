@@ -35,7 +35,7 @@ const TRAVEL = 22;
 const SEQUENCE: number[] = [1, 2, 3, 1, 2]; // option indices
 
 const ROW_HEIGHT = 130;
-const LIST_TOP = 470; // y of first row center within canvas
+const LIST_TOP = 580; // y of first row center within canvas
 const CURSOR_X_REST = 1240;
 
 const totalFrames = SEQUENCE.length * (STAY + TRAVEL) + 30;
@@ -100,10 +100,7 @@ export const AgentSelectVideo = () => {
       style={{
         backgroundColor: BG,
         fontFamily,
-        padding: "70px 70px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
+        padding: "180px 70px 0 70px",
       }}
     >
       <Card hoveredIdx={hoveredIdx} clickPulse={clickPulse} cursorY={cursorY} />
