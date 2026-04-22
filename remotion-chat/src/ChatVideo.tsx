@@ -179,7 +179,7 @@ const Bubble: React.FC<{
           {typingDots ? <TypingDots /> : (
             <>
               <span>{text}</span>
-              {showCaret && <Caret color={isMuted ? MUTED : DARK} />}
+              {showCaret && <Caret color={isMuted ? "#3A3A35" : DARK} />}
             </>
           )}
         </div>
