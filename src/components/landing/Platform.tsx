@@ -53,7 +53,7 @@ export const Platform = () => {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <span className="inline-block text-xs font-bold tracking-widest text-primary uppercase mb-3">Platform</span>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
-            One platform. <br /><span className="italic font-serif text-primary">Endless</span> ways to grow.
+            One platform, <br /><span className="italic font-serif text-primary">Infinite</span> possibilities
           </h2>
         </div>
 
