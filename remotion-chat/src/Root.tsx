@@ -26,7 +26,7 @@ export const RemotionRoot = () => (
     component={AgentSelectVideo}
     durationInFrames={AGENT_SELECT_DURATION}
     fps={30}
-    width={1200}
+    width={1600}
     height={1200}
   />
   </>
