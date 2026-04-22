@@ -42,8 +42,8 @@ export const ChatWidgetVideo = () => {
     [0, 1],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
   );
-  const cursorX = interpolate(cursorProgress, [0, 1], [200, 1180]);
-  const cursorY = interpolate(cursorProgress, [0, 1], [180, 920]);
+  const cursorX = interpolate(cursorProgress, [0, 1], [200, 1080]);
+  const cursorY = interpolate(cursorProgress, [0, 1], [180, 880]);
   const cursorOpacity = interpolate(frame, [cursorAppear, cursorAppear + 8], [0, 1], { extrapolateRight: "clamp" });
 
   // Click pulse
