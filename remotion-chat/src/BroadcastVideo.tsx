@@ -57,11 +57,11 @@ export const BroadcastVideo: React.FC = () => {
 };
 
 const Header: React.FC = () => (
-  <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
-    <div style={{ width: 78, height: 78, borderRadius: 20, border: `1px solid ${BORDER}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 40 }}>←</div>
+  <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+    <div style={{ width: 64, height: 64, borderRadius: 18, border: `1px solid ${BORDER}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 34 }}>←</div>
     <div>
-      <div style={{ fontSize: 78, fontWeight: 800, color: GREEN, letterSpacing: -2, lineHeight: 1.02 }}>Bulk Message</div>
-      <div style={{ fontSize: 30, color: MUTED, marginTop: 8 }}>Send WhatsApp session messages to selected contacts</div>
+      <div style={{ fontSize: 64, fontWeight: 800, color: GREEN, letterSpacing: -2, lineHeight: 1.02 }}>Bulk Message</div>
+      <div style={{ fontSize: 26, color: MUTED, marginTop: 6 }}>Send WhatsApp session messages to selected contacts</div>
     </div>
   </div>
 );
@@ -74,12 +74,12 @@ const Tabs: React.FC<{ active: 1 | 2 | 3 | 4 }> = ({ active }) => {
         const isActive = i + 1 === active;
         return (
           <div key={t} style={{
-            padding: "20px 36px",
+            padding: "16px 30px",
             borderRadius: 999,
             background: isActive ? GREEN : GREEN_SOFT,
             color: isActive ? "#FFF" : GREEN,
             fontWeight: 800,
-            fontSize: 30,
+            fontSize: 26,
             display: "flex", alignItems: "center", gap: 10,
           }}>
             {t} <span style={{ opacity: 0.7 }}>›</span>
