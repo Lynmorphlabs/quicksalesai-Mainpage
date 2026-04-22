@@ -107,7 +107,7 @@ export const KnowledgeBaseVideo = () => {
       style={{
         backgroundColor: BG,
         fontFamily,
-        padding: 60,
+        padding: 28,
       }}
     >
       <div
