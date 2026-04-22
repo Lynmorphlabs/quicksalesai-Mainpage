@@ -15,9 +15,9 @@ const cols = [
 
 export const Footer = () => (
   <footer className="border-t border-border/40 bg-card/40 pt-16 pb-10">
-    <div className="container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10">
+    <div className="container flex flex-wrap justify-around gap-10 text-center sm:text-left">
       {cols.map((c) => (
-        <div key={c.title}>
+        <div key={c.title} className="min-w-[140px]">
           <h4 className="text-sm font-bold mb-3">{c.title}</h4>
           <ul className="space-y-2">
             {c.links.map((l) => (
