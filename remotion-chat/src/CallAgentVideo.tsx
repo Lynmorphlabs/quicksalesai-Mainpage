@@ -4,7 +4,7 @@ import { loadFont } from "@remotion/google-fonts/Inter";
 const { fontFamily } = loadFont("normal", { weights: ["400","500","600","700","800"], subsets: ["latin"] });
 
 export const CA_DURATION = 320;
-const BG = "#F8EDD8";
+const BG = "#FAF3B8";
 const GREEN = "#16A34A";
 const DARK = "#0F172A";
 const MUTED = "#64748B";
