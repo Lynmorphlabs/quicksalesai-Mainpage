@@ -4,6 +4,7 @@ import schedulingVideo from "@/assets/platform-onboard.mp4";
 import multiAgentVideo from "@/assets/feature-multi-agent.mp4";
 import knowledgeBaseVideo from "@/assets/feature-knowledge-base.mp4";
 import chatWidgetVideo from "@/assets/feature-chat-widget.mp4";
+import leadScraperVideo from "@/assets/feature-lead-scraper.mp4";
 import inbox from "@/assets/feature-inbox.jpg";
 import ai from "@/assets/feature-ai.jpg";
 import tasks from "@/assets/feature-tasks.jpg";
@@ -23,7 +24,7 @@ const features = [
   { img: schedulingVideo, isVideo: true, title: "Appointment Scheduling", subtitle: "From chat to calendar in seconds", desc: "Your AI suggests time slots, confirms bookings, and syncs to Google Calendar automatically — no back and forth needed." },
   { img: chatWidgetVideo, isVideo: true, title: "Website Chat Widget", subtitle: "Turn website visitors into WhatsApp conversations", desc: "Drop a chat widget on your site and instantly move visitors into WhatsApp — where deals actually get closed." },
   { img: templates, title: "Broadcast Messaging", subtitle: "Reach everyone. Miss no one.", desc: "Send targeted WhatsApp campaigns to your entire customer list in one go — promotions, updates, and follow-ups at scale." },
-  { img: inbox, title: "Lead Scraper", subtitle: "Find your next customer before they find you", desc: "Automatically discover business leads from Google, Facebook, and LinkedIn — complete with verified WhatsApp numbers ready to contact." },
+  { img: leadScraperVideo, isVideo: true, title: "Lead Scraper", subtitle: "Find your next customer before they find you", desc: "Automatically discover business leads from Google, Facebook, and LinkedIn — complete with verified WhatsApp numbers ready to contact." },
   { img: analytics, title: "WhatsApp Group AI", subtitle: "Your AI works in groups too", desc: "Add your AI agent into any WhatsApp group — it knows who's who, answers questions, reads documents, and keeps every conversation moving." },
 ];
 
