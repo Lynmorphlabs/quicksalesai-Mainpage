@@ -13,7 +13,7 @@ const { fontFamily } = loadFont("normal", {
 });
 
 // Cream background like the AI Knowledge Base card
-const BG = "#FCF4A8";
+const BG = "#F8EDD8";
 const PANEL = "#FFFFFF";
 const BORDER = "#E5E9E7";
 const GREEN = "#10B981";
