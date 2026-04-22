@@ -61,7 +61,7 @@ export const Features = () => {
             key={i}
             className="group rounded-3xl bg-card border border-border/60 overflow-hidden shadow-soft hover:shadow-elevated hover:-translate-y-1 transition-smooth"
           >
-            <div className="aspect-[4/3] overflow-hidden bg-[#CDEDE0]">
+            <div className="aspect-[4/3] overflow-hidden bg-[#E8E5DE]">
               {f.isVideo ? (
                 <video
                   src={f.img}
@@ -82,12 +82,12 @@ export const Features = () => {
                 />
               )}
             </div>
-            <div className="p-5 pt-4">
-              <h3 className="text-xl font-bold tracking-tight">{f.title}</h3>
+            <div className="p-5">
+              <h3 className="text-lg font-bold tracking-tight">{f.title}</h3>
               {f.subtitle && (
-                <p className="mt-0.5 text-base font-semibold text-primary">{f.subtitle}</p>
+                <p className="mt-1 text-sm font-medium text-primary">{f.subtitle}</p>
               )}
-              <p className="mt-1 text-base text-muted-foreground leading-snug">{f.desc}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{f.desc}</p>
             </div>
           </article>
         ))}
