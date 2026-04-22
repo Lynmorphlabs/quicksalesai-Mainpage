@@ -267,6 +267,7 @@ const ChatBubble: React.FC<{
                 color: textColor,
                 lineHeight: 1.3,
                 letterSpacing: -0.3,
+                whiteSpace: "pre-wrap",
               }}
             >
               {text}
