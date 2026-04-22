@@ -1,5 +1,6 @@
 import templates from "@/assets/feature-templates.jpg";
 import aiAgentVideo from "@/assets/platform-ai-agent.mp4";
+import schedulingVideo from "@/assets/platform-onboard.mp4";
 import inbox from "@/assets/feature-inbox.jpg";
 import ai from "@/assets/feature-ai.jpg";
 import tasks from "@/assets/feature-tasks.jpg";
@@ -16,7 +17,7 @@ const features = [
   { img: inbox, title: "AI Call Agent", subtitle: "Never miss a call, never lose a lead", desc: "An AI that answers, qualifies, and follows up on calls for you — so every enquiry gets a response, day or night." },
   { img: ai, title: "AI Knowledge Base", subtitle: "Simply train your AI in minutes", desc: "Just upload your menu, catalogue, or any document — your AI learns from it instantly and uses it to answer every customer question accurately." },
   { img: tasks, title: "Multi AI Agent", subtitle: "The right agent for every job", desc: "Run multiple specialised AI agents at once — one for sales, one for support, one for bookings — each focused and sharp." },
-  { img: contacts, title: "Appointment Scheduling", subtitle: "From chat to calendar in seconds", desc: "Your AI suggests time slots, confirms bookings, and syncs to Google Calendar automatically — no back and forth needed." },
+  { img: schedulingVideo, isVideo: true, title: "Appointment Scheduling", subtitle: "From chat to calendar in seconds", desc: "Your AI suggests time slots, confirms bookings, and syncs to Google Calendar automatically — no back and forth needed." },
   { img: catalog, title: "Website Chat Widget", subtitle: "Turn website visitors into WhatsApp conversations", desc: "Drop a chat widget on your site and instantly move visitors into WhatsApp — where deals actually get closed." },
   { img: templates, title: "Broadcast Messaging", subtitle: "Reach everyone. Miss no one.", desc: "Send targeted WhatsApp campaigns to your entire customer list in one go — promotions, updates, and follow-ups at scale." },
   { img: inbox, title: "Lead Scraper", subtitle: "Find your next customer before they find you", desc: "Automatically discover business leads from Google, Facebook, and LinkedIn — complete with verified WhatsApp numbers ready to contact." },
