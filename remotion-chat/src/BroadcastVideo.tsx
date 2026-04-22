@@ -58,10 +58,10 @@ export const BroadcastVideo: React.FC = () => {
 
 const Header: React.FC = () => (
   <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
-    <div style={{ width: 70, height: 70, borderRadius: 18, border: `1px solid ${BORDER}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 36 }}>←</div>
+    <div style={{ width: 78, height: 78, borderRadius: 20, border: `1px solid ${BORDER}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 40 }}>←</div>
     <div>
-      <div style={{ fontSize: 64, fontWeight: 800, color: GREEN, letterSpacing: -1.5, lineHeight: 1.05 }}>Bulk Message</div>
-      <div style={{ fontSize: 26, color: MUTED, marginTop: 6 }}>Send WhatsApp session messages to selected contacts (one line per batch)</div>
+      <div style={{ fontSize: 78, fontWeight: 800, color: GREEN, letterSpacing: -2, lineHeight: 1.02 }}>Bulk Message</div>
+      <div style={{ fontSize: 30, color: MUTED, marginTop: 8 }}>Send WhatsApp session messages to selected contacts</div>
     </div>
   </div>
 );
@@ -69,17 +69,17 @@ const Header: React.FC = () => (
 const Tabs: React.FC<{ active: 1 | 2 | 3 | 4 }> = ({ active }) => {
   const tabs = ["1. WhatsApp line", "2. Recipients", "3. Message", "4. Review"];
   return (
-    <div style={{ display: "flex", gap: 16 }}>
+    <div style={{ display: "flex", gap: 18 }}>
       {tabs.map((t, i) => {
         const isActive = i + 1 === active;
         return (
           <div key={t} style={{
-            padding: "16px 28px",
+            padding: "20px 36px",
             borderRadius: 999,
             background: isActive ? GREEN : GREEN_SOFT,
             color: isActive ? "#FFF" : GREEN,
-            fontWeight: 700,
-            fontSize: 24,
+            fontWeight: 800,
+            fontSize: 30,
             display: "flex", alignItems: "center", gap: 10,
           }}>
             {t} <span style={{ opacity: 0.7 }}>›</span>
@@ -142,53 +142,45 @@ const Step2: React.FC<{ frame: number }> = ({ frame }) => {
     "114340971724950",
     "120363046726989989",
     "120363047519029361",
-    "120363169975121665",
-    "120363304138546080",
-    "120363329731871770",
   ];
 
   return (
     <Card>
       <Header />
       <Tabs active={2} />
-      <div style={{ flex: 1, padding: 36, border: `1px solid ${BORDER}`, borderRadius: 20 }}>
+      <div style={{ flex: 1, padding: 32, border: `1px solid ${BORDER}`, borderRadius: 20, display: "flex", flexDirection: "column", gap: 18 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
           <div>
-            <div style={{ fontSize: 24, fontWeight: 700, color: DARK, marginBottom: 10 }}>Search</div>
-            <div style={{ border: `1px solid ${BORDER}`, borderRadius: 14, padding: "18px 22px", fontSize: 24, color: "#94A3B8" }}>Name or phone</div>
+            <div style={{ fontSize: 28, fontWeight: 700, color: DARK, marginBottom: 10 }}>Search</div>
+            <div style={{ border: `1px solid ${BORDER}`, borderRadius: 14, padding: "20px 24px", fontSize: 26, color: "#94A3B8" }}>Name or phone</div>
           </div>
           <div>
-            <div style={{ fontSize: 24, fontWeight: 700, color: DARK, marginBottom: 10 }}>Tags</div>
-            <div style={{ border: `1px solid ${BORDER}`, borderRadius: 14, padding: "18px 22px", fontSize: 24, color: "#94A3B8" }}>Filter by tags...</div>
+            <div style={{ fontSize: 28, fontWeight: 700, color: DARK, marginBottom: 10 }}>Tags</div>
+            <div style={{ border: `1px solid ${BORDER}`, borderRadius: 14, padding: "20px 24px", fontSize: 26, color: "#94A3B8" }}>Filter by tags...</div>
           </div>
         </div>
-        <div style={{ marginTop: 20 }}>
-          <div style={{ fontSize: 22, fontWeight: 700, color: DARK, marginBottom: 10 }}>Status (optional)</div>
-          <div style={{ border: `1px solid ${BORDER}`, borderRadius: 14, padding: "16px 20px", fontSize: 22, color: searchTyped ? DARK : "#94A3B8", maxWidth: 480 }}>
-            {searchTyped || "e.g. lead"}{frame >= searchStart && searchTyped.length < searchText.length && <span style={{ display: "inline-block", width: 3, height: 24, background: DARK, marginLeft: 2, verticalAlign: "middle" }} />}
-          </div>
+        <div style={{ padding: "16px 28px", border: `1px solid ${BORDER}`, borderRadius: 999, alignSelf: "flex-start", fontSize: 24, fontWeight: 700, color: DARK }}>
+          Use all matching filter (1340)
         </div>
-        <div style={{ marginTop: 20, padding: "14px 22px", border: `1px solid ${BORDER}`, borderRadius: 999, display: "inline-block", fontSize: 20, fontWeight: 600, color: DARK }}>Use all matching filter (1340)</div>
-
-        <div style={{ marginTop: 20, border: `2px solid ${GREEN}`, borderRadius: 18, overflow: "hidden" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "70px 1fr 1fr", padding: "18px 24px", background: "#F8FAFC", fontSize: 22, fontWeight: 800, color: DARK }}>
+        <div style={{ border: `2px solid ${GREEN}`, borderRadius: 18, overflow: "hidden" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "80px 1fr 1fr", padding: "22px 28px", background: "#F8FAFC", fontSize: 28, fontWeight: 800, color: DARK }}>
             <div></div><div>Name</div><div>Phone</div>
           </div>
           {rows.map((r, i) => {
-            const checked = i < 5 && checks[i];
+            const checked = checks[i];
             return (
-              <div key={r} style={{ display: "grid", gridTemplateColumns: "70px 1fr 1fr", padding: "16px 24px", borderTop: `1px solid ${BORDER}`, fontSize: 22, alignItems: "center", color: i < 5 ? DARK : MUTED }}>
+              <div key={r} style={{ display: "grid", gridTemplateColumns: "80px 1fr 1fr", padding: "22px 28px", borderTop: `1px solid ${BORDER}`, fontSize: 26, alignItems: "center", color: DARK }}>
                 <div>
-                  <div style={{ width: 30, height: 30, borderRadius: 6, background: checked ? GREEN : "transparent", border: `2px solid ${checked ? GREEN : "#CBD5E1"}`, display: "flex", alignItems: "center", justifyContent: "center", color: "#FFF", fontWeight: 800 }}>{checked ? "✓" : ""}</div>
+                  <div style={{ width: 36, height: 36, borderRadius: 8, background: checked ? GREEN : "transparent", border: `2px solid ${checked ? GREEN : "#CBD5E1"}`, display: "flex", alignItems: "center", justifyContent: "center", color: "#FFF", fontSize: 22, fontWeight: 800 }}>{checked ? "✓" : ""}</div>
                 </div>
                 <div style={{ fontWeight: 600 }}>{r}</div>
                 <div>{r}</div>
               </div>
             );
           })}
-          <div style={{ display: "flex", justifyContent: "space-between", padding: "18px 24px", borderTop: `1px solid ${BORDER}`, fontSize: 20, color: MUTED }}>
+          <div style={{ display: "flex", justifyContent: "space-between", padding: "20px 28px", borderTop: `1px solid ${BORDER}`, fontSize: 24, color: MUTED }}>
             <div>Page 1 — Selected: {checks.filter(Boolean).length}</div>
-            <div style={{ display: "flex", gap: 24 }}><span>Prev</span><span style={{ color: DARK, fontWeight: 700 }}>Next</span></div>
+            <div style={{ display: "flex", gap: 28 }}><span>Prev</span><span style={{ color: DARK, fontWeight: 700 }}>Next</span></div>
           </div>
         </div>
       </div>
@@ -206,12 +198,12 @@ const Step3: React.FC<{ frame: number }> = ({ frame }) => {
     <Card>
       <Header />
       <Tabs active={3} />
-      <div style={{ flex: 1, padding: 40, border: `1px solid ${BORDER}`, borderRadius: 20 }}>
-        <div style={{ fontSize: 32, fontWeight: 800, color: DARK, marginBottom: 18 }}>Message</div>
-        <div style={{ border: `2px solid ${GREEN}`, borderRadius: 16, padding: "28px 30px", fontSize: 28, color: DARK, minHeight: 280, lineHeight: 1.4 }}>
-          {msgTyped}{frame >= msgStart && msgTyped.length < msgText.length && <span style={{ display: "inline-block", width: 3, height: 30, background: DARK, marginLeft: 2, verticalAlign: "middle" }} />}
+      <div style={{ flex: 1, padding: 40, border: `1px solid ${BORDER}`, borderRadius: 20, display: "flex", flexDirection: "column" }}>
+        <div style={{ fontSize: 40, fontWeight: 800, color: DARK, marginBottom: 22 }}>Message</div>
+        <div style={{ border: `2px solid ${GREEN}`, borderRadius: 18, padding: "36px 40px", fontSize: 44, fontWeight: 500, color: DARK, flex: 1, lineHeight: 1.4 }}>
+          {msgTyped}{frame >= msgStart && msgTyped.length < msgText.length && <span style={{ display: "inline-block", width: 4, height: 46, background: DARK, marginLeft: 2, verticalAlign: "middle" }} />}
         </div>
-        <div style={{ marginTop: 22, padding: "16px 28px", border: `1px solid ${BORDER}`, borderRadius: 14, display: "inline-flex", alignItems: "center", gap: 12, fontSize: 22, fontWeight: 700, color: DARK }}>
+        <div style={{ marginTop: 24, padding: "20px 32px", border: `1px solid ${BORDER}`, borderRadius: 14, alignSelf: "flex-start", display: "inline-flex", alignItems: "center", gap: 14, fontSize: 28, fontWeight: 700, color: DARK }}>
           🖼️ Add media from library
         </div>
       </div>
