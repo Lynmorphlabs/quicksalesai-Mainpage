@@ -174,12 +174,12 @@ export const ChatWidgetVideo = () => {
             Skincare made simple.
           </div>
 
-          {/* Chat widget bubble */}
+          {/* Chat widget bubble - BIG */}
           <div
             style={{
               position: "absolute",
-              right: 60,
-              bottom: 60,
+              right: 80,
+              bottom: 80,
               transform: `scale(${widgetScale})`,
               transformOrigin: "bottom right",
             }}
@@ -188,27 +188,27 @@ export const ChatWidgetVideo = () => {
               style={{
                 background: DARK,
                 color: "#fff",
-                borderRadius: 14,
-                padding: "16px 22px",
+                borderRadius: 28,
+                padding: "32px 44px",
                 display: "flex",
                 alignItems: "center",
-                gap: 16,
-                boxShadow: "0 12px 32px rgba(0,0,0,0.25)",
+                gap: 28,
+                boxShadow: "0 24px 60px rgba(0,0,0,0.35)",
                 position: "relative",
               }}
             >
-              <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-                <div style={{ fontSize: 20, fontWeight: 700, letterSpacing: 0.3 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <div style={{ fontSize: 42, fontWeight: 700, letterSpacing: 0.5 }}>
                   CHAT WITH OUR EXPERT
                 </div>
-                <div style={{ fontSize: 13, color: "#BFBFBF", letterSpacing: 0.5 }}>
+                <div style={{ fontSize: 24, color: "#BFBFBF", letterSpacing: 1 }}>
                   MON-FRI 11AM-6PM
                 </div>
               </div>
               <div
                 style={{
-                  width: 52,
-                  height: 52,
+                  width: 96,
+                  height: 96,
                   borderRadius: "50%",
                   background: WA_GREEN,
                   display: "flex",
@@ -217,7 +217,7 @@ export const ChatWidgetVideo = () => {
                   flexShrink: 0,
                 }}
               >
-                <WhatsAppIcon size={30} color="#fff" />
+                <WhatsAppIcon size={56} color="#fff" />
               </div>
 
               {/* Click pulse */}
@@ -225,12 +225,12 @@ export const ChatWidgetVideo = () => {
                 <div
                   style={{
                     position: "absolute",
-                    right: 4,
-                    bottom: 4,
-                    width: 60,
-                    height: 60,
+                    right: 8,
+                    bottom: 8,
+                    width: 110,
+                    height: 110,
                     borderRadius: "50%",
-                    border: `3px solid ${WA_GREEN}`,
+                    border: `4px solid ${WA_GREEN}`,
                     transform: `scale(${clickScale})`,
                     opacity: clickFade,
                   }}
@@ -240,30 +240,53 @@ export const ChatWidgetVideo = () => {
           </div>
         </div>
 
-        {/* WhatsApp chat panel sliding up */}
+        {/* Phone WhatsApp pop-up */}
         {frame >= waOpenStart && (
           <div
             style={{
               position: "absolute",
-              right: 60,
-              bottom: 60,
-              width: 520,
-              height: 720,
-              borderRadius: 20,
+              left: "50%",
+              top: "50%",
+              width: 480,
+              height: 940,
+              marginLeft: -240,
+              marginTop: -470,
+              borderRadius: 56,
               overflow: "hidden",
+              background: "#000",
+              padding: 14,
               transform: `translateY(${waY}px)`,
               opacity: waOpacity,
-              boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
-              display: "flex",
-              flexDirection: "column",
-              background: WA_BG,
+              boxShadow: "0 30px 80px rgba(0,0,0,0.45)",
             }}
           >
+          <div style={{
+            width: "100%",
+            height: "100%",
+            borderRadius: 44,
+            overflow: "hidden",
+            background: WA_BG,
+            display: "flex",
+            flexDirection: "column",
+            position: "relative",
+          }}>
+            {/* Phone notch */}
+            <div style={{
+              position: "absolute",
+              top: 8,
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: 130,
+              height: 28,
+              background: "#000",
+              borderRadius: 16,
+              zIndex: 10,
+            }} />
             {/* WA Header */}
             <div
               style={{
                 background: WA_HEADER,
-                padding: "18px 20px",
+                padding: "44px 20px 16px",
                 display: "flex",
                 alignItems: "center",
                 gap: 14,
@@ -271,23 +294,23 @@ export const ChatWidgetVideo = () => {
             >
               <div
                 style={{
-                  width: 48,
-                  height: 48,
+                  width: 44,
+                  height: 44,
                   borderRadius: "50%",
-                  background: WA_GREEN,
+                  background: "linear-gradient(135deg, #F2C6C0, #E89B92)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: 20,
+                  fontSize: 22,
                   fontWeight: 700,
-                  color: "#fff",
+                  color: "#3A1F1C",
                 }}
               >
-                Q
+                ✨
               </div>
               <div style={{ display: "flex", flexDirection: "column", color: "#fff" }}>
-                <div style={{ fontSize: 19, fontWeight: 600 }}>Quicksales Business Team</div>
-                <div style={{ fontSize: 13, opacity: 0.85 }}>online</div>
+                <div style={{ fontSize: 18, fontWeight: 600 }}>Beauty Expert AI</div>
+                <div style={{ fontSize: 12, opacity: 0.85 }}>online</div>
               </div>
             </div>
 
@@ -312,18 +335,18 @@ export const ChatWidgetVideo = () => {
                     maxWidth: "82%",
                     background: "#fff",
                     borderRadius: "12px 12px 12px 2px",
-                    padding: "12px 16px",
-                    fontSize: 18,
+                    padding: "10px 14px",
+                    fontSize: 15,
                     color: DARK,
                     boxShadow: "0 1px 2px rgba(0,0,0,0.1)",
                     transform: `translateY(${msg1Y}px)`,
                     opacity: msg1Opacity,
                   }}
                 >
-                  Hi! 👋 Welcome to Glow Beauty.
+                  Hi! ✨ I'm your Beauty Expert AI.
                   <br />
-                  How can we help you today?
-                  <div style={{ fontSize: 11, color: "#999", textAlign: "right", marginTop: 4 }}>
+                  What's your skin type?
+                  <div style={{ fontSize: 10, color: "#999", textAlign: "right", marginTop: 4 }}>
                     11:42
                   </div>
                 </div>
@@ -352,16 +375,16 @@ export const ChatWidgetVideo = () => {
                     maxWidth: "82%",
                     background: "#fff",
                     borderRadius: "12px 12px 12px 2px",
-                    padding: "12px 16px",
-                    fontSize: 18,
+                    padding: "10px 14px",
+                    fontSize: 15,
                     color: DARK,
                     boxShadow: "0 1px 2px rgba(0,0,0,0.1)",
                     transform: `translateY(${msg2Y}px)`,
                     opacity: msg2Opacity,
                   }}
                 >
-                  Looking for a skincare routine? ✨
-                  <div style={{ fontSize: 11, color: "#999", textAlign: "right", marginTop: 4 }}>
+                  I can recommend the perfect routine 💕
+                  <div style={{ fontSize: 10, color: "#999", textAlign: "right", marginTop: 4 }}>
                     11:42
                   </div>
                 </div>
@@ -372,7 +395,7 @@ export const ChatWidgetVideo = () => {
             <div
               style={{
                 background: "#F0F0F0",
-                padding: "10px 14px",
+                padding: "10px 14px 24px",
                 display: "flex",
                 alignItems: "center",
                 gap: 10,
@@ -384,7 +407,7 @@ export const ChatWidgetVideo = () => {
                   background: "#fff",
                   borderRadius: 22,
                   padding: "10px 16px",
-                  fontSize: 15,
+                  fontSize: 13,
                   color: "#999",
                 }}
               >
@@ -392,8 +415,8 @@ export const ChatWidgetVideo = () => {
               </div>
               <div
                 style={{
-                  width: 42,
-                  height: 42,
+                  width: 40,
+                  height: 40,
                   borderRadius: "50%",
                   background: WA_HEADER,
                   display: "flex",
@@ -406,6 +429,7 @@ export const ChatWidgetVideo = () => {
                 ➤
               </div>
             </div>
+          </div>
           </div>
         )}
 
