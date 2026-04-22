@@ -143,7 +143,7 @@ const GroupHeader: React.FC = () => (
     </div>
     <div style={{ display: "flex", flexDirection: "column" }}>
       <span style={{ fontSize: 28, fontWeight: 700, color: DARK, letterSpacing: -0.3 }}>
-        Kitchen Operations
+        Cafe Supplier
       </span>
       <span style={{ fontSize: 20, color: MUTED, fontWeight: 500 }}>
         Jason, May, Sarah, Kai, QuickSales AI
@@ -211,7 +211,7 @@ const Bubble: React.FC<{ mention?: string; body?: string; dots?: boolean }> = ({
       gap: 22,
       alignItems: "flex-start",
       boxShadow: "0 6px 20px rgba(0,0,0,0.04)",
-      maxWidth: 1060,
+      width: "100%",
     }}
   >
     <AgentLogo />
