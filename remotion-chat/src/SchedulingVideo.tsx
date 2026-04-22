@@ -356,8 +356,8 @@ const TypingDots: React.FC = () => {
 const AgentLogo: React.FC = () => (
   <div
     style={{
-      width: 72,
-      height: 72,
+      width: 84,
+      height: 84,
       borderRadius: 16,
       background: BRAND,
       display: "flex",
