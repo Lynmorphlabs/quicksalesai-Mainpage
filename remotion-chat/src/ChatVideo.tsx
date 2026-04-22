@@ -98,7 +98,7 @@ export const ChatVideo = () => {
               }}
             />
           }
-          name="Diego"
+          name="Zen"
           text={customerTyped}
           showCaret={frame >= customerTypeStart && customerTyped.length < customerText.length}
         />
@@ -115,7 +115,7 @@ export const ChatVideo = () => {
         <Bubble
           variant="white"
           avatar={<AgentLogo />}
-          name="EverDream Hotels"
+          name="QuickSales AI"
           text={showTypingDots ? "" : agentTyped}
           typingDots={showTypingDots}
           showCaret={
