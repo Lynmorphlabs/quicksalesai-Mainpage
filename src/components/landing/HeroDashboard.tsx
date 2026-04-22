@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { Search, Send, Phone, Video, MoreVertical, CheckCheck, Smile, Paperclip, Users, BarChart3, MessageSquare, TrendingUp } from "lucide-react";
 
 const contacts = [
-  { name: "Priya Sharma", msg: "Thanks! Order confirmed 🙌", time: "2m", unread: 2, color: "hsl(var(--bubble-pink))", initial: "PS", active: true },
-  { name: "Ahmed Khan", msg: "Can you share the catalog?", time: "8m", unread: 0, color: "hsl(var(--bubble-blue))", initial: "AK" },
-  { name: "Sara Mehta", msg: "Looks great, send invoice", time: "12m", unread: 1, color: "hsl(var(--bubble-amber))", initial: "SM" },
-  { name: "Rohan Das", msg: "Typing…", time: "now", unread: 0, color: "hsl(var(--bubble-violet))", initial: "RD" },
-  { name: "Lina Wu", msg: "Perfect, thank you!", time: "1h", unread: 0, color: "hsl(var(--bubble-teal))", initial: "LW" },
+  { name: "Emily Carter", msg: "Thanks! Order confirmed 🙌", time: "2m", unread: 2, color: "hsl(var(--bubble-pink))", initial: "EC", active: true },
+  { name: "Nurul Aisyah", msg: "Can you share the catalog?", time: "8m", unread: 0, color: "hsl(var(--bubble-blue))", initial: "NA" },
+  { name: "Wei Ming Tan", msg: "Looks great, send invoice", time: "12m", unread: 1, color: "hsl(var(--bubble-amber))", initial: "WT" },
+  { name: "Ahmad Faizal", msg: "Typing…", time: "now", unread: 0, color: "hsl(var(--bubble-violet))", initial: "AF" },
+  { name: "Li Hua Lim", msg: "Perfect, thank you!", time: "1h", unread: 0, color: "hsl(var(--bubble-teal))", initial: "LL" },
 ];
 
 export const HeroDashboard = () => {
@@ -62,9 +62,9 @@ export const HeroDashboard = () => {
         <section className="col-span-12 sm:col-span-8 lg:col-span-6 flex flex-col bg-[hsl(60_30%_97%)]">
           <header className="flex items-center justify-between px-5 py-3 border-b border-border/50 bg-card">
             <div className="flex items-center gap-3">
-              <div className="h-9 w-9 rounded-full grid place-items-center text-white text-xs font-bold" style={{ background: "hsl(var(--bubble-pink))" }}>PS</div>
+              <div className="h-9 w-9 rounded-full grid place-items-center text-white text-xs font-bold" style={{ background: "hsl(var(--bubble-pink))" }}>EC</div>
               <div>
-                <p className="text-sm font-semibold">Priya Sharma</p>
+                <p className="text-sm font-semibold">Emily Carter</p>
                 <p className="text-[11px] text-primary flex items-center gap-1">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" /> online
                 </p>
