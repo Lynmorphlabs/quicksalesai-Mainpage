@@ -12,7 +12,7 @@ const { fontFamily } = loadFont("normal", {
   subsets: ["latin"],
 });
 
-const BG = "#FCF4A8";
+const BG = "#F8EDD8";
 const SITE_BG = "#F2C6C0";
 const DARK = "#1A1A1A";
 const WA_GREEN = "#25D366";
