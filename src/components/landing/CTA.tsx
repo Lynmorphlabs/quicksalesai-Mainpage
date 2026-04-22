@@ -1,10 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { useState } from "react";
-import { ChatWidget } from "./ChatWidget";
 
 export const CTA = () => {
-  const [open, setOpen] = useState(false);
   return (
   <section id="contact" className="py-24">
     <div className="container">
@@ -22,11 +19,17 @@ export const CTA = () => {
           </p>
           <div className="mt-8 flex items-center justify-center gap-3 flex-wrap">
             <Button
+              asChild
               size="lg"
-              onClick={() => setOpen(true)}
               className="bg-gradient-primary hover:opacity-90 shadow-soft rounded-full px-7 h-12"
             >
-              Try out our AI Agent <ArrowRight className="ml-1 h-4 w-4" />
+              <a
+                href="https://api.whatsapp.com/send/?phone=6580225588&text&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Try out our AI Agent <ArrowRight className="ml-1 h-4 w-4" />
+              </a>
             </Button>
           </div>
 
@@ -36,7 +39,6 @@ export const CTA = () => {
         </div>
       </div>
     </div>
-    <ChatWidget open={open} onOpenChange={setOpen} />
   </section>
   );
 };
