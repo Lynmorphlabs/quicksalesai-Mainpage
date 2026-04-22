@@ -34,9 +34,9 @@ const STAY = 55;
 const TRAVEL = 22;
 const SEQUENCE: number[] = [1, 2, 3, 1, 2]; // option indices
 
-const ROW_HEIGHT = 92;
-const LIST_TOP = 360; // y of first row center within canvas
-const CURSOR_X_REST = 760;
+const ROW_HEIGHT = 130;
+const LIST_TOP = 470; // y of first row center within canvas
+const CURSOR_X_REST = 880;
 
 const totalFrames = SEQUENCE.length * (STAY + TRAVEL) + 30;
 
@@ -100,7 +100,10 @@ export const AgentSelectVideo = () => {
       style={{
         backgroundColor: BG,
         fontFamily,
-        padding: 80,
+        padding: "70px 70px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
       }}
     >
       <Card hoveredIdx={hoveredIdx} clickPulse={clickPulse} cursorY={cursorY} />
@@ -122,11 +125,11 @@ const Card: React.FC<{ hoveredIdx: number; clickPulse: number; cursorY: number }
       }}
     >
       {/* Header */}
-      <div style={{ display: "flex", alignItems: "center", gap: 28, marginBottom: 36 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 32, marginBottom: 48 }}>
         <div
           style={{
-            width: 96,
-            height: 96,
+            width: 116,
+            height: 116,
             borderRadius: 28,
             background: ACCENT_SOFT,
             display: "flex",
@@ -139,7 +142,7 @@ const Card: React.FC<{ hoveredIdx: number; clickPulse: number; cursorY: number }
         <div style={{ flex: 1 }}>
           <div
             style={{
-              fontSize: 56,
+              fontSize: 68,
               fontWeight: 700,
               color: TEXT_DARK,
               letterSpacing: -1,
@@ -155,7 +158,7 @@ const Card: React.FC<{ hoveredIdx: number; clickPulse: number; cursorY: number }
             alignItems: "center",
             gap: 12,
             color: TEXT_DARK,
-            fontSize: 30,
+            fontSize: 36,
             fontWeight: 500,
           }}
         >
@@ -168,8 +171,8 @@ const Card: React.FC<{ hoveredIdx: number; clickPulse: number; cursorY: number }
       <div
         style={{
           background: CARD,
-          borderRadius: 28,
-          padding: "22px 8px 22px",
+          borderRadius: 36,
+          padding: "28px 12px 28px",
           boxShadow: "0 14px 40px rgba(13,40,32,0.08)",
           border: `1px solid ${BORDER}`,
           position: "relative",
@@ -202,9 +205,9 @@ const Card: React.FC<{ hoveredIdx: number; clickPulse: number; cursorY: number }
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                padding: "22px 28px",
-                margin: "0 14px",
-                borderRadius: 16,
+                padding: "30px 36px",
+                margin: "0 18px",
+                borderRadius: 20,
                 background: isHovered ? HOVER_BG : "transparent",
                 transition: "none",
                 height: ROW_HEIGHT - 12,
@@ -212,7 +215,7 @@ const Card: React.FC<{ hoveredIdx: number; clickPulse: number; cursorY: number }
             >
               <span
                 style={{
-                  fontSize: 32,
+                  fontSize: 40,
                   fontWeight: 500,
                   color: opt.italic ? MUTED : TEXT_DARK,
                   fontStyle: opt.italic ? "italic" : "normal",
@@ -222,7 +225,7 @@ const Card: React.FC<{ hoveredIdx: number; clickPulse: number; cursorY: number }
                 {opt.label}
               </span>
               {opt.checked && (
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke={TEXT_DARK} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke={TEXT_DARK} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 12l5 5L20 6" />
                 </svg>
               )}
