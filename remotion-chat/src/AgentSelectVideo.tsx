@@ -36,7 +36,7 @@ const SEQUENCE: number[] = [1, 2, 3, 1, 2]; // option indices
 
 const ROW_HEIGHT = 130;
 const LIST_TOP = 470; // y of first row center within canvas
-const CURSOR_X_REST = 880;
+const CURSOR_X_REST = 1240;
 
 const totalFrames = SEQUENCE.length * (STAY + TRAVEL) + 30;
 
