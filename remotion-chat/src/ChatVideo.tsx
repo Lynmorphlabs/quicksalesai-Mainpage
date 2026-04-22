@@ -167,7 +167,7 @@ const Bubble: React.FC<{
           style={{
             fontSize: 38,
             fontWeight: 500,
-            color: isMuted ? MUTED : DARK,
+            color: isMuted ? "#3A3A35" : DARK,
             lineHeight: 1.25,
             letterSpacing: -0.5,
             minHeight: 48,
