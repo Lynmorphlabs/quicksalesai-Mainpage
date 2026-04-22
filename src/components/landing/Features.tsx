@@ -40,7 +40,7 @@ export const Features = () => {
         <div className="max-w-2xl">
           <span className="inline-block text-xs font-bold tracking-widest text-primary uppercase mb-3">Features</span>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
-            One platform. <span className="italic font-serif text-primary">Infinite</span> possibilities.
+            One platform. <br /><span className="italic font-serif text-primary">Infinite</span> possibilities.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             No tech team needed. No complicated setup. Just plug in, train your AI, and let it sell for you.

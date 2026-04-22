@@ -14,8 +14,8 @@ export const CTA = () => {
           <span className="inline-grid place-items-center h-14 w-14 rounded-2xl bg-gradient-primary text-primary-foreground shadow-elevated mx-auto mb-6">
             <MessageCircle className="h-6 w-6" />
           </span>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight max-w-4xl mx-auto">
-            Stop losing leads to <span className="italic font-serif text-primary whitespace-nowrap">missed messages</span>
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight max-w-2xl mx-auto">
+            Stop losing leads to <br /><span className="italic font-serif text-primary whitespace-nowrap">missed messages</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             Every customer that messages you and doesn't get a reply instantly is a lead your competitor is closing. Quicksales makes sure that never happens again.
