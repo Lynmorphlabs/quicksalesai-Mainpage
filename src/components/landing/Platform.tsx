@@ -1,5 +1,5 @@
 import { useState } from "react";
-import aiAgentVideo from "@/assets/platform-ai-agent.mp4";
+import aiAgent from "@/assets/platform-ai-agent.jpg";
 import onboard from "@/assets/platform-onboard.jpg";
 import followup from "@/assets/platform-followup.jpg";
 import broadcast from "@/assets/platform-broadcast-new.jpg";
@@ -12,8 +12,7 @@ const slides = [
     title: "AI Agent That Sells While You Sleep",
     desc: "Your AI replies, qualifies, and converts customers on WhatsApp 24/7 — no human needed.",
     points: ["Instant replies to every message", "Qualifies leads automatically", "Handles FAQs, pricing, and bookings", "Works outside business hours"],
-    img: aiAgentVideo,
-    isVideo: true,
+    img: aiAgent,
   },
   {
     tag: "Onboard",
