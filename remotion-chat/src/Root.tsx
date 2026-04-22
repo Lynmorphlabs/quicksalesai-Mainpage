@@ -2,6 +2,7 @@ import { Composition } from "remotion";
 import { ChatVideo } from "./ChatVideo";
 import { SchedulingVideo, SCHEDULE_TOTAL } from "./SchedulingVideo";
 import { AgentSelectVideo, AGENT_SELECT_DURATION } from "./AgentSelectVideo";
+import { KnowledgeBaseVideo, KB_DURATION } from "./KnowledgeBaseVideo";
 
 export const RemotionRoot = () => (
   <>
@@ -25,6 +26,14 @@ export const RemotionRoot = () => (
     id="agent-select"
     component={AgentSelectVideo}
     durationInFrames={AGENT_SELECT_DURATION}
+    fps={30}
+    width={1600}
+    height={1200}
+  />
+  <Composition
+    id="knowledge-base"
+    component={KnowledgeBaseVideo}
+    durationInFrames={KB_DURATION}
     fps={30}
     width={1600}
     height={1200}
