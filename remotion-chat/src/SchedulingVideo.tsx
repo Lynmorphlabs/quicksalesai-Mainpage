@@ -217,7 +217,7 @@ const ChatBubble: React.FC<{
   const isUser = sender === "user";
   const bg = isUser ? "#DCD8D0" : "#FFFFFF";
   const nameColor = isUser ? MUTED_TEXT : "#7F7B73";
-  const textColor = isUser ? MUTED_TEXT : DARK;
+  const textColor = isUser ? "#3A3A35" : DARK;
   const name = isUser ? "Zen" : "QuickSales AI";
 
   return (
