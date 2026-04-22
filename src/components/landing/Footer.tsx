@@ -2,14 +2,21 @@ const cols = [
   {
     title: "Product",
     links: [
-      { label: "Features", href: "#product" },
-      { label: "Platform", href: "#platform" },
-      { label: "Pricing", href: "#pricing" },
+      { label: "Features", href: "#product", disabled: false },
+      { label: "Platform", href: "#platform", disabled: false },
+      { label: "Pricing", href: "#pricing", disabled: false },
     ],
   },
   {
     title: "Company",
-    links: [{ label: "Contact", href: "#contact" }],
+    links: [{ label: "Contact", href: "#contact", disabled: false }],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Testimonials", href: "#", disabled: true },
+      { label: "FAQ", href: "#", disabled: true },
+    ],
   },
 ];
 
@@ -22,12 +29,21 @@ export const Footer = () => (
           <ul className="space-y-2">
             {c.links.map((l) => (
               <li key={l.label}>
-                <a
-                  href={l.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-smooth"
-                >
-                  {l.label}
-                </a>
+                {l.disabled ? (
+                  <span
+                    aria-disabled="true"
+                    className="text-sm text-muted-foreground/50 cursor-not-allowed select-none"
+                  >
+                    {l.label}
+                  </span>
+                ) : (
+                  <a
+                    href={l.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-smooth"
+                  >
+                    {l.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
