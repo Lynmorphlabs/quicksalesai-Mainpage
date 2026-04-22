@@ -5,6 +5,7 @@ import { AgentSelectVideo, AGENT_SELECT_DURATION } from "./AgentSelectVideo";
 import { KnowledgeBaseVideo, KB_DURATION } from "./KnowledgeBaseVideo";
 import { ChatWidgetVideo, CW_DURATION } from "./ChatWidgetVideo";
 import { LeadScraperVideo, LS_DURATION } from "./LeadScraperVideo";
+import { CallAgentVideo, CA_DURATION } from "./CallAgentVideo";
 
 export const RemotionRoot = () => (
   <>
@@ -52,6 +53,14 @@ export const RemotionRoot = () => (
     id="lead-scraper"
     component={LeadScraperVideo}
     durationInFrames={LS_DURATION}
+    fps={30}
+    width={1600}
+    height={1200}
+  />
+  <Composition
+    id="call-agent"
+    component={CallAgentVideo}
+    durationInFrames={CA_DURATION}
     fps={30}
     width={1600}
     height={1200}
