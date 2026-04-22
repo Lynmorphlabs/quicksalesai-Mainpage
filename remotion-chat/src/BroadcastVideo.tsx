@@ -140,48 +140,39 @@ const Step2: React.FC<{ frame: number }> = ({ frame }) => {
   const rows = [
     "111425074806949",
     "114340971724950",
-    "120363046726989989",
-    "120363047519029361",
   ];
 
   return (
     <Card>
       <Header />
       <Tabs active={2} />
-      <div style={{ flex: 1, padding: 32, border: `1px solid ${BORDER}`, borderRadius: 20, display: "flex", flexDirection: "column", gap: 18 }}>
+      <div style={{ flex: 1, padding: 28, border: `1px solid ${BORDER}`, borderRadius: 20, display: "flex", flexDirection: "column", gap: 16, minHeight: 0 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
           <div>
             <div style={{ fontSize: 28, fontWeight: 700, color: DARK, marginBottom: 10 }}>Search</div>
-            <div style={{ border: `1px solid ${BORDER}`, borderRadius: 14, padding: "20px 24px", fontSize: 26, color: "#94A3B8" }}>Name or phone</div>
+            <div style={{ border: `1px solid ${BORDER}`, borderRadius: 14, padding: "16px 22px", fontSize: 24, color: "#94A3B8" }}>Name or phone</div>
           </div>
           <div>
             <div style={{ fontSize: 28, fontWeight: 700, color: DARK, marginBottom: 10 }}>Tags</div>
-            <div style={{ border: `1px solid ${BORDER}`, borderRadius: 14, padding: "20px 24px", fontSize: 26, color: "#94A3B8" }}>Filter by tags...</div>
+            <div style={{ border: `1px solid ${BORDER}`, borderRadius: 14, padding: "16px 22px", fontSize: 24, color: "#94A3B8" }}>Filter by tags...</div>
           </div>
         </div>
-        <div style={{ padding: "16px 28px", border: `1px solid ${BORDER}`, borderRadius: 999, alignSelf: "flex-start", fontSize: 24, fontWeight: 700, color: DARK }}>
-          Use all matching filter (1340)
-        </div>
         <div style={{ border: `2px solid ${GREEN}`, borderRadius: 18, overflow: "hidden" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "80px 1fr 1fr", padding: "22px 28px", background: "#F8FAFC", fontSize: 28, fontWeight: 800, color: DARK }}>
+          <div style={{ display: "grid", gridTemplateColumns: "80px 1fr 1fr", padding: "18px 26px", background: "#F8FAFC", fontSize: 26, fontWeight: 800, color: DARK }}>
             <div></div><div>Name</div><div>Phone</div>
           </div>
           {rows.map((r, i) => {
             const checked = checks[i];
             return (
-              <div key={r} style={{ display: "grid", gridTemplateColumns: "80px 1fr 1fr", padding: "22px 28px", borderTop: `1px solid ${BORDER}`, fontSize: 26, alignItems: "center", color: DARK }}>
+              <div key={r} style={{ display: "grid", gridTemplateColumns: "80px 1fr 1fr", padding: "18px 26px", borderTop: `1px solid ${BORDER}`, fontSize: 24, alignItems: "center", color: DARK }}>
                 <div>
-                  <div style={{ width: 36, height: 36, borderRadius: 8, background: checked ? GREEN : "transparent", border: `2px solid ${checked ? GREEN : "#CBD5E1"}`, display: "flex", alignItems: "center", justifyContent: "center", color: "#FFF", fontSize: 22, fontWeight: 800 }}>{checked ? "✓" : ""}</div>
+                  <div style={{ width: 32, height: 32, borderRadius: 8, background: checked ? GREEN : "transparent", border: `2px solid ${checked ? GREEN : "#CBD5E1"}`, display: "flex", alignItems: "center", justifyContent: "center", color: "#FFF", fontSize: 20, fontWeight: 800 }}>{checked ? "✓" : ""}</div>
                 </div>
                 <div style={{ fontWeight: 600 }}>{r}</div>
                 <div>{r}</div>
               </div>
             );
           })}
-          <div style={{ display: "flex", justifyContent: "space-between", padding: "20px 28px", borderTop: `1px solid ${BORDER}`, fontSize: 24, color: MUTED }}>
-            <div>Page 1 — Selected: {checks.filter(Boolean).length}</div>
-            <div style={{ display: "flex", gap: 28 }}><span>Prev</span><span style={{ color: DARK, fontWeight: 700 }}>Next</span></div>
-          </div>
         </div>
       </div>
       <Footer leftLabel="Back" />
