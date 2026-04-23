@@ -22,7 +22,7 @@ export const Hero = () => {
             AI Sales
           </span>
           <span className="mt-2 block sm:mt-3">Platform</span>
-          <span className="mt-2 block sm:mt-3">
+          <span className="block">
             for <span className="italic font-serif text-primary">Growing</span> Businesses
           </span>
         </h1>
