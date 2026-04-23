@@ -1,5 +1,5 @@
 import { Composition } from "remotion";
-import { ChatVideo } from "./ChatVideo";
+import { ChatVideo, CHAT_TOTAL } from "./ChatVideo";
 import { SchedulingVideo, SCHEDULE_TOTAL } from "./SchedulingVideo";
 import { AgentSelectVideo, AGENT_SELECT_DURATION } from "./AgentSelectVideo";
 import { KnowledgeBaseVideo, KB_DURATION } from "./KnowledgeBaseVideo";
@@ -14,7 +14,7 @@ export const RemotionRoot = () => (
   <Composition
     id="main"
     component={ChatVideo}
-    durationInFrames={210}
+    durationInFrames={CHAT_TOTAL}
     fps={30}
     width={1200}
     height={1200}

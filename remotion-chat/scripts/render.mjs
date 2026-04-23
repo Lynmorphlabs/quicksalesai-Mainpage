@@ -28,11 +28,11 @@ await renderMedia({
   composition,
   serveUrl: bundled,
   codec: "h264",
-  outputLocation: "/mnt/documents/chat-conversation.mp4",
+  outputLocation: "/dev-server/src/assets/platform-ai-agent.mp4",
   puppeteerInstance: browser,
   muted: true,
   concurrency: 1,
 });
 
 await browser.close({ silent: false });
-console.log("✅ Rendered to /mnt/documents/chat-conversation.mp4");
+console.log("✅ Rendered to /dev-server/src/assets/platform-ai-agent.mp4");
