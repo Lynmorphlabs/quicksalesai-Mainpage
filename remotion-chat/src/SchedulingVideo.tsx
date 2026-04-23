@@ -31,13 +31,20 @@ type Msg = {
 
 const messages: Msg[] = [
   {
-    sender: "agent",
-    text: "May I have your email, and which day and time would you prefer for the viewing? I'll arrange it for you.",
+    sender: "user",
+    text: "Hi, I'm looking for a 2-bedroom condo in the east. Can I have an online meeting this Tuesday 3pm?",
   },
-  { sender: "user", text: "zen@gmail.com, Next Wednesday 3pm" },
   {
     sender: "agent",
-    text: "Got it. Your property viewing has been scheduled for Wednesday 3pm.\n\nViewing Details: https://meet.google.com/zfb-mtuh-orz\n\nI've sent you a confirmation via email.\nLooking forward to showing you the unit, Zen 😊",
+    text: "Sure 👍 I've scheduled your call for Tuesday 3pm.\n\n🎥 Google Meet: https://meet.google.com/zfb-mtuh-orz\n\nI'll walk you through a few suitable options during the session.\n\nA confirmation has been sent to your email. Speak soon!",
+  },
+  {
+    sender: "user",
+    text: "Hi, after going through the materials you shared, I'd like to arrange a viewing for the Treasure this Friday 2pm.",
+  },
+  {
+    sender: "agent",
+    text: "Great choice 👍 I've booked your viewing for Friday 2pm.\n\n📍 Treasure at Tampines\n🕒 Friday 2pm\n\nI've sent you the confirmation details via email.\nSee you at the unit 😊",
   },
 ];
 
