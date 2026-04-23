@@ -15,7 +15,7 @@ export const Hero = () => {
           Powering Business Sales on WhatsApp
         </div>
 
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.15] tracking-tight animate-fade-in-up [animation-delay:120ms]">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.25] tracking-tight animate-fade-in-up [animation-delay:120ms]">
           The #1 Trusted{" "}
           <span className="italic font-serif text-primary">WhatsApp</span>{" "}
           AI Sales Platform
