@@ -20,10 +20,68 @@ const DARK = "#1F1F1F";
 const BRAND = "#2A2A1F";
 const CREAM = "#EFE9D8";
 
-// Typewriter helper
-const typed = (text: string, frame: number, startFrame: number, charsPerFrame = 0.9) => {
+const CHARS_PER_FRAME = 1.4;
+
+type Msg = {
+  sender: "user" | "agent";
+  name: string;
+  text: string;
+};
+
+const messages: Msg[] = [
+  {
+    sender: "user",
+    name: "Zen",
+    text: "Hi, please recommend me suitable savings insurance",
+  },
+  {
+    sender: "agent",
+    name: "QuickSales AI",
+    text: "Sure 😊 I can help with that.\nMay I know your monthly budget and how long you're planning to save?",
+  },
+  {
+    sender: "user",
+    name: "Zen",
+    text: "Around $300/month, maybe long term like 15–20 years",
+  },
+  {
+    sender: "agent",
+    name: "QuickSales AI",
+    text: "Got it 👍 Based on that, here are a couple of options you might consider:\n• Endowment Plan – Stable returns, suitable for medium-term goals (10–20 years)\n• Investment-Linked Plan (ILP) – Higher potential returns, with some market exposure\nWould you like me to walk you through the differences in more detail?",
+  },
+];
+
+// Compute timing per message
+const GAP_BEFORE = 18;
+const TYPING_DOTS_DURATION = 22;
+const HOLD_AFTER = 20;
+
+type Timing = {
+  bubbleStart: number;
+  typingDotsStart: number; // only for agent
+  typeStart: number;
+  typeDuration: number;
+  end: number;
+};
+
+const timings: Timing[] = [];
+let cursor = 10;
+messages.forEach((m, i) => {
+  const bubbleStart = cursor;
+  const isAgent = m.sender === "agent";
+  const typingDotsStart = bubbleStart + 6;
+  const typeStart = isAgent ? typingDotsStart + TYPING_DOTS_DURATION : bubbleStart + 8;
+  const typeDuration = m.text.length / CHARS_PER_FRAME;
+  const end = typeStart + typeDuration + HOLD_AFTER;
+  timings.push({ bubbleStart, typingDotsStart, typeStart, typeDuration, end });
+  cursor = end + GAP_BEFORE;
+});
+
+export const CHAT_TOTAL = Math.ceil(cursor + 30);
+
+const typed = (text: string, frame: number, startFrame: number) => {
   const elapsed = Math.max(0, frame - startFrame);
-  const count = Math.min(text.length, Math.floor(elapsed * charsPerFrame));
+  const count = Math.min(text.length, Math.floor(elapsed * CHARS_PER_FRAME));
   return text.slice(0, count);
 };
 
@@ -31,40 +89,8 @@ export const ChatVideo = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Scene timings
-  const customerBubbleStart = 10;
-  const customerTypeStart = 25;
-  const customerText = "Hi, I need help on the product";
-  const customerTypeDuration = customerText.length / 0.9;
-
-  const agentBubbleStart = Math.round(customerTypeStart + customerTypeDuration + 18);
-  const typingDotsEnd = agentBubbleStart + 25;
-  const agentTypeStart = typingDotsEnd + 4;
-  const agentText = "Hi, this is the support team. How can I help you?";
-
-  // Customer bubble spring entry
-  const customerSpring = spring({
-    frame: frame - customerBubbleStart,
-    fps,
-    config: { damping: 18, stiffness: 180 },
-  });
-  const customerY = interpolate(customerSpring, [0, 1], [40, 0]);
-  const customerOpacity = interpolate(customerSpring, [0, 1], [0, 1]);
-
-  // Agent bubble spring entry
-  const agentSpring = spring({
-    frame: frame - agentBubbleStart,
-    fps,
-    config: { damping: 18, stiffness: 180 },
-  });
-  const agentY = interpolate(agentSpring, [0, 1], [40, 0]);
-  const agentOpacity = interpolate(agentSpring, [0, 1], [0, 1]);
-
-  const customerTyped = typed(customerText, frame, customerTypeStart);
-  const agentTyped = typed(agentText, frame, agentTypeStart);
-
-  // Typing dots animation
-  const showTypingDots = frame >= agentBubbleStart + 6 && frame < typingDotsEnd;
+  // Find last visible message to anchor the stack
+  const visibleCount = messages.filter((_, i) => frame >= timings[i].bubbleStart).length;
 
   return (
     <AbsoluteFill
@@ -74,56 +100,74 @@ export const ChatVideo = () => {
         padding: 80,
         justifyContent: "center",
         alignItems: "center",
-        gap: 28,
       }}
     >
-      {/* Customer bubble */}
       <div
         style={{
-          width: 940,
-          opacity: customerOpacity,
-          transform: `translateY(${customerY}px)`,
+          width: 1000,
+          display: "flex",
+          flexDirection: "column",
+          gap: 22,
         }}
       >
-        <Bubble
-          variant="muted"
-          avatar={
-            <Img
-              src={staticFile("customer.jpg")}
-              style={{
-                width: 88,
-                height: 88,
-                borderRadius: 18,
-                objectFit: "cover",
-              }}
-            />
-          }
-          name="Zen"
-          text={customerTyped}
-          showCaret={frame >= customerTypeStart && customerTyped.length < customerText.length}
-        />
-      </div>
+        {messages.map((m, i) => {
+          const t = timings[i];
+          if (frame < t.bubbleStart) return null;
 
-      {/* Agent bubble */}
-      <div
-        style={{
-          width: 940,
-          opacity: agentOpacity,
-          transform: `translateY(${agentY}px)`,
-        }}
-      >
-        <Bubble
-          variant="white"
-          avatar={<AgentLogo />}
-          name="QuickSales AI"
-          text={showTypingDots ? "" : agentTyped}
-          typingDots={showTypingDots}
-          showCaret={
+          const sp = spring({
+            frame: frame - t.bubbleStart,
+            fps,
+            config: { damping: 18, stiffness: 180 },
+          });
+          const y = interpolate(sp, [0, 1], [40, 0]);
+          const opacity = interpolate(sp, [0, 1], [0, 1]);
+
+          const isAgent = m.sender === "agent";
+          const showTypingDots =
+            isAgent && frame >= t.typingDotsStart && frame < t.typeStart;
+          const text = isAgent
+            ? showTypingDots
+              ? ""
+              : typed(m.text, frame, t.typeStart)
+            : typed(m.text, frame, t.typeStart);
+          const showCaret =
             !showTypingDots &&
-            frame >= agentTypeStart &&
-            agentTyped.length < agentText.length
-          }
-        />
+            frame >= t.typeStart &&
+            text.length < m.text.length;
+
+          return (
+            <div
+              key={i}
+              style={{
+                opacity,
+                transform: `translateY(${y}px)`,
+              }}
+            >
+              <Bubble
+                variant={isAgent ? "white" : "muted"}
+                avatar={
+                  isAgent ? (
+                    <AgentLogo />
+                  ) : (
+                    <Img
+                      src={staticFile("customer.jpg")}
+                      style={{
+                        width: 88,
+                        height: 88,
+                        borderRadius: 18,
+                        objectFit: "cover",
+                      }}
+                    />
+                  )
+                }
+                name={m.name}
+                text={text}
+                typingDots={showTypingDots}
+                showCaret={showCaret}
+              />
+            </div>
+          );
+        })}
       </div>
     </AbsoluteFill>
   );
@@ -143,7 +187,7 @@ const Bubble: React.FC<{
       style={{
         background: isMuted ? "#DCD8D0" : "#FFFFFF",
         borderRadius: 28,
-        padding: "26px 34px",
+        padding: "24px 32px",
         display: "flex",
         gap: 22,
         alignItems: "flex-start",
@@ -151,10 +195,10 @@ const Bubble: React.FC<{
       }}
     >
       <div style={{ flexShrink: 0 }}>{avatar}</div>
-      <div style={{ flex: 1, paddingTop: 4 }}>
+      <div style={{ flex: 1, paddingTop: 4, minWidth: 0 }}>
         <div
           style={{
-            fontSize: 28,
+            fontSize: 26,
             fontWeight: 500,
             color: isMuted ? MUTED : "#7F7B73",
             marginBottom: 6,
@@ -165,22 +209,23 @@ const Bubble: React.FC<{
         </div>
         <div
           style={{
-            fontSize: 38,
+            fontSize: 32,
             fontWeight: 500,
             color: isMuted ? "#3A3A35" : DARK,
-            lineHeight: 1.25,
-            letterSpacing: -0.5,
-            minHeight: 48,
+            lineHeight: 1.3,
+            letterSpacing: -0.4,
+            minHeight: 42,
             display: "flex",
             alignItems: "center",
             gap: 4,
+            whiteSpace: "pre-wrap",
           }}
         >
           {typingDots ? <TypingDots /> : (
-            <>
-              <span>{text}</span>
+            <span>
+              {text}
               {showCaret && <Caret color={isMuted ? "#3A3A35" : DARK} />}
-            </>
+            </span>
           )}
         </div>
       </div>
@@ -196,7 +241,7 @@ const Caret: React.FC<{ color: string }> = ({ color }) => {
       style={{
         display: "inline-block",
         width: 3,
-        height: 36,
+        height: 30,
         background: color,
         marginLeft: 2,
         opacity: visible ? 1 : 0,
