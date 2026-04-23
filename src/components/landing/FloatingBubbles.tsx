@@ -13,7 +13,7 @@ type Bubble = {
 
 const bubbles: Bubble[] = [
   {
-    name: "Paul",
+    name: "Peter",
     msg: "Appointment Booked 📅",
     color: "hsl(var(--bubble-pink))",
     pos: "left-[2%] top-[44%]",
