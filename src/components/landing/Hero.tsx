@@ -15,13 +15,16 @@ export const Hero = () => {
           Powering Business Sales on WhatsApp
         </div>
 
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.6] tracking-tight animate-fade-in-up [animation-delay:120ms]">
-          The #1 Trusted{" "}
-          <span className="italic font-serif text-primary">WhatsApp</span>{" "}
-          AI Sales Platform
-          <br className="hidden sm:block" />
-          {" "}for{" "}
-          <span className="italic font-serif text-primary">Growing</span> Businesses
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight animate-fade-in-up [animation-delay:120ms]">
+          <span className="block">The #1 Trusted</span>
+          <span className="block">
+            <span className="italic font-serif text-primary">WhatsApp</span>{" "}
+            AI Sales
+          </span>
+          <span className="mt-2 block sm:mt-3">Platform</span>
+          <span className="mt-2 block sm:mt-3">
+            for <span className="italic font-serif text-primary">Growing</span> Businesses
+          </span>
         </h1>
 
         <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in-up [animation-delay:240ms]">
