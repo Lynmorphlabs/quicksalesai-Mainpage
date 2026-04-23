@@ -23,7 +23,7 @@ await renderMedia({
   composition,
   serveUrl: bundled,
   codec: "h264",
-  outputLocation: "/mnt/documents/scheduling-conversation.mp4",
+  outputLocation: "/dev-server/src/assets/platform-onboard.mp4",
   puppeteerInstance: browser,
   muted: true,
   concurrency: 1,
