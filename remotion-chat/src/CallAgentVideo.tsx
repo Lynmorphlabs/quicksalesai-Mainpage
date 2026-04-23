@@ -95,7 +95,7 @@ const Header: React.FC<{ title: string }> = ({ title }) => (
 
 const Step1: React.FC<{ frame: number }> = ({ frame }) => {
   const nameStart = 25;
-  const nameText = "Real estate concierge";
+  const nameText = "Hotel wedding concierge";
   const nameTyped = typed(nameText, frame, nameStart);
 
   const greetStart = 80;
