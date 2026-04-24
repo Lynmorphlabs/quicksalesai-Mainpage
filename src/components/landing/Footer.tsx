@@ -64,7 +64,6 @@ export const Footer = () => (
       <p className="text-xs text-muted-foreground">
         © {new Date().getFullYear()} Quicksales.ai · All rights reserved.
       </p>
-      <p className="text-xs text-muted-foreground">Made with 💚 for growing businesses</p>
     </div>
   </footer>
 );
