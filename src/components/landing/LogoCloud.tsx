@@ -2,12 +2,14 @@ import viuLogo from "@/assets/logos/viu.png";
 import huaweiLogo from "@/assets/logos/huawei.png";
 import antGroupLogo from "@/assets/logos/ant-group.png";
 import deadPoetsLogo from "@/assets/logos/dead-poets.png";
+import stEngineeringLogo from "@/assets/logos/st-engineering.png";
 
 const logos = [
   { src: viuLogo, alt: "Viu", className: "h-10 sm:h-12" },
   { src: huaweiLogo, alt: "Huawei", className: "h-12 sm:h-14" },
   { src: antGroupLogo, alt: "Ant Group", className: "h-10 sm:h-12" },
   { src: deadPoetsLogo, alt: "The Dead Poets Society Bar", className: "h-16 sm:h-20" },
+  { src: stEngineeringLogo, alt: "ST Engineering", className: "h-10 sm:h-12" },
 ];
 
 export const LogoCloud = () => (
