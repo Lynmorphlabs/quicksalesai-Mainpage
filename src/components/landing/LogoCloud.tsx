@@ -9,7 +9,7 @@ const logos = [
   { src: huaweiLogo, alt: "Huawei", className: "h-12 sm:h-14" },
   { src: antGroupLogo, alt: "Ant Group", className: "h-10 sm:h-12" },
   { src: deadPoetsLogo, alt: "The Dead Poets Society Bar", className: "h-16 sm:h-20" },
-  { src: stEngineeringLogo, alt: "ST Engineering", className: "h-10 sm:h-12" },
+  { src: stEngineeringLogo, alt: "ST Engineering", className: "h-7 sm:h-9" },
 ];
 
 export const LogoCloud = () => (
