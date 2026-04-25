@@ -96,12 +96,13 @@ export const Features = () => {
             <div className="aspect-[4/3] overflow-hidden bg-[#E8E5DE]">
               {f.isVideo ? (
                 <video
-                  ref={(el) => (videoRefs.current[i] = el)}
+                  ref={(el) => {
+                    videoRefs.current[i] = el;
+                  }}
                   src={f.img}
                   autoPlay
                   loop
                   muted
-                  defaultMuted
                   playsInline
                   preload="auto"
                   controls={false}
