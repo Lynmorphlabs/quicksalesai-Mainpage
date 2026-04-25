@@ -42,12 +42,12 @@ const messages: Msg[] = [
   {
     sender: "user",
     name: "Zen",
-    text: "Around $300/month, maybe long term like 15–20 years",
+    text: "大概每个月 $300，应该是长期储蓄，大概 15–20 年",
   },
   {
     sender: "agent",
     name: "QuickSales AI",
-    text: "Got it 👍 Based on that, here are a couple of options you might consider:\n• Endowment Plan – Stable returns, suitable for medium-term goals (10–20 years)\n• Investment-Linked Plan (ILP) – Higher potential returns, with some market exposure\nWould you like me to walk you through the differences in more detail?",
+    text: "了解 👍 根据你的情况，这里有几个可以考虑的选项：\n• 储蓄型保险（Endowment Plan）— 回报稳定，适合中期目标（10–20 年）\n• 投资连结保险（ILP）— 潜在回报较高，但会有一定的市场波动\n需要我帮你详细讲解两者的区别吗？",
   },
 ];
 
