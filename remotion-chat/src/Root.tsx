@@ -8,6 +8,7 @@ import { LeadScraperVideo, LS_DURATION } from "./LeadScraperVideo";
 import { CallAgentVideo, CA_DURATION } from "./CallAgentVideo";
 import { BroadcastVideo, BC_DURATION } from "./BroadcastVideo";
 import { GroupAIVideo, GROUP_AI_DURATION } from "./GroupAIVideo";
+import { WorkflowBuilderVideo, WFB_DURATION } from "./WorkflowBuilderVideo";
 
 export const RemotionRoot = () => (
   <>
@@ -81,6 +82,14 @@ export const RemotionRoot = () => (
     durationInFrames={GROUP_AI_DURATION}
     fps={30}
     width={1200}
+    height={1200}
+  />
+  <Composition
+    id="workflow-builder"
+    component={WorkflowBuilderVideo}
+    durationInFrames={WFB_DURATION}
+    fps={30}
+    width={1600}
     height={1200}
   />
   </>
