@@ -34,7 +34,7 @@ const features = [
   { img: groupAiVideo, isVideo: true, title: "WhatsApp Group AI", subtitle: "Your AI works in groups too", desc: "Add your AI agent into any WhatsApp group — it knows who's who, answers questions, reads documents, and keeps every conversation moving." },
   { img: humanTakeoverVideo, isVideo: true, title: "Human Takeover", subtitle: "Step in whenever it matters", desc: "Seamlessly jump into any conversation when needed. Your team stays in control, handles sensitive cases, and takes over from AI without disrupting the flow." },
   { img: workflowBuilderVideo, isVideo: true, comingSoon: true, title: "AI Workflow Builder", subtitle: "Create workflows with simple prompts", desc: "Just describe what you want — your AI builds the workflow for you. Automate tasks, connect tools, and launch processes in minutes without touching code." },
-  { img: crmIntegrationVideo, isVideo: true, title: "CRM Integration", subtitle: "Keep all your customer data in sync", desc: "Automatically capture leads, track conversations, and update your CRM in real time — so every interaction is recorded, organised, and ready for follow-up without manual work." },
+  { img: crmIntegrationVideo, isVideo: true, comingSoon: true, title: "CRM Integration", subtitle: "Keep all your customer data in sync", desc: "Automatically capture leads, track conversations, and update your CRM in real time — so every interaction is recorded, organised, and ready for follow-up without manual work." },
 ];
 
 export const Features = () => {
