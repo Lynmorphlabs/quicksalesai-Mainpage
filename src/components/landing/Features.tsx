@@ -132,9 +132,6 @@ export const Features = () => {
             <div className="aspect-[4/3] overflow-hidden bg-[#E8E5DE]">
               {f.comingSoon ? (
                 <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 via-primary/5 to-muted relative">
-                  <span className="px-4 py-1.5 rounded-full bg-foreground/90 text-background text-xs font-bold tracking-widest uppercase">
-                    Coming Soon
-                  </span>
                 </div>
               ) : f.isVideo ? (
                 <video
@@ -174,7 +171,7 @@ export const Features = () => {
                 {f.title}
                 {f.comingSoon && (
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-primary border border-primary/30 bg-primary/10 px-2 py-0.5 rounded-full">
-                    Soon
+                    Coming Soon
                   </span>
                 )}
               </h3>
