@@ -131,10 +131,7 @@ export const Features = () => {
             className="group rounded-3xl bg-card border border-border/60 overflow-hidden shadow-soft hover:shadow-elevated hover:-translate-y-1 transition-smooth"
           >
             <div className="aspect-[4/3] overflow-hidden bg-[#E8E5DE]">
-              {f.comingSoon ? (
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 via-primary/5 to-muted relative">
-                </div>
-              ) : f.isVideo ? (
+              {f.isVideo && f.img ? (
                 <video
                   ref={(el) => {
                     videoRefs.current[i] = el;
@@ -156,6 +153,8 @@ export const Features = () => {
                   }}
                   className="w-full h-full object-contain"
                 />
+              ) : f.comingSoon ? (
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 via-primary/5 to-muted" />
               ) : (
                 <img
                   src={f.img as string}
