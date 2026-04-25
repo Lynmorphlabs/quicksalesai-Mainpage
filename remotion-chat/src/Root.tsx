@@ -11,6 +11,7 @@ import { GroupAIVideo, GROUP_AI_DURATION } from "./GroupAIVideo";
 import { WorkflowBuilderVideo, WFB_DURATION } from "./WorkflowBuilderVideo";
 import { HumanTakeoverVideo, HT_DURATION } from "./HumanTakeoverVideo";
 import { VoiceAgentVideo, VA_DURATION } from "./VoiceAgentVideo";
+import { CRMIntegrationVideo, CRM_DURATION } from "./CRMIntegrationVideo";
 
 export const RemotionRoot = () => (
   <>
@@ -106,6 +107,14 @@ export const RemotionRoot = () => (
     id="voice-agent"
     component={VoiceAgentVideo}
     durationInFrames={VA_DURATION}
+    fps={30}
+    width={1600}
+    height={1200}
+  />
+  <Composition
+    id="crm-integration"
+    component={CRMIntegrationVideo}
+    durationInFrames={CRM_DURATION}
     fps={30}
     width={1600}
     height={1200}
