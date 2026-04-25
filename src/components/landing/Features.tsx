@@ -16,7 +16,7 @@ import catalog from "@/assets/feature-catalog.jpg";
 import analytics from "@/assets/feature-analytics.jpg";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FeaturesComparisonDialog } from "./FeaturesComparisonDialog";
 
 const features = [
@@ -33,6 +33,38 @@ const features = [
 
 export const Features = () => {
   const [open, setOpen] = useState(false);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target as HTMLVideoElement;
+          if (entry.isIntersecting) {
+            video.play().catch(() => {
+              // Autoplay blocked — retry on user interaction
+            });
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    videoRefs.current.forEach((v) => v && observer.observe(v));
+
+    const tryPlayAll = () => {
+      videoRefs.current.forEach((v) => v?.play().catch(() => {}));
+    };
+    window.addEventListener("touchstart", tryPlayAll, { once: true });
+    window.addEventListener("click", tryPlayAll, { once: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("touchstart", tryPlayAll);
+      window.removeEventListener("click", tryPlayAll);
+    };
+  }, []);
+
   return (
   <section id="product" className="py-24 sm:py-32 relative">
     <div className="container">
@@ -64,12 +96,17 @@ export const Features = () => {
             <div className="aspect-[4/3] overflow-hidden bg-[#E8E5DE]">
               {f.isVideo ? (
                 <video
+                  ref={(el) => {
+                    videoRefs.current[i] = el;
+                  }}
                   src={f.img}
                   autoPlay
                   loop
                   muted
                   playsInline
                   preload="auto"
+                  controls={false}
+                  disablePictureInPicture
                   className="w-full h-full object-contain"
                 />
               ) : (
