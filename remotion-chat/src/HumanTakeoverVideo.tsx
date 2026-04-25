@@ -150,13 +150,13 @@ const Field: React.FC<{
   );
 };
 
-const Toggle: React.FC<{ on: boolean; flipFrame: number }> = ({ on, flipFrame }) => {
+const Toggle: React.FC<{ on: boolean; flipFrame: number; flips?: boolean }> = ({ on, flipFrame, flips = true }) => {
   const frame = useCurrentFrame();
   const t = interpolate(frame, [flipFrame, flipFrame + 18], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-  const progress = on ? t : 1 - t;
+  const progress = flips ? (on ? t : 1 - t) : on ? 1 : 0;
   const knobX = interpolate(progress, [0, 1], [4, 30]);
   const bg = `rgba(16,185,129,${interpolate(progress, [0, 1], [0.15, 1])})`;
   return (
@@ -190,6 +190,26 @@ const Icon: React.FC<{ children: React.ReactNode; color?: string }> = ({ childre
   <div style={{ width: 22, height: 22, color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>
     {children}
   </div>
+);
+
+
+const UserSvg = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="4" /><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" /></svg>
+);
+const MailSvg = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 7 9-7" /></svg>
+);
+const LockSvg = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="11" width="16" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg>
+);
+const PhoneSvg = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92V20a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3.08a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z" /></svg>
+);
+const DocSvg = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M9 13h6M9 17h6" /></svg>
+);
+const SaveSvg: React.FC<{ color?: string }> = ({ color = "currentColor" }) => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" /><path d="M17 21v-8H7v8M7 3v5h8" /></svg>
 );
 
 export const HumanTakeoverVideo = () => {
@@ -296,7 +316,7 @@ export const HumanTakeoverVideo = () => {
               transform: `scale(${buttonScale})`,
             }}
           >
-            <span style={{ fontSize: 18 }}>💾</span> Activate Agent
+            <SaveSvg color="#ffffff" /> Activate Agent
           </div>
         </div>
       </div>
@@ -318,17 +338,20 @@ export const HumanTakeoverVideo = () => {
           }}
         >
           <div style={{ display: "flex", gap: 24 }}>
-            <Field index={0} label="Agent Name" icon={<Icon>👤</Icon>} />
-            <Field index={1} label="Digital Access ID (Email)" icon={<Icon>✉</Icon>} />
+            <Field index={0} label="Agent Name" icon={<Icon><UserSvg /></Icon>} />
+            <Field index={1} label="Digital Access ID (Email)" icon={<Icon><MailSvg /></Icon>} />
           </div>
           <div style={{ display: "flex", gap: 24 }}>
-            <Field index={2} label="Secure Access Token (Password)" icon={<Icon>🔒</Icon>} />
+            <div style={{ flex: 1 }}>
+              <Field index={2} label="Secure Access Token (Password)" icon={<Icon><LockSvg /></Icon>} />
+            </div>
             <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 10 }}>
               <div style={{ fontSize: 16, color: TEXT_DARK, fontWeight: 500 }}>Direct Contact (WhatsApp)</div>
-              <div style={{ display: "flex", gap: 12 }}>
+              <div style={{ display: "flex", gap: 12, alignItems: "stretch" }}>
                 <div
                   style={{
                     width: 110,
+                    minWidth: 110,
                     height: 64,
                     borderRadius: 18,
                     border: `1.5px solid ${BORDER}`,
@@ -340,12 +363,13 @@ export const HumanTakeoverVideo = () => {
                     color: TEXT_DARK,
                     background: PANEL,
                     gap: 6,
+                    flexShrink: 0,
                   }}
                 >
                   +65 <span style={{ color: SUBTLE, fontSize: 12 }}>▾</span>
                 </div>
-                <div style={{ flex: 1 }}>
-                  <Field index={3} label="" icon={<Icon>📞</Icon>} />
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <Field index={3} label="" icon={<Icon><PhoneSvg /></Icon>} />
                 </div>
               </div>
             </div>
@@ -353,7 +377,7 @@ export const HumanTakeoverVideo = () => {
           <Field
             index={4}
             label="Internal Context / Role Description"
-            icon={<Icon>📄</Icon>}
+            icon={<Icon><DocSvg /></Icon>}
             multiline
           />
         </div>
@@ -386,7 +410,7 @@ export const HumanTakeoverVideo = () => {
                 fontSize: 20,
               }}
             >
-              💾
+              <SaveSvg />
             </div>
             <div style={{ fontSize: 26, fontWeight: 700, color: TEXT_DARK, letterSpacing: -0.5 }}>Deployment</div>
           </div>
@@ -426,7 +450,7 @@ export const HumanTakeoverVideo = () => {
               <div style={{ fontSize: 18, fontWeight: 700, color: TEXT_DARK }}>Hide Phone Number</div>
               <div style={{ fontSize: 11, color: MUTED, fontWeight: 700, letterSpacing: 1.4, marginTop: 4 }}>PRIVACY PROTECTION</div>
             </div>
-            <Toggle on={false} flipFrame={TOGGLE2_FRAME} />
+            <Toggle on={false} flipFrame={TOGGLE2_FRAME} flips={false} />
           </div>
 
           <div style={{ marginTop: 4 }}>
