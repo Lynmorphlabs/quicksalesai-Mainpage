@@ -23,7 +23,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { FeaturesComparisonDialog } from "./FeaturesComparisonDialog";
 
 const features = [
-  { img: aiAgentVideo, isVideo: true, title: "AI WhatsApp Agent (Text/Voice recognition)", subtitle: "Your 24/7 sales rep on WhatsApp", desc: "Replies to customers instantly, answers questions, qualifies leads, and closes deals — automatically, even while you sleep. Reads and shares files and documents too." },
+  { img: aiAgentVideo, isVideo: true, title: "AI WhatsApp Agent", titleSuffix: "(Text/Voice recognition)", subtitle: "Your 24/7 sales rep on WhatsApp", desc: "Replies to customers instantly, answers questions, qualifies leads, and closes deals — automatically, even while you sleep. Reads and shares files and documents too." },
   { img: callAgentVideo, isVideo: true, title: "AI Call Agent", subtitle: "Never miss a call, never lose a lead", desc: "An AI that answers, qualifies, and follows up on calls for you — so every enquiry gets a response, day or night." },
   { img: knowledgeBaseVideo, isVideo: true, title: "AI Knowledge Base", subtitle: "Simply train your AI in minutes", desc: "Just upload your menu, catalogue, or any document — your AI learns from it instantly and uses it to answer every customer question accurately." },
   { img: multiAgentVideo, isVideo: true, title: "Multi AI Agent", subtitle: "The right agent for every job", desc: "Run multiple specialised AI agents at once — one for sales, one for support, one for bookings — each focused and sharp." },
@@ -177,6 +177,9 @@ export const Features = () => {
                   </span>
                 )}
               </h3>
+              {f.titleSuffix && (
+                <p className="text-xs font-medium text-muted-foreground mt-0.5">{f.titleSuffix}</p>
+              )}
               {f.subtitle && (
                 <p className="mt-1 text-sm font-medium text-primary">{f.subtitle}</p>
               )}
