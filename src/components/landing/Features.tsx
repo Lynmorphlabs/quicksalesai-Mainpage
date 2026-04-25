@@ -16,7 +16,7 @@ import catalog from "@/assets/feature-catalog.jpg";
 import analytics from "@/assets/feature-analytics.jpg";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { FeaturesComparisonDialog } from "./FeaturesComparisonDialog";
 
 const features = [
@@ -35,35 +35,68 @@ export const Features = () => {
   const [open, setOpen] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
+  const primeVideo = useCallback((video: HTMLVideoElement | null) => {
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.autoplay = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("autoplay", "");
+    video.setAttribute("playsinline", "true");
+    video.setAttribute("webkit-playsinline", "true");
+
+    const tryPlay = () => {
+      void video.play().catch(() => undefined);
+    };
+
+    if (video.readyState >= 2) {
+      tryPlay();
+      return;
+    }
+
+    video.load();
+    video.addEventListener("loadeddata", tryPlay, { once: true });
+    video.addEventListener("canplay", tryPlay, { once: true });
+  }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const video = entry.target as HTMLVideoElement;
-          if (entry.isIntersecting) {
-            video.play().catch(() => {
-              // Autoplay blocked — retry on user interaction
-            });
-          }
+          if (!entry.isIntersecting) return;
+          primeVideo(video);
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.15, rootMargin: "160px 0px" }
     );
 
-    videoRefs.current.forEach((v) => v && observer.observe(v));
+    videoRefs.current.forEach((video) => {
+      if (!video) return;
+      primeVideo(video);
+      observer.observe(video);
+    });
 
     const tryPlayAll = () => {
-      videoRefs.current.forEach((v) => v?.play().catch(() => {}));
+      videoRefs.current.forEach((video) => primeVideo(video));
     };
+
+    document.addEventListener("visibilitychange", tryPlayAll);
+    window.addEventListener("focus", tryPlayAll);
     window.addEventListener("touchstart", tryPlayAll, { once: true });
     window.addEventListener("click", tryPlayAll, { once: true });
 
     return () => {
       observer.disconnect();
+      document.removeEventListener("visibilitychange", tryPlayAll);
+      window.removeEventListener("focus", tryPlayAll);
       window.removeEventListener("touchstart", tryPlayAll);
       window.removeEventListener("click", tryPlayAll);
     };
-  }, []);
+  }, [primeVideo]);
 
   return (
   <section id="product" className="py-24 sm:py-32 relative">
@@ -98,6 +131,7 @@ export const Features = () => {
                 <video
                   ref={(el) => {
                     videoRefs.current[i] = el;
+                    primeVideo(el);
                   }}
                   src={f.img}
                   autoPlay
@@ -107,6 +141,12 @@ export const Features = () => {
                   preload="auto"
                   controls={false}
                   disablePictureInPicture
+                  onLoadedData={(event) => {
+                    primeVideo(event.currentTarget);
+                  }}
+                  onCanPlay={(event) => {
+                    primeVideo(event.currentTarget);
+                  }}
                   className="w-full h-full object-contain"
                 />
               ) : (
