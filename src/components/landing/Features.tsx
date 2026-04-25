@@ -29,6 +29,9 @@ const features = [
   { img: broadcastVideo, isVideo: true, title: "Broadcast Messaging", subtitle: "Reach everyone. Miss no one.", desc: "Send targeted WhatsApp campaigns to your entire customer list in one go — promotions, updates, and follow-ups at scale." },
   { img: leadScraperVideo, isVideo: true, title: "Lead Scraper", subtitle: "Find your next customer before they find you", desc: "Automatically discover business leads from Google, Facebook, and LinkedIn — complete with verified WhatsApp numbers ready to contact." },
   { img: groupAiVideo, isVideo: true, title: "WhatsApp Group AI", subtitle: "Your AI works in groups too", desc: "Add your AI agent into any WhatsApp group — it knows who's who, answers questions, reads documents, and keeps every conversation moving." },
+  { img: null, isVideo: false, comingSoon: true, title: "AI Workflow Builder", subtitle: "Create workflows with simple prompts", desc: "Just describe what you want — your AI builds the workflow for you. Automate tasks, connect tools, and launch processes in minutes without touching code." },
+  { img: null, isVideo: false, comingSoon: true, title: "Human Takeover", subtitle: "Step in whenever it matters", desc: "Seamlessly jump into any conversation when needed. Your team stays in control, handles sensitive cases, and takes over from AI without disrupting the flow." },
+  { img: null, isVideo: false, comingSoon: true, title: "AI Voice Agent", subtitle: "Talk to customers, even when you're busy", desc: "AI answers calls, qualifies leads, and follows up automatically — so every enquiry is handled instantly, day or night, without missing opportunities." },
 ];
 
 export const Features = () => {
@@ -127,13 +130,19 @@ export const Features = () => {
             className="group rounded-3xl bg-card border border-border/60 overflow-hidden shadow-soft hover:shadow-elevated hover:-translate-y-1 transition-smooth"
           >
             <div className="aspect-[4/3] overflow-hidden bg-[#E8E5DE]">
-              {f.isVideo ? (
+              {f.comingSoon ? (
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 via-primary/5 to-muted relative">
+                  <span className="px-4 py-1.5 rounded-full bg-foreground/90 text-background text-xs font-bold tracking-widest uppercase">
+                    Coming Soon
+                  </span>
+                </div>
+              ) : f.isVideo ? (
                 <video
                   ref={(el) => {
                     videoRefs.current[i] = el;
                     primeVideo(el);
                   }}
-                  src={f.img}
+                  src={f.img as string}
                   autoPlay
                   loop
                   muted
@@ -151,7 +160,7 @@ export const Features = () => {
                 />
               ) : (
                 <img
-                  src={f.img}
+                  src={f.img as string}
                   alt={f.title}
                   loading="lazy"
                   width={896}
@@ -161,7 +170,14 @@ export const Features = () => {
               )}
             </div>
             <div className="p-5">
-              <h3 className="text-lg font-bold tracking-tight">{f.title}</h3>
+              <h3 className="text-lg font-bold tracking-tight flex items-center gap-2">
+                {f.title}
+                {f.comingSoon && (
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-primary border border-primary/30 bg-primary/10 px-2 py-0.5 rounded-full">
+                    Soon
+                  </span>
+                )}
+              </h3>
               {f.subtitle && (
                 <p className="mt-1 text-sm font-medium text-primary">{f.subtitle}</p>
               )}
