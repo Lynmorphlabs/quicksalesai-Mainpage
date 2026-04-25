@@ -30,8 +30,8 @@ const BLUE_SOFT = "#DBEAFE";
 const LINE = "#CBD5D1";
 
 const FPS = 30;
-const NODE_W = 360;
-const NODE_H = 96;
+const NODE_W = 340;
+const NODE_H = 84;
 
 type NodeDef = {
   id: string;
@@ -49,8 +49,8 @@ type NodeDef = {
 const CX = 820;
 const LEFT = CX - 240;
 const RIGHT = CX + 240;
-const ROW_H = 130;
-const TOP = 70;
+const ROW_H = 112;
+const TOP = 40;
 
 const NODES: NodeDef[] = [
   { id: "n1", label: "Receive File Upload", type: "Webhook",  x: CX,    y: TOP + 0 * ROW_H, color: PINK,   bg: PINK_SOFT,   glyph: "↧" },
