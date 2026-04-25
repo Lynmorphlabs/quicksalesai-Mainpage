@@ -32,8 +32,8 @@ const features = [
   { img: broadcastVideo, isVideo: true, title: "Broadcast Messaging", subtitle: "Reach everyone. Miss no one.", desc: "Send targeted WhatsApp campaigns to your entire customer list in one go — promotions, updates, and follow-ups at scale." },
   { img: leadScraperVideo, isVideo: true, title: "Lead Scraper", subtitle: "Find your next customer before they find you", desc: "Automatically discover business leads from Google, Facebook, and LinkedIn — complete with verified WhatsApp numbers ready to contact." },
   { img: groupAiVideo, isVideo: true, title: "WhatsApp Group AI", subtitle: "Your AI works in groups too", desc: "Add your AI agent into any WhatsApp group — it knows who's who, answers questions, reads documents, and keeps every conversation moving." },
+  { img: humanTakeoverVideo, isVideo: true, title: "Human Takeover", subtitle: "Step in whenever it matters", desc: "Seamlessly jump into any conversation when needed. Your team stays in control, handles sensitive cases, and takes over from AI without disrupting the flow." },
   { img: workflowBuilderVideo, isVideo: true, comingSoon: true, title: "AI Workflow Builder", subtitle: "Create workflows with simple prompts", desc: "Just describe what you want — your AI builds the workflow for you. Automate tasks, connect tools, and launch processes in minutes without touching code." },
-  { img: humanTakeoverVideo, isVideo: true, comingSoon: true, title: "Human Takeover", subtitle: "Step in whenever it matters", desc: "Seamlessly jump into any conversation when needed. Your team stays in control, handles sensitive cases, and takes over from AI without disrupting the flow." },
   { img: voiceAgentVideo, isVideo: true, comingSoon: true, title: "AI Voice Agent", subtitle: "Talk to customers, even when you're busy", desc: "AI answers calls, qualifies leads, and follows up automatically — so every enquiry is handled instantly, day or night, without missing opportunities." },
 ];
 
