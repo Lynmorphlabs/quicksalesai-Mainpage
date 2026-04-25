@@ -9,6 +9,7 @@ import { CallAgentVideo, CA_DURATION } from "./CallAgentVideo";
 import { BroadcastVideo, BC_DURATION } from "./BroadcastVideo";
 import { GroupAIVideo, GROUP_AI_DURATION } from "./GroupAIVideo";
 import { WorkflowBuilderVideo, WFB_DURATION } from "./WorkflowBuilderVideo";
+import { HumanTakeoverVideo, HT_DURATION } from "./HumanTakeoverVideo";
 
 export const RemotionRoot = () => (
   <>
@@ -88,6 +89,14 @@ export const RemotionRoot = () => (
     id="workflow-builder"
     component={WorkflowBuilderVideo}
     durationInFrames={WFB_DURATION}
+    fps={30}
+    width={1600}
+    height={1200}
+  />
+  <Composition
+    id="human-takeover"
+    component={HumanTakeoverVideo}
+    durationInFrames={HT_DURATION}
     fps={30}
     width={1600}
     height={1200}
