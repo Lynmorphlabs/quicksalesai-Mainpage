@@ -38,9 +38,9 @@ const conversation: Msg[] = [
   { side: "in", text: "oi", time: "3:02 AM", showTail: false },
   { side: "in", text: "oi", time: "3:02 AM", showTail: false },
 
-  { side: "out", text: "Hi Gavin! 😄 Sorry ah, got a bit overwhelmed just now...", time: "3:05 AM", showTail: true },
+  { side: "out", text: "Hi Gavin! Sorry ah, got a bit overwhelmed just now...", time: "3:05 AM", showTail: true },
   { side: "out", text: "You keep saying \u201Coi\u201D — are you trying to get my attention for something?", time: "3:05 AM", showTail: false },
-  { side: "out", text: "What can I help you with? 🙂", time: "3:05 AM", showTail: false },
+  { side: "out", text: "What can I help you with?", time: "3:05 AM", showTail: false },
 
   { side: "in", text: "where u", time: "3:06 AM", showTail: true },
 
@@ -49,7 +49,7 @@ const conversation: Msg[] = [
   { side: "in", text: "wake up I got new idea", time: "3:07 AM", showTail: true },
 
   { side: "out", text: "I think maybe we both tired lah... it's quite late already right?", time: "3:07 AM", showTail: true },
-  { side: "out", text: "Otherwise maybe get some rest first? 🙂", time: "3:07 AM", showTail: false },
+  { side: "out", text: "Otherwise maybe get some rest first?", time: "3:07 AM", showTail: false },
   { side: "out", text: "Really don't want to misunderstand what you trying to say...", time: "3:07 AM", showTail: false },
 ];
 
