@@ -12,6 +12,7 @@ import { WorkflowBuilderVideo, WFB_DURATION } from "./WorkflowBuilderVideo";
 import { HumanTakeoverVideo, HT_DURATION } from "./HumanTakeoverVideo";
 import { VoiceAgentVideo, VA_DURATION } from "./VoiceAgentVideo";
 import { CRMIntegrationVideo, CRM_DURATION } from "./CRMIntegrationVideo";
+import { WhatsAppVideo, WHATSAPP_DURATION } from "./WhatsAppVideo";
 
 export const RemotionRoot = () => (
   <>
@@ -118,6 +119,14 @@ export const RemotionRoot = () => (
     fps={30}
     width={1600}
     height={1200}
+  />
+  <Composition
+    id="whatsapp"
+    component={WhatsAppVideo}
+    durationInFrames={WHATSAPP_DURATION}
+    fps={30}
+    width={900}
+    height={1600}
   />
   </>
 );
