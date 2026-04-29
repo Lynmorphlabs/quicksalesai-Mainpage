@@ -40,7 +40,7 @@ export const Testimonials = () => (
           Testimonials
         </span>
         <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
-          Wall of <span className="italic font-serif text-primary">Love</span>
+          Loved by <span className="italic font-serif text-primary">operators</span> who ship
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
           Real words from leaders running real businesses on Quicksales.
