@@ -34,7 +34,7 @@ const features = [
   { img: humanTakeoverVideo, isVideo: true, title: "Human Takeover", subtitle: "Step in whenever it matters", desc: "Seamlessly jump into any conversation when needed. Your team stays in control, handles sensitive cases, and takes over from AI without disrupting the flow." },
   { img: workflowBuilderVideo, isVideo: true, comingSoon: true, title: "AI Workflow Builder", subtitle: "Create workflows with simple prompts", desc: "Just describe what you want — your AI builds the workflow for you. Automate tasks, connect tools, and launch processes in minutes without touching code." },
   { img: crmIntegrationVideo, isVideo: true, comingSoon: true, title: "CRM Integration", subtitle: "Keep all your customer data in sync", desc: "Automatically capture leads, track conversations, and update your CRM in real time — so every interaction is recorded, organised, and ready for follow-up without manual work." },
-  { img: callAgentVideo, isVideo: true, title: "AI Call Agent", subtitle: "Never miss a call, never lose a lead", desc: "An AI that answers, qualifies, and follows up on calls for you — so every enquiry gets a response, day or night." },
+  { img: callAgentVideo, isVideo: true, comingSoon: true, title: "AI Call Agent", subtitle: "Never miss a call, never lose a lead", desc: "An AI that answers, qualifies, and follows up on calls for you — so every enquiry gets a response, day or night." },
 ];
 
 export const Features = () => {
