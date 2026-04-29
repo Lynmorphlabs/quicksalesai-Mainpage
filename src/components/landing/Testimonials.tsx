@@ -6,6 +6,7 @@ import eyechampLogo from "@/assets/logos/eyechamp.jpg";
 import lckLogo from "@/assets/logos/lck.jpg";
 import pengemsLogo from "@/assets/logos/pengems.jpg";
 import glasshouseLogo from "@/assets/logos/glasshouse.jpg";
+import desireeGemsLogo from "@/assets/logos/desiree-gems.png";
 
 const testimonials = [
   {
@@ -74,6 +75,7 @@ const testimonials = [
     name: "Bernard Philip",
     role: "Desiree Gems Jewelry Retailer",
     initials: "BP",
+    logo: desireeGemsLogo,
     quote:
       "I couldn't reply fast enough occasionally. After I set this up, everything gets answered and booked automatically. Appointments went up.",
   },
