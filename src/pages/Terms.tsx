@@ -16,7 +16,7 @@ const Terms = () => (
     <h2>1. Definitions</h2>
     <p>In these Terms and Conditions, the following definitions apply:</p>
     <ul>
-      <li><strong>"Company"</strong> means Quicksales.ai, its subsidiaries, affiliates, officers, directors, employees, agents, and licensors.</li>
+       <li><strong>"Company"</strong> means Quicksales.ai, Quicksales Pte Ltd, its subsidiaries, affiliates, officers, directors, employees, agents, and licensors.</li>
       <li><strong>"Service"</strong> means the Quicksales.ai platform, including all features, tools, AI agents, automation workflows, web widgets, APIs, and integrations made available to Subscribers.</li>
       <li><strong>"Subscriber"</strong> or <strong>"User"</strong> means any individual or entity that registers for, accesses, or uses the Service under a valid subscription.</li>
       <li><strong>"Subscription"</strong> means the paid plan purchased by the Subscriber to access the Service.</li>
