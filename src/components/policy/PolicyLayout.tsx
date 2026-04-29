@@ -21,11 +21,11 @@ export const PolicyLayout = ({ eyebrow, title, version, effective, jurisdictions
       <div className="container py-16 md:py-24">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-smooth mb-6"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-smooth mb-4"
         >
           <ArrowLeft className="h-4 w-4" /> Back to home
         </Link>
-        <span className="inline-block text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-4">
+        <span className="block text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-4">
           {eyebrow}
         </span>
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-4">
