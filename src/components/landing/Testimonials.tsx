@@ -1,10 +1,18 @@
 import { Quote } from "lucide-react";
+import asiatokenfundLogo from "@/assets/logos/asiatokenfund.jpeg";
+import ascentisLogo from "@/assets/logos/ascentis.png";
+import pestwerkzLogo from "@/assets/logos/pestwerkz.jpg";
+import eyechampLogo from "@/assets/logos/eyechamp.jpg";
+import lckLogo from "@/assets/logos/lck.jpg";
+import pengemsLogo from "@/assets/logos/pengems.jpg";
+import glasshouseLogo from "@/assets/logos/glasshouse.jpg";
 
 const testimonials = [
   {
     name: "Ken Nizam",
     role: "CEO, AsiaTokenFund Group & 1M Technology",
     initials: "KN",
+    logo: asiatokenfundLogo,
     quote:
       "We thought QuickSales was a tool. It turned out to be a sales team, handling replies, qualifying leads, and booking meetings automatically.",
   },
@@ -12,6 +20,7 @@ const testimonials = [
     name: "Johnson Tan",
     role: "Deputy CEO, Ascentis",
     initials: "JT",
+    logo: ascentisLogo,
     quote:
       "QuickSales can replace multiple tools and roles. It qualifies, follows up, and books, without human effort.",
   },
@@ -26,6 +35,7 @@ const testimonials = [
     name: "Javier Ang",
     role: "Pestwerkz Control",
     initials: "JA",
+    logo: pestwerkzLogo,
     quote:
       "I tried the lead scraper feature and within the first week I already had more than 20 new enquiries coming in that I didn't go and find myself, and impressive AI customer support!",
   },
@@ -33,6 +43,7 @@ const testimonials = [
     name: "Andrew Tan",
     role: "EyeChamp Optometrist",
     initials: "AT",
+    logo: eyechampLogo,
     quote:
       "I always call every single customers to remind them to collect their contact lenses. Now the AI sends the reminders for me and they just show up. Saves me so much time.",
   },
@@ -40,6 +51,7 @@ const testimonials = [
     name: "Brian Lee",
     role: "LCK Aluminum",
     initials: "BL",
+    logo: lckLogo,
     quote:
       "I had a client drop off because I took too long to confirm a site visit. After I started using this, I haven't had that problem since. Same day confirmation every time. AI Agent is smart too!",
   },
@@ -47,6 +59,7 @@ const testimonials = [
     name: "Varat",
     role: "PenGems Jewelry Retailer",
     initials: "VA",
+    logo: pengemsLogo,
     quote:
       "I lost quite a few customers over the weekend because I can't reply fast enough. After I set this up, everything gets answered and booked automatically. I'm so free now~",
   },
@@ -68,6 +81,7 @@ const testimonials = [
     name: "Toh Wee Leong",
     role: "Glasshouse Creamery",
     initials: "TL",
+    logo: glasshouseLogo,
     quote:
       "I used to manage all the party bookings myself on WhatsApp, very messy. Now I just check the confirmed reservations in the morning. The AI settle everything for me now. Worth it!!",
   },
@@ -134,9 +148,20 @@ export const Testimonials = () => (
                 </blockquote>
 
                 <figcaption className="mt-8 flex items-center gap-4 pt-6 border-t border-border/60">
-                  <div className="grid place-items-center h-12 w-12 rounded-2xl bg-gradient-primary text-primary-foreground font-bold text-sm shadow-soft shrink-0">
-                    {t.initials}
-                  </div>
+                  {t.logo ? (
+                    <div className="grid place-items-center h-12 w-12 rounded-2xl bg-white border border-border/60 shadow-soft shrink-0 overflow-hidden p-1.5">
+                      <img
+                        src={t.logo}
+                        alt={`${t.role} logo`}
+                        className="max-h-full max-w-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <div className="grid place-items-center h-12 w-12 rounded-2xl bg-gradient-primary text-primary-foreground font-bold text-sm shadow-soft shrink-0">
+                      {t.initials}
+                    </div>
+                  )}
                   <div>
                     <div className="font-bold text-foreground leading-tight">{t.name}</div>
                     <div className="text-sm text-muted-foreground leading-tight mt-0.5">{t.role}</div>
