@@ -47,15 +47,22 @@ export const Testimonials = () => (
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto -mx-4 sm:mx-auto">
-        <div className="overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-          <div className="flex gap-6 px-4 sm:px-1 pb-2 items-stretch">
-            {testimonials.map((t) => (
+      <div
+        className="relative max-w-6xl mx-auto group/marquee"
+        style={{
+          maskImage:
+            "linear-gradient(90deg, transparent 0, black 8%, black 92%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(90deg, transparent 0, black 8%, black 92%, transparent 100%)",
+        }}
+      >
+        <div className="overflow-hidden">
+          <div className="flex gap-6 w-max animate-marquee group-hover/marquee:[animation-play-state:paused]">
+            {[...testimonials, ...testimonials].map((t, i) => (
               <figure
-                key={t.name}
-                className="group relative snap-start shrink-0 w-[88%] sm:w-[480px] md:w-[560px] flex flex-col rounded-3xl p-8 sm:p-10 bg-card/70 backdrop-blur-xl border border-border/60 shadow-soft hover:shadow-elevated transition-smooth overflow-hidden"
+                key={`${t.name}-${i}`}
+                className="group relative shrink-0 w-[88vw] sm:w-[480px] md:w-[560px] flex flex-col rounded-3xl p-8 sm:p-10 bg-card/70 backdrop-blur-xl border border-border/60 shadow-soft hover:shadow-elevated transition-smooth overflow-hidden"
               >
-                {/* Subtle gradient ring on hover */}
                 <div
                   className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-smooth"
                   style={{
@@ -82,10 +89,6 @@ export const Testimonials = () => (
               </figure>
             ))}
           </div>
-        </div>
-
-        <div className="mt-6 text-center text-xs text-muted-foreground/80 tracking-wide">
-          ← Scroll to see more →
         </div>
       </div>
     </div>
