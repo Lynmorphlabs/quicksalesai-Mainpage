@@ -2,18 +2,74 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Johnson",
-    role: "Deputy CEO, Ascentis",
-    initials: "JO",
-    quote:
-      "QuickSales is a straightforward solution. It's easy to get started, and the overall experience feels well thought through for day-to-day use.",
-  },
-  {
     name: "Ken Nizam",
     role: "CEO, AsiaTokenFund Group & 1M Technology",
     initials: "KN",
     quote:
-      "What stood out about QuickSales is how naturally it fits into existing workflows. It helps streamline initial engagement and follow-ups without requiring heavy setup. The experience feels intuitive, and it's clear the product is built with real operational needs in mind.",
+      "We thought QuickSales was a tool. It turned out to be a sales team, handling replies, qualifying leads, and booking meetings automatically.",
+  },
+  {
+    name: "Johnson Tan",
+    role: "Deputy CEO, Ascentis",
+    initials: "JT",
+    quote:
+      "QuickSales can replace multiple tools and roles. It qualifies, follows up, and books, without human effort.",
+  },
+  {
+    name: "Verena Wirasaputra",
+    role: "Zagora Music School",
+    initials: "VW",
+    quote:
+      "I used to spend my whole monday morning replying to parents about trial slots and reschedules. Now I just check what the AI already handled. Took me 5 min to set up.",
+  },
+  {
+    name: "Javier Ang",
+    role: "Pestwerkz Control",
+    initials: "JA",
+    quote:
+      "I tried the lead scraper feature and within the first week I already had more than 20 new enquiries coming in that I didn't go and find myself, and impressive AI customer support!",
+  },
+  {
+    name: "Andrew Tan",
+    role: "EyeChamp Optometrist",
+    initials: "AT",
+    quote:
+      "I always call every single customers to remind them to collect their contact lenses. Now the AI sends the reminders for me and they just show up. Saves me so much time.",
+  },
+  {
+    name: "Brian Lee",
+    role: "LCK Aluminum",
+    initials: "BL",
+    quote:
+      "I had a client drop off because I took too long to confirm a site visit. After I started using this, I haven't had that problem since. Same day confirmation every time. AI Agent is smart too!",
+  },
+  {
+    name: "Varat",
+    role: "PenGems Jewelry Retailer",
+    initials: "VA",
+    quote:
+      "I lost quite a few customers over the weekend because I can't reply fast enough. After I set this up, everything gets answered and booked automatically. I'm so free now~",
+  },
+  {
+    name: "Wang Wei Zhong",
+    role: "Property Agent",
+    initials: "WZ",
+    quote:
+      "I was in a viewing once and missed 3 enquiries. Lost all of them. Now I never miss one because AI replies while I'm with another client. Wish I had this earlier!! Cheapest & smartest assistant!",
+  },
+  {
+    name: "Bernard Philip",
+    role: "Desiree Gems Jewelry Retailer",
+    initials: "BP",
+    quote:
+      "I couldn't reply fast enough occasionally. After I set this up, everything gets answered and booked automatically. Appointments went up.",
+  },
+  {
+    name: "Toh Wee Leong",
+    role: "Glasshouse Creamery",
+    initials: "TL",
+    quote:
+      "I used to manage all the party bookings myself on WhatsApp, very messy. Now I just check the confirmed reservations in the morning. The AI settle everything for me now. Worth it!!",
   },
 ];
 
