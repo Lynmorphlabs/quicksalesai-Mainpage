@@ -151,11 +151,11 @@ export const Testimonials = () => (
 
                 <figcaption className="mt-8 flex items-center gap-4 pt-6 border-t border-border/60">
                   {t.logo ? (
-                    <div className="grid place-items-center h-12 w-12 rounded-2xl bg-white border border-border/60 shadow-soft shrink-0 overflow-hidden p-1.5">
+                    <div className="h-12 w-12 rounded-2xl bg-white border border-border/60 shadow-soft shrink-0 overflow-hidden">
                       <img
                         src={t.logo}
                         alt={`${t.role} logo`}
-                        className="max-h-full max-w-full object-contain"
+                        className="h-full w-full object-cover"
                         loading="lazy"
                       />
                     </div>
