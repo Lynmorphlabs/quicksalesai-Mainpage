@@ -63,7 +63,7 @@ export const PolicyLayout = ({ eyebrow, title, version, effective, jurisdictions
         {children}
       </article>
 
-      <div className="mx-auto max-w-4xl mt-10 flex flex-wrap gap-3">
+      <div className="mx-auto max-w-4xl mt-10 flex flex-wrap justify-center gap-3">
         <Link to="/privacy" className="text-sm px-4 py-2 rounded-full border border-border bg-card hover:bg-secondary transition-smooth">Privacy Policy</Link>
         <Link to="/terms" className="text-sm px-4 py-2 rounded-full border border-border bg-card hover:bg-secondary transition-smooth">Terms &amp; Conditions</Link>
         <Link to="/acceptable-use" className="text-sm px-4 py-2 rounded-full border border-border bg-card hover:bg-secondary transition-smooth">Acceptable Use Policy</Link>
