@@ -448,7 +448,7 @@ const AcceptableUse = () => (
         <tr><td><strong>General compliance queries</strong></td><td>support@quicksales.ai</td></tr>
         <tr><td><strong>Data protection / privacy</strong></td><td>support@quicksales.ai</td></tr>
         <tr><td><strong>General product support</strong></td><td>support@quicksales.ai</td></tr>
-         <tr><td><strong>Registered address</strong></td><td>Quicksales.ai, Quicksales Pte Ltd, Singapore 179435 179435</td></tr>
+         <tr><td><strong>Registered address</strong></td><td>Quicksales.ai, Quicksales Pte Ltd, Singapore 179435</td></tr>
       </tbody>
     </table>
 
