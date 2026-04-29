@@ -47,37 +47,46 @@ export const Testimonials = () => (
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-        {testimonials.map((t) => (
-          <figure
-            key={t.name}
-            className="group relative rounded-3xl p-8 sm:p-10 bg-card/70 backdrop-blur-xl border border-border/60 shadow-soft hover:shadow-elevated transition-smooth overflow-hidden"
-          >
-            {/* Subtle gradient ring on hover */}
-            <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-smooth"
-              style={{
-                background:
-                  "linear-gradient(135deg, hsl(var(--primary) / 0.08), transparent 60%)",
-              }}
-            />
+      <div className="max-w-6xl mx-auto -mx-4 sm:mx-auto">
+        <div className="overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex gap-6 px-4 sm:px-1 pb-2 items-stretch">
+            {testimonials.map((t) => (
+              <figure
+                key={t.name}
+                className="group relative snap-start shrink-0 w-[88%] sm:w-[480px] md:w-[560px] flex flex-col rounded-3xl p-8 sm:p-10 bg-card/70 backdrop-blur-xl border border-border/60 shadow-soft hover:shadow-elevated transition-smooth overflow-hidden"
+              >
+                {/* Subtle gradient ring on hover */}
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-smooth"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, hsl(var(--primary) / 0.08), transparent 60%)",
+                  }}
+                />
 
-            <Quote className="h-8 w-8 text-primary/70 mb-5" strokeWidth={2.5} />
+                <Quote className="h-8 w-8 text-primary/70 mb-5" strokeWidth={2.5} />
 
-            <blockquote className="text-base sm:text-lg leading-relaxed text-foreground/90">
-              "{t.quote}"
-            </blockquote>
+                <blockquote className="flex-1 text-base sm:text-lg leading-relaxed text-foreground/90">
+                  "{t.quote}"
+                </blockquote>
 
-            <figcaption className="mt-8 flex items-center gap-4 pt-6 border-t border-border/60">
-              <div className="grid place-items-center h-12 w-12 rounded-2xl bg-gradient-primary text-primary-foreground font-bold text-sm shadow-soft">
-                {t.initials}
-              </div>
-              <div>
-                <div className="font-bold text-foreground">{t.name}</div>
-                <div className="text-sm text-muted-foreground">{t.role}</div>
-              </div>
-            </figcaption>
-          </figure>
-        ))}
+                <figcaption className="mt-8 flex items-center gap-4 pt-6 border-t border-border/60">
+                  <div className="grid place-items-center h-12 w-12 rounded-2xl bg-gradient-primary text-primary-foreground font-bold text-sm shadow-soft shrink-0">
+                    {t.initials}
+                  </div>
+                  <div>
+                    <div className="font-bold text-foreground leading-tight">{t.name}</div>
+                    <div className="text-sm text-muted-foreground leading-tight mt-0.5">{t.role}</div>
+                  </div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-6 text-center text-xs text-muted-foreground/80 tracking-wide">
+          ← Scroll to see more →
+        </div>
       </div>
     </div>
   </section>
