@@ -37,7 +37,7 @@ export const Testimonials = () => (
     <div className="container">
       <div className="text-center max-w-2xl mx-auto mb-14">
         <span className="inline-block text-xs font-bold tracking-widest text-primary uppercase mb-3">
-          Testimonials
+          WALL OF LOVE
         </span>
         <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
           Loved by <span className="italic font-serif text-primary">operators</span> who ship
