@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
@@ -13,9 +13,40 @@ interface PolicyLayoutProps {
   children: ReactNode;
 }
 
-export const PolicyLayout = ({ eyebrow, title, version, effective, jurisdictions, children }: PolicyLayoutProps) => (
+const policyTabs = [
+  { to: "/privacy", label: "Privacy Policy" },
+  { to: "/terms", label: "Terms & Conditions" },
+  { to: "/acceptable-use", label: "Acceptable Use" },
+];
+
+export const PolicyLayout = ({ eyebrow, title, version, effective, jurisdictions, children }: PolicyLayoutProps) => {
+  const { pathname } = useLocation();
+  return (
   <div className="min-h-screen bg-background">
     <Navbar />
+    {/* Policy tab nav */}
+    <div className="border-b border-border/40 bg-card/40 backdrop-blur-sm">
+      <div className="container py-4 flex justify-center">
+        <nav className="inline-flex items-center gap-1 bg-card/60 border border-border/60 rounded-full p-1 shadow-soft">
+          {policyTabs.map((t) => {
+            const active = pathname === t.to;
+            return (
+              <Link
+                key={t.to}
+                to={t.to}
+                className={`px-4 md:px-5 py-2 text-sm font-medium rounded-full transition-smooth ${
+                  active
+                    ? "bg-gradient-primary text-primary-foreground shadow-soft"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                }`}
+              >
+                {t.label}
+              </Link>
+            );
+          })}
+        </nav>
+      </div>
+    </div>
     {/* Hero band */}
     <section className="relative overflow-hidden bg-hero border-b border-border/40">
       <div className="container py-16 md:py-24">
@@ -62,16 +93,11 @@ export const PolicyLayout = ({ eyebrow, title, version, effective, jurisdictions
       >
         {children}
       </article>
-
-      <div className="mx-auto max-w-4xl mt-10 flex flex-wrap justify-center gap-3">
-        <Link to="/privacy" className="text-sm px-4 py-2 rounded-full border border-border bg-card hover:bg-secondary transition-smooth">Privacy Policy</Link>
-        <Link to="/terms" className="text-sm px-4 py-2 rounded-full border border-border bg-card hover:bg-secondary transition-smooth">Terms &amp; Conditions</Link>
-        <Link to="/acceptable-use" className="text-sm px-4 py-2 rounded-full border border-border bg-card hover:bg-secondary transition-smooth">Acceptable Use Policy</Link>
-      </div>
     </main>
     <Footer />
   </div>
-);
+  );
+};
 
 /* Reusable callout block for important highlighted notices in policies */
 export const PolicyCallout = ({ tone = "warning", title, children }: { tone?: "warning" | "info" | "danger"; title?: string; children: ReactNode }) => {
