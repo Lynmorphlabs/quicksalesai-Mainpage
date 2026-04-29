@@ -24,7 +24,6 @@ import { FeaturesComparisonDialog } from "./FeaturesComparisonDialog";
 
 const features = [
   { img: aiAgentVideo, isVideo: true, title: "AI WhatsApp Agent", titleSuffix: "(Multi-lingual Text/Voice recognition)", subtitle: "Your 24/7 sales rep on WhatsApp", desc: "Replies to customers instantly, answers questions, qualifies leads, and closes deals — automatically, even while you sleep. Reads and shares files and documents too." },
-  { img: callAgentVideo, isVideo: true, title: "AI Call Agent", subtitle: "Never miss a call, never lose a lead", desc: "An AI that answers, qualifies, and follows up on calls for you — so every enquiry gets a response, day or night." },
   { img: knowledgeBaseVideo, isVideo: true, title: "AI Knowledge Base", subtitle: "Simply train your AI in minutes", desc: "Just upload your menu, catalogue, or any document — your AI learns from it instantly and uses it to answer every customer question accurately." },
   { img: multiAgentVideo, isVideo: true, title: "Multi AI Agent", subtitle: "The right agent for every job", desc: "Run multiple specialised AI agents at once — one for sales, one for support, one for bookings — each focused and sharp." },
   { img: schedulingVideo, isVideo: true, title: "Automated Appointment Scheduling", subtitle: "From chat to calendar in seconds", desc: "Your AI suggests time slots, confirms bookings, and syncs to Google Calendar automatically — no back and forth needed." },
@@ -35,6 +34,7 @@ const features = [
   { img: humanTakeoverVideo, isVideo: true, title: "Human Takeover", subtitle: "Step in whenever it matters", desc: "Seamlessly jump into any conversation when needed. Your team stays in control, handles sensitive cases, and takes over from AI without disrupting the flow." },
   { img: workflowBuilderVideo, isVideo: true, comingSoon: true, title: "AI Workflow Builder", subtitle: "Create workflows with simple prompts", desc: "Just describe what you want — your AI builds the workflow for you. Automate tasks, connect tools, and launch processes in minutes without touching code." },
   { img: crmIntegrationVideo, isVideo: true, comingSoon: true, title: "CRM Integration", subtitle: "Keep all your customer data in sync", desc: "Automatically capture leads, track conversations, and update your CRM in real time — so every interaction is recorded, organised, and ready for follow-up without manual work." },
+  { img: callAgentVideo, isVideo: true, title: "AI Call Agent", subtitle: "Never miss a call, never lose a lead", desc: "An AI that answers, qualifies, and follows up on calls for you — so every enquiry gets a response, day or night." },
 ];
 
 export const Features = () => {
