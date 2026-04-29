@@ -450,7 +450,7 @@ const PrivacyPolicy = () => (
     <table>
       <tbody>
         <tr><td><strong>DPO email</strong></td><td>Support@quicksales.ai</td></tr>
-        <tr><td><strong>Postal address</strong></td><td>Data Protection Officer, Quicksales.ai, [Registered Company Address], Singapore [Postal Code]</td></tr>
+         <tr><td><strong>Postal address</strong></td><td>Data Protection Officer, Quicksales.ai, Quicksales Pte Ltd, Singapore 179435 179435</td></tr>
         <tr><td><strong>Response time</strong></td><td>Within 21 days (MY PDPA) / 30 days (SG PDPA / GDPR) of verified request</td></tr>
         <tr><td><strong>Languages</strong></td><td>English; Bahasa Malaysia summary available on request for Malaysian data subjects</td></tr>
       </tbody>
@@ -511,7 +511,7 @@ const PrivacyPolicy = () => (
         <tr><td><strong>Cross-border transfer queries</strong></td><td>support@quicksales.ai | Subject: 'Cross-Border Transfer Query.'</td></tr>
         <tr><td><strong>Security/breach reports</strong></td><td>support@quicksales.ai | Subject: 'Security Incident.'</td></tr>
         <tr><td><strong>General product support</strong></td><td>support@quicksales.ai</td></tr>
-        <tr><td><strong>DPO postal address</strong></td><td>Quicksales.ai, [Registered Company Address], Singapore [Postal Code]</td></tr>
+         <tr><td><strong>DPO postal address</strong></td><td>Quicksales.ai, Quicksales Pte Ltd, Singapore 179435 179435</td></tr>
         <tr><td><strong>Response time</strong></td><td>21 days (MY) / 30 days (SG / GDPR) from verified receipt</td></tr>
       </tbody>
     </table>
