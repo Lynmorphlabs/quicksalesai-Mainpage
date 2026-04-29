@@ -25,6 +25,14 @@ const cols = [
       { label: "FAQ", href: "#", disabled: true },
     ],
   },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy Policy", href: "/privacy", disabled: false },
+      { label: "Terms & Conditions", href: "/terms", disabled: false },
+      { label: "Acceptable Use", href: "/acceptable-use", disabled: false },
+    ],
+  },
 ];
 
 export const Footer = () => (
