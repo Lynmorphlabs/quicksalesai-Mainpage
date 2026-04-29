@@ -84,6 +84,7 @@ const testimonials = [
     role: "Glasshouse Creamery",
     initials: "TL",
     logo: glasshouseLogo,
+    logoFill: true,
     quote:
       "I used to manage all the party bookings myself on WhatsApp, very messy. Now I just check the confirmed reservations in the morning. The AI settle everything for me now. Worth it!!",
   },
@@ -155,7 +156,11 @@ export const Testimonials = () => (
                       <img
                         src={t.logo}
                         alt={`${t.role} logo`}
-                        className="h-full w-full object-cover"
+                        className={
+                          t.logoFill
+                            ? "h-full w-full object-cover"
+                            : "h-full w-full object-contain p-1.5"
+                        }
                         loading="lazy"
                       />
                     </div>
