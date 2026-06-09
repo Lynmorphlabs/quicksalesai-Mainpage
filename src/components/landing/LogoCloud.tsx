@@ -24,7 +24,7 @@ const logos = [
   { src: renwthLogo.url, alt: "Renwth Indonesia", className: "h-20 sm:h-24" },
   { src: foodyLogo.url, alt: "Foody.vn", className: "h-12 sm:h-14" },
   { src: lotteriaLogo.url, alt: "Lotteria", className: "h-20 sm:h-24" },
-  { src: shopeeLogo.url, alt: "Shopee", className: "h-20 sm:h-24" },
+  { src: shopeeLogo.url, alt: "Shopee", className: "h-28 sm:h-32" },
   { src: hiltonLogo.url, alt: "Hilton Hotels & Resorts", className: "h-20 sm:h-24" },
   { src: ongongLogo.url, alt: "Ong & Ong", className: "h-20 sm:h-24" },
   { src: cfldLogo.url, alt: "CFLD", className: "h-20 sm:h-24" },
