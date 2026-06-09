@@ -120,7 +120,7 @@ export default {
         "typing-2": "typing 1.2s ease-in-out 0.2s infinite",
         "typing-3": "typing 1.2s ease-in-out 0.4s infinite",
         "pulse-ring": "pulse-ring 2.2s cubic-bezier(0,0,.2,1) infinite",
-        "marquee": "marquee 80s linear infinite",
+        "marquee": "marquee 55s linear infinite",
       },
     },
   },
