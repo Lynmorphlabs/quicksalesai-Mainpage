@@ -188,17 +188,27 @@ export const HeroDashboard = () => {
           <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mt-2">Media shared</p>
           <div className="grid grid-cols-3 gap-2">
             {[
-              { label: "Listing", sub: "PDF" },
-              { label: "Floor plan", sub: "PDF" },
-              { label: "Brochure", sub: "PDF" },
-              { label: "Living rm", sub: "JPG" },
-              { label: "Balcony", sub: "JPG" },
+              { label: "Listing", sub: "PDF", img: listingAsset.url },
+              { label: "Floor plan", sub: "PDF", img: floorplanAsset.url },
+              { label: "Brochure", sub: "PDF", img: brochureAsset.url },
+              { label: "Living rm", sub: "JPG", img: livingAsset.url },
+              { label: "Balcony", sub: "JPG", img: balconyAsset.url },
               { label: "+12 more", sub: "" },
             ].map((m, i) => (
-              <div key={i} className="aspect-square rounded-lg bg-secondary/60 border border-border/50 p-1.5 flex flex-col justify-end">
-                {m.sub === "PDF" && <FileText className="h-3.5 w-3.5 text-primary mb-auto" />}
-                <span className="text-[9px] font-semibold leading-tight truncate">{m.label}</span>
-                {m.sub && <span className="text-[8px] text-muted-foreground">{m.sub}</span>}
+              <div key={i} className="aspect-square rounded-lg bg-secondary/60 border border-border/50 overflow-hidden relative group">
+                {m.img ? (
+                  <>
+                    <img src={m.img} alt={m.label} loading="lazy" className="w-full h-full object-cover" />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-1.5 pt-4">
+                      <span className="text-[9px] font-semibold leading-tight truncate text-white block">{m.label}</span>
+                      <span className="text-[8px] text-white/80">{m.sub}</span>
+                    </div>
+                  </>
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center">
+                    <span className="text-[10px] font-bold text-muted-foreground">{m.label}</span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
