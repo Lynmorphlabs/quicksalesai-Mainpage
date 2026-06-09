@@ -12,7 +12,8 @@ const channels = [
   { Icon: Music2, bg: "#000000", label: "TikTok" },
 ];
 
-const contacts = [
+type Contact = { name: string; msg: string; time: string; unread: number; color: string; initial: string; channel: string; active?: boolean };
+const contacts: Contact[] = [
   { name: "Jason Tan", msg: "Is the Bukit Timah unit still…", time: "2m", unread: 3, color: "hsl(var(--bubble-pink))", initial: "JT", active: true, channel: "wa" },
   { name: "Priya Lakshmanan", msg: "Can you schedule a viewing?", time: "9m", unread: 1, color: "hsl(var(--bubble-violet))", initial: "PL", channel: "ig" },
   { name: "Marcus Ho", msg: "What's the PSF for the 3BR?", time: "15m", unread: 2, color: "hsl(var(--bubble-amber))", initial: "MH", channel: "wa" },
@@ -20,7 +21,7 @@ const contacts = [
   { name: "Rajan Kumar", msg: "Thanks, send me the floor plan", time: "1h", unread: 0, color: "hsl(var(--bubble-blue))", initial: "RK", channel: "tt" },
 ];
 
-const moreContacts: typeof contacts = [
+const moreContacts: Contact[] = [
   { name: "Aisha Rahman", msg: "Is the unit pet-friendly?", time: "2h", unread: 0, color: "hsl(var(--bubble-pink))", initial: "AR", channel: "fb" },
   { name: "Daniel Lim", msg: "Can we negotiate the price?", time: "3h", unread: 0, color: "hsl(var(--bubble-amber))", initial: "DL", channel: "wa" },
   { name: "Wei Ling", msg: "Sent over the docs, thanks!", time: "5h", unread: 0, color: "hsl(var(--bubble-violet))", initial: "WL", channel: "ig" },
