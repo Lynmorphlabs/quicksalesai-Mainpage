@@ -21,6 +21,7 @@ import balconyAsset from "../../assets/media-balcony.jpg.asset.json";
 import tiktokBrand from "../../assets/logos/tiktok-brand.png.asset.json";
 import instagramBrand from "../../assets/logos/instagram-brand.png.asset.json";
 import facebookBrand from "../../assets/logos/facebook-brand.png.asset.json";
+import whatsappBrand from "../../assets/logos/whatsapp-brand.png.asset.json";
 
 const BrandImg = (src: string): ComponentType<{ className?: string }> => ({ className }) => (
   <img src={src} alt="" className={className} />
@@ -28,9 +29,10 @@ const BrandImg = (src: string): ComponentType<{ className?: string }> => ({ clas
 const InstagramBrand = BrandImg(instagramBrand.url);
 const FacebookBrand = BrandImg(facebookBrand.url);
 const TikTokBrand = BrandImg(tiktokBrand.url);
+const WhatsAppBrand = BrandImg(whatsappBrand.url);
 
 const channels = [
-  { Icon: WhatsAppIcon, bg: "#25D366", active: true, label: "WhatsApp" },
+  { Icon: WhatsAppBrand, bg: "transparent", active: true, label: "WhatsApp", bare: true },
   { Icon: FacebookBrand, bg: "transparent", label: "Facebook", bare: true },
   { Icon: InstagramBrand, bg: "transparent", label: "Instagram", bare: true },
   { Icon: TikTokBrand, bg: "transparent", label: "TikTok", bare: true },
