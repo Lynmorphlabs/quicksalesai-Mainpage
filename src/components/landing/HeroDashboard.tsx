@@ -52,6 +52,8 @@ const moreContacts: Contact[] = [
   { name: "Daniel Lim", msg: "Can we negotiate the price?", time: "3h", unread: 0, color: "hsl(var(--bubble-amber))", initial: "DL", channel: "wa" },
   { name: "Wei Ling", msg: "Sent over the docs, thanks!", time: "5h", unread: 0, color: "hsl(var(--bubble-violet))", initial: "WL", channel: "ig" },
   { name: "Kenny Chua", msg: "Looking for a 2BR under $1.8M", time: "1d", unread: 0, color: "hsl(var(--bubble-teal))", initial: "KC", channel: "tt" },
+  { name: "Mei Ling Tan", msg: "Can I view this weekend?", time: "1d", unread: 0, color: "hsl(var(--bubble-blue))", initial: "ML", channel: "ig" },
+  { name: "Ravi Subramaniam", msg: "Is parking included?", time: "2d", unread: 0, color: "hsl(var(--bubble-amber))", initial: "RS", channel: "fb" },
 ];
 
 const allContacts = [...contacts, ...moreContacts];
