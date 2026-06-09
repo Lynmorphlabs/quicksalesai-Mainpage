@@ -20,7 +20,7 @@ const logos = [
   { src: antGroupLogo, alt: "Ant Group", className: "h-8 sm:h-10" },
   { src: stEngineeringLogo, alt: "ST Engineering", className: "h-7 sm:h-9" },
   { src: hpLogo.url, alt: "HP", className: "h-10 sm:h-12" },
-  { src: pgLogo.url, alt: "P&G", className: "h-10 sm:h-12" },
+  { src: pgLogo.url, alt: "P&G", className: "h-24 sm:h-28", wrapperClass: "-ml-4 sm:-ml-6" },
   { src: renwthLogo.url, alt: "Renwth Indonesia", className: "h-20 sm:h-24" },
   { src: foodyLogo.url, alt: "Foody.vn", className: "h-12 sm:h-14" },
   { src: lotteriaLogo.url, alt: "Lotteria", className: "h-20 sm:h-24 translate-y-3" },
@@ -43,7 +43,7 @@ export const LogoCloud = () => (
           {[...logos, ...logos].map((logo, i) => (
             <div
               key={`${logo.alt}-${i}`}
-              className="flex items-center justify-center shrink-0 w-[14vw] min-w-[140px]"
+              className={`flex items-center justify-center shrink-0 w-[14vw] min-w-[140px] ${logo.wrapperClass || ""}`}
             >
               <img
                 src={logo.src}
