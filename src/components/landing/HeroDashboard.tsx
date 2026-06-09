@@ -257,8 +257,8 @@ export const HeroDashboard = () => {
 const Metric = ({ label, value, trend, Icon, iconColor }: { label: string; value: string; trend?: string; Icon: ComponentType<SVGProps<SVGSVGElement>>; iconColor: string }) => (
   <div className="rounded-xl border border-border/60 bg-secondary/40 p-3">
     <div className="flex items-center gap-2 mb-1">
-      <span className="h-6 w-6 rounded-md grid place-items-center" style={{ background: `${iconColor.replace('hsl(', 'hsla(').replace(')', ', 0.15)')}`, color: iconColor }}>
-        <Icon className="h-3.5 w-3.5" />
+      <span className="h-7 w-7 rounded-lg grid place-items-center text-white shrink-0" style={{ background: iconColor }}>
+        <Icon className="h-4 w-4" strokeWidth={2.4} />
       </span>
       <p className="text-xs text-muted-foreground">{label}</p>
     </div>
