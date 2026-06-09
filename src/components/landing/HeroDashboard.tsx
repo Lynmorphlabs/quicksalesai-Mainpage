@@ -97,7 +97,7 @@ export const HeroDashboard = () => {
           <div className="p-3 border-b border-border/50">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Search chats</p>
           </div>
-          <ul className="divide-y divide-border/40 max-h-[460px] overflow-hidden">
+          <ul className="divide-y divide-border/40">
             {allContacts.map((c, i) => (
               <li key={i} className={`p-3 flex items-center gap-3 cursor-pointer ${c.active ? "bg-primary-soft/60" : "hover:bg-secondary/60"} transition-smooth`}>
                 <div className="relative shrink-0">
