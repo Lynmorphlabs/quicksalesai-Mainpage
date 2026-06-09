@@ -22,6 +22,7 @@ import tiktokBrand from "../../assets/logos/tiktok-brand.png.asset.json";
 import instagramBrand from "../../assets/logos/instagram-brand.png.asset.json";
 import facebookBrand from "../../assets/logos/facebook-brand.png.asset.json";
 import whatsappBrand from "../../assets/logos/whatsapp-brand.png.asset.json";
+import wechatBrand from "../../assets/logos/wechat-brand.svg.asset.json";
 
 const BrandImg = (src: string): ComponentType<{ className?: string }> => ({ className }) => (
   <img src={src} alt="" className={className} />
@@ -30,30 +31,32 @@ const InstagramBrand = BrandImg(instagramBrand.url);
 const FacebookBrand = BrandImg(facebookBrand.url);
 const TikTokBrand = BrandImg(tiktokBrand.url);
 const WhatsAppBrand = BrandImg(whatsappBrand.url);
+const WeChatBrand = BrandImg(wechatBrand.url);
 
 const channels = [
   { Icon: WhatsAppBrand, bg: "transparent", active: true, label: "WhatsApp", bare: true },
+  { Icon: WeChatBrand, bg: "transparent", label: "WeChat", bare: true },
   { Icon: FacebookBrand, bg: "transparent", label: "Facebook", bare: true },
   { Icon: InstagramBrand, bg: "transparent", label: "Instagram", bare: true },
   { Icon: TikTokBrand, bg: "transparent", label: "TikTok", bare: true },
 ];
 
-type Contact = { name: string; msg: string; time: string; unread: number; color: string; initial: string; channel: string; active?: boolean };
+type Contact = { name: string; msg: string; time: string; unread: number; color: string; initial: string; channel: string; active?: boolean; avatar?: string };
 const contacts: Contact[] = [
-  { name: "Jason Tan", msg: "Is the Bukit Timah unit still…", time: "2m", unread: 3, color: "hsl(var(--bubble-pink))", initial: "JT", active: true, channel: "wa" },
-  { name: "Priya Lakshmanan", msg: "Can you schedule a viewing?", time: "9m", unread: 1, color: "hsl(var(--bubble-violet))", initial: "PL", channel: "ig" },
+  { name: "Jason Tan", msg: "Is the Bukit Timah unit still…", time: "2m", unread: 3, color: "hsl(var(--bubble-pink))", initial: "JT", active: true, channel: "wa", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=faces" },
+  { name: "Priya Lakshmanan", msg: "Can you schedule a viewing?", time: "9m", unread: 1, color: "hsl(var(--bubble-violet))", initial: "PL", channel: "ig", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop&crop=faces" },
   { name: "Marcus Ho", msg: "What's the PSF for the 3BR?", time: "15m", unread: 2, color: "hsl(var(--bubble-amber))", initial: "MH", channel: "wa" },
-  { name: "Sarah Fong", msg: "Send me the floor plan pls", time: "32m", unread: 0, color: "hsl(var(--bubble-teal))", initial: "SF", channel: "wa" },
+  { name: "Sarah Fong", msg: "Send me the floor plan pls", time: "32m", unread: 0, color: "hsl(var(--bubble-teal))", initial: "SF", channel: "wc", avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop&crop=faces" },
   { name: "Rajan Kumar", msg: "Thanks, send me the floor plan", time: "1h", unread: 0, color: "hsl(var(--bubble-blue))", initial: "RK", channel: "tt" },
 ];
 
 const moreContacts: Contact[] = [
-  { name: "Aisha Rahman", msg: "Is the unit pet-friendly?", time: "2h", unread: 0, color: "hsl(var(--bubble-pink))", initial: "AR", channel: "fb" },
+  { name: "Aisha Rahman", msg: "Is the unit pet-friendly?", time: "2h", unread: 0, color: "hsl(var(--bubble-pink))", initial: "AR", channel: "fb", avatar: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=120&h=120&fit=crop" },
   { name: "Daniel Lim", msg: "Can we negotiate the price?", time: "3h", unread: 0, color: "hsl(var(--bubble-amber))", initial: "DL", channel: "wa" },
-  { name: "Wei Ling", msg: "Sent over the docs, thanks!", time: "5h", unread: 0, color: "hsl(var(--bubble-violet))", initial: "WL", channel: "ig" },
+  { name: "Wei Ling", msg: "Sent over the docs, thanks!", time: "5h", unread: 0, color: "hsl(var(--bubble-violet))", initial: "WL", channel: "wc", avatar: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=120&h=120&fit=crop" },
   { name: "Kenny Chua", msg: "Looking for a 2BR under $1.8M", time: "1d", unread: 0, color: "hsl(var(--bubble-teal))", initial: "KC", channel: "tt" },
-  { name: "Mei Ling Tan", msg: "Can I view this weekend?", time: "1d", unread: 0, color: "hsl(var(--bubble-blue))", initial: "ML", channel: "ig" },
-  { name: "Ravi Subramaniam", msg: "Is parking included?", time: "2d", unread: 0, color: "hsl(var(--bubble-amber))", initial: "RS", channel: "fb" },
+  { name: "Mei Ling Tan", msg: "Can I view this weekend?", time: "1d", unread: 0, color: "hsl(var(--bubble-blue))", initial: "ML", channel: "ig", avatar: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?w=120&h=120&fit=crop" },
+  { name: "Ravi Subramaniam", msg: "Is parking included?", time: "2d", unread: 0, color: "hsl(var(--bubble-amber))", initial: "RS", channel: "fb", avatar: "https://images.unsplash.com/photo-1608889476561-6242cfdbf622?w=120&h=120&fit=crop" },
 ];
 
 const allContacts = [...contacts, ...moreContacts];
@@ -63,6 +66,7 @@ const channelDot: Record<string, { bg: string; Icon: ComponentType<SVGProps<SVGS
   ig: { bg: "#d62976", Icon: Instagram as unknown as ComponentType<SVGProps<SVGSVGElement>> },
   fb: { bg: "#0084FF", Icon: Facebook as unknown as ComponentType<SVGProps<SVGSVGElement>> },
   tt: { bg: "#000000", Icon: TikTokIcon },
+  wc: { bg: "#2DC100", Icon: MessageSquare as unknown as ComponentType<SVGProps<SVGSVGElement>> },
 };
 
 export const HeroDashboard = () => {
@@ -101,9 +105,13 @@ export const HeroDashboard = () => {
             {allContacts.map((c, i) => (
               <li key={i} className={`p-3 flex items-center gap-3 cursor-pointer ${c.active ? "bg-primary-soft/60" : "hover:bg-secondary/60"} transition-smooth`}>
                 <div className="relative shrink-0">
-                  <div className="h-10 w-10 rounded-full grid place-items-center text-white text-xs font-bold" style={{ background: c.color }}>
-                    {c.initial}
-                  </div>
+                  {c.avatar ? (
+                    <img src={c.avatar} alt={c.name} loading="lazy" className="h-10 w-10 rounded-full object-cover" />
+                  ) : (
+                    <div className="h-10 w-10 rounded-full grid place-items-center text-white text-xs font-bold" style={{ background: c.color }}>
+                      {c.initial}
+                    </div>
+                  )}
                   <span
                     className="absolute -bottom-0.5 -right-0.5 h-4 w-4 rounded-full grid place-items-center ring-2 ring-secondary text-white"
                     style={{ background: channelDot[c.channel].bg }}
