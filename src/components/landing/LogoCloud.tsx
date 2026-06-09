@@ -1,7 +1,6 @@
 import viuLogo from "@/assets/logos/viu.png.asset.json";
 import huaweiLogo from "@/assets/logos/huawei.png.asset.json";
 import antGroupLogo from "@/assets/logos/ant-group.png.asset.json";
-import certikLogo from "@/assets/logos/certik.png.asset.json";
 import stEngineeringLogo from "@/assets/logos/st-engineering.png.asset.json";
 import hpLogo from "@/assets/logos/hp.png.asset.json";
 import pgLogo from "@/assets/logos/pg.png.asset.json";
