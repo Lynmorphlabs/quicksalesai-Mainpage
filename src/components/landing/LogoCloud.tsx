@@ -48,7 +48,7 @@ export const LogoCloud = () => (
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className={`${logo.className} w-auto object-contain opacity-70 hover:opacity-100 transition-opacity`}
+                className={`${logo.className} w-auto object-contain transition-opacity`}
                 loading="lazy"
               />
             </div>
