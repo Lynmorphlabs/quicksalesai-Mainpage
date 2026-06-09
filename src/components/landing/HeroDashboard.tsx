@@ -23,6 +23,9 @@ import instagramBrand from "../../assets/logos/instagram-brand.png.asset.json";
 import facebookBrand from "../../assets/logos/facebook-brand.png.asset.json";
 import whatsappBrand from "../../assets/logos/whatsapp-brand.png.asset.json";
 import wechatBrand from "../../assets/logos/wechat-brand.svg.asset.json";
+import jasonAvatar from "../../assets/avatars/jason.jpg.asset.json";
+import priyaAvatar from "../../assets/avatars/priya.jpg.asset.json";
+import sarahAvatar from "../../assets/avatars/sarah.jpg.asset.json";
 
 const BrandImg = (src: string): ComponentType<{ className?: string }> => ({ className }) => (
   <img src={src} alt="" className={className} />
@@ -43,10 +46,10 @@ const channels = [
 
 type Contact = { name: string; msg: string; time: string; unread: number; color: string; initial: string; channel: string; active?: boolean; avatar?: string };
 const contacts: Contact[] = [
-  { name: "Jason Tan", msg: "Is the Bukit Timah unit still…", time: "2m", unread: 3, color: "hsl(var(--bubble-pink))", initial: "JT", active: true, channel: "wa", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=faces" },
-  { name: "Priya Lakshmanan", msg: "Can you schedule a viewing?", time: "9m", unread: 1, color: "hsl(var(--bubble-violet))", initial: "PL", channel: "ig", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop&crop=faces" },
+  { name: "Jason Tan", msg: "Is the Bukit Timah unit still…", time: "2m", unread: 3, color: "hsl(var(--bubble-pink))", initial: "JT", active: true, channel: "wa", avatar: jasonAvatar.url },
+  { name: "Priya Lakshmanan", msg: "Can you schedule a viewing?", time: "9m", unread: 1, color: "hsl(var(--bubble-violet))", initial: "PL", channel: "ig", avatar: priyaAvatar.url },
   { name: "Marcus Ho", msg: "What's the PSF for the 3BR?", time: "15m", unread: 2, color: "hsl(var(--bubble-amber))", initial: "MH", channel: "wa" },
-  { name: "Sarah Fong", msg: "Send me the floor plan pls", time: "32m", unread: 0, color: "hsl(var(--bubble-teal))", initial: "SF", channel: "wc", avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop&crop=faces" },
+  { name: "Sarah Fong", msg: "Send me the floor plan pls", time: "32m", unread: 0, color: "hsl(var(--bubble-teal))", initial: "SF", channel: "wc", avatar: sarahAvatar.url },
   { name: "Rajan Kumar", msg: "Thanks, send me the floor plan", time: "1h", unread: 0, color: "hsl(var(--bubble-blue))", initial: "RK", channel: "tt" },
 ];
 
