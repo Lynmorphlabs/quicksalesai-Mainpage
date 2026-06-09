@@ -20,15 +20,15 @@ const logos: { src: string; alt: string; className: string; wrapperClass?: strin
   { src: antGroupLogo, alt: "Ant Group", className: "h-8 sm:h-10" },
   { src: stEngineeringLogo, alt: "ST Engineering", className: "h-7 sm:h-9" },
   { src: hpLogo.url, alt: "HP", className: "h-10 sm:h-12" },
-  { src: pgLogo.url, alt: "P&G", className: "h-[2.75rem] sm:h-[3.75rem]" },
+  { src: pgLogo.url, alt: "P&G", className: "h-[2.75rem] sm:h-[3.75rem]", wrapperClass: "w-[8vw] min-w-[80px] -ml-6 sm:-ml-10" },
   { src: renwthLogo.url, alt: "Renwth Indonesia", className: "h-20 sm:h-24" },
   { src: foodyLogo.url, alt: "Foody.vn", className: "h-12 sm:h-14" },
   { src: lotteriaLogo.url, alt: "Lotteria", className: "h-20 sm:h-24 translate-y-3" },
   { src: shopeeLogo.url, alt: "Shopee", className: "h-28 sm:h-32 translate-y-3" },
   { src: hiltonLogo.url, alt: "Hilton Hotels & Resorts", className: "h-20 sm:h-24" },
   { src: ongongLogo.url, alt: "Ong & Ong", className: "h-20 sm:h-24" },
-  { src: cfldLogo.url, alt: "CFLD", className: "h-20 sm:h-24" },
-  { src: galaLogo.url, alt: "Gala", className: "h-12 sm:h-14" },
+  { src: cfldLogo.url, alt: "CFLD", className: "h-14 sm:h-16" },
+  { src: galaLogo.url, alt: "Gala", className: "h-12 sm:h-14 -translate-y-2" },
   { src: bitmartLogo.url, alt: "BitMart", className: "h-20 sm:h-24" },
 ];
 
