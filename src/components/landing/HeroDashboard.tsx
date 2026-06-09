@@ -1,4 +1,9 @@
 import { Send, Phone, Video, MoreVertical, CheckCheck, Smile, Paperclip, FileText, Download, MessageCircle, Instagram, Facebook, Music2 } from "lucide-react";
+import listingAsset from "../../assets/media-listing.jpg.asset.json";
+import floorplanAsset from "../../assets/media-floorplan.jpg.asset.json";
+import brochureAsset from "../../assets/media-brochure.jpg.asset.json";
+import livingAsset from "../../assets/media-living.jpg.asset.json";
+import balconyAsset from "../../assets/media-balcony.jpg.asset.json";
 
 const channels = [
   { Icon: MessageCircle, bg: "#25D366", active: true, label: "WhatsApp" },
