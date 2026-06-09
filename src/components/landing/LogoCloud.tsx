@@ -2,12 +2,34 @@ import viuLogo from "@/assets/logos/viu.png";
 import huaweiLogo from "@/assets/logos/huawei.png";
 import antGroupLogo from "@/assets/logos/ant-group.png";
 import stEngineeringLogo from "@/assets/logos/st-engineering.png";
+import hpLogo from "@/assets/logos/hp.png.asset.json";
+import pgLogo from "@/assets/logos/pg.png.asset.json";
+import renwthLogo from "@/assets/logos/renwth.png.asset.json";
+import foodyLogo from "@/assets/logos/foody.png.asset.json";
+import lotteriaLogo from "@/assets/logos/lotteria.png.asset.json";
+import shopeeLogo from "@/assets/logos/shopee.png.asset.json";
+import hiltonLogo from "@/assets/logos/hilton.png.asset.json";
+import ongongLogo from "@/assets/logos/ongong.png.asset.json";
+import cfldLogo from "@/assets/logos/cfld.png.asset.json";
+import galaLogo from "@/assets/logos/gala.png.asset.json";
+import bitmartLogo from "@/assets/logos/bitmart.png.asset.json";
 
 const logos = [
   { src: viuLogo, alt: "Viu", className: "h-10 sm:h-12" },
   { src: huaweiLogo, alt: "Huawei", className: "h-12 sm:h-14" },
   { src: antGroupLogo, alt: "Ant Group", className: "h-10 sm:h-12" },
   { src: stEngineeringLogo, alt: "ST Engineering", className: "h-7 sm:h-9" },
+  { src: hpLogo.url, alt: "HP", className: "h-12 sm:h-14" },
+  { src: pgLogo.url, alt: "P&G", className: "h-12 sm:h-14" },
+  { src: renwthLogo.url, alt: "Renwth Indonesia", className: "h-9 sm:h-11" },
+  { src: foodyLogo.url, alt: "Foody.vn", className: "h-9 sm:h-11" },
+  { src: lotteriaLogo.url, alt: "Lotteria", className: "h-7 sm:h-9" },
+  { src: shopeeLogo.url, alt: "Shopee", className: "h-12 sm:h-14" },
+  { src: hiltonLogo.url, alt: "Hilton Hotels & Resorts", className: "h-12 sm:h-14" },
+  { src: ongongLogo.url, alt: "Ong & Ong", className: "h-9 sm:h-11" },
+  { src: cfldLogo.url, alt: "CFLD", className: "h-10 sm:h-12" },
+  { src: galaLogo.url, alt: "Gala", className: "h-9 sm:h-11" },
+  { src: bitmartLogo.url, alt: "BitMart", className: "h-8 sm:h-10" },
 ];
 
 export const LogoCloud = () => (
