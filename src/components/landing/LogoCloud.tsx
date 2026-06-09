@@ -1,7 +1,7 @@
-import viuLogo from "@/assets/logos/viu.png";
-import huaweiLogo from "@/assets/logos/huawei.png";
-import antGroupLogo from "@/assets/logos/ant-group.png";
-import stEngineeringLogo from "@/assets/logos/st-engineering.png";
+import viuLogo from "@/assets/logos/viu.png.asset.json";
+import huaweiLogo from "@/assets/logos/huawei.png.asset.json";
+import antGroupLogo from "@/assets/logos/ant-group.png.asset.json";
+import certikLogo from "@/assets/logos/certik.png.asset.json";
 import hpLogo from "@/assets/logos/hp.png.asset.json";
 import pgLogo from "@/assets/logos/pg.png.asset.json";
 import renwthLogo from "@/assets/logos/renwth.png.asset.json";
@@ -15,10 +15,10 @@ import galaLogo from "@/assets/logos/gala.png.asset.json";
 import bitmartLogo from "@/assets/logos/bitmart.png.asset.json";
 
 const logos: { src: string; alt: string; className: string; wrapperClass?: string }[] = [
-  { src: viuLogo, alt: "Viu", className: "h-8 sm:h-10" },
-  { src: huaweiLogo, alt: "Huawei", className: "h-9 sm:h-11" },
-  { src: antGroupLogo, alt: "Ant Group", className: "h-8 sm:h-10" },
-  { src: stEngineeringLogo, alt: "ST Engineering", className: "h-7 sm:h-9" },
+  { src: viuLogo.url, alt: "Viu", className: "h-10 sm:h-12" },
+  { src: huaweiLogo.url, alt: "Huawei", className: "h-10 sm:h-12" },
+  { src: antGroupLogo.url, alt: "Ant Group", className: "h-10 sm:h-12" },
+  { src: certikLogo.url, alt: "CertiK", className: "h-8 sm:h-10" },
   { src: hpLogo.url, alt: "HP", className: "h-10 sm:h-12" },
   { src: pgLogo.url, alt: "P&G", className: "h-[2.75rem] sm:h-[3.75rem]", wrapperClass: "w-[8vw] min-w-[80px] -ml-6 sm:-ml-10" },
   { src: renwthLogo.url, alt: "Renwth Indonesia", className: "h-20 sm:h-24", wrapperClass: "ml-8 sm:ml-12" },
