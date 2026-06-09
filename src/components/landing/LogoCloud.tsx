@@ -15,21 +15,21 @@ import galaLogo from "@/assets/logos/gala.png.asset.json";
 import bitmartLogo from "@/assets/logos/bitmart.png.asset.json";
 
 const logos = [
-  { src: viuLogo, alt: "Viu", className: "h-10 sm:h-12" },
-  { src: huaweiLogo, alt: "Huawei", className: "h-12 sm:h-14" },
-  { src: antGroupLogo, alt: "Ant Group", className: "h-10 sm:h-12" },
+  { src: viuLogo, alt: "Viu", className: "h-8 sm:h-10" },
+  { src: huaweiLogo, alt: "Huawei", className: "h-9 sm:h-11" },
+  { src: antGroupLogo, alt: "Ant Group", className: "h-8 sm:h-10" },
   { src: stEngineeringLogo, alt: "ST Engineering", className: "h-7 sm:h-9" },
-  { src: hpLogo.url, alt: "HP", className: "h-14 sm:h-16" },
-  { src: pgLogo.url, alt: "P&G", className: "h-14 sm:h-16" },
-  { src: renwthLogo.url, alt: "Renwth Indonesia", className: "h-11 sm:h-13" },
-  { src: foodyLogo.url, alt: "Foody.vn", className: "h-11 sm:h-13" },
-  { src: lotteriaLogo.url, alt: "Lotteria", className: "h-9 sm:h-11" },
-  { src: shopeeLogo.url, alt: "Shopee", className: "h-14 sm:h-16" },
-  { src: hiltonLogo.url, alt: "Hilton Hotels & Resorts", className: "h-14 sm:h-16" },
-  { src: ongongLogo.url, alt: "Ong & Ong", className: "h-11 sm:h-13" },
-  { src: cfldLogo.url, alt: "CFLD", className: "h-12 sm:h-14" },
-  { src: galaLogo.url, alt: "Gala", className: "h-11 sm:h-13" },
-  { src: bitmartLogo.url, alt: "BitMart", className: "h-10 sm:h-12" },
+  { src: hpLogo.url, alt: "HP", className: "h-10 sm:h-12" },
+  { src: pgLogo.url, alt: "P&G", className: "h-10 sm:h-12" },
+  { src: renwthLogo.url, alt: "Renwth Indonesia", className: "h-8 sm:h-10" },
+  { src: foodyLogo.url, alt: "Foody.vn", className: "h-8 sm:h-10" },
+  { src: lotteriaLogo.url, alt: "Lotteria", className: "h-7 sm:h-9" },
+  { src: shopeeLogo.url, alt: "Shopee", className: "h-10 sm:h-12" },
+  { src: hiltonLogo.url, alt: "Hilton Hotels & Resorts", className: "h-9 sm:h-11" },
+  { src: ongongLogo.url, alt: "Ong & Ong", className: "h-8 sm:h-10" },
+  { src: cfldLogo.url, alt: "CFLD", className: "h-9 sm:h-11" },
+  { src: galaLogo.url, alt: "Gala", className: "h-8 sm:h-10" },
+  { src: bitmartLogo.url, alt: "BitMart", className: "h-8 sm:h-10" },
 ];
 
 export const LogoCloud = () => (
@@ -43,7 +43,7 @@ export const LogoCloud = () => (
           {[...logos, ...logos].map((logo, i) => (
             <div
               key={`${logo.alt}-${i}`}
-              className="flex items-center justify-center shrink-0 w-[25vw] min-w-[220px]"
+              className="flex items-center justify-center shrink-0 w-[14vw] min-w-[140px]"
             >
               <img
                 src={logo.src}
