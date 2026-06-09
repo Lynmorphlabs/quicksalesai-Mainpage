@@ -19,7 +19,6 @@ const logos: { src: string; alt: string; className: string; wrapperClass?: strin
   { src: huaweiLogo.url, alt: "Huawei", className: "h-14 sm:h-16" },
   { src: antGroupLogo.url, alt: "Ant Group", className: "h-14 sm:h-16" },
   { src: stEngineeringLogo.url, alt: "ST Engineering", className: "h-12 sm:h-14" },
-  { src: certikLogo.url, alt: "CertiK", className: "h-8 sm:h-10" },
   { src: hpLogo.url, alt: "HP", className: "h-10 sm:h-12" },
   { src: pgLogo.url, alt: "P&G", className: "h-[2.75rem] sm:h-[3.75rem]", wrapperClass: "w-[8vw] min-w-[80px] -ml-6 sm:-ml-10" },
   { src: renwthLogo.url, alt: "Renwth Indonesia", className: "h-20 sm:h-24", wrapperClass: "ml-8 sm:ml-12" },
