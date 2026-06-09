@@ -1,4 +1,4 @@
-import { Send, Phone, Video, MoreVertical, CheckCheck, Smile, Paperclip, FileText, Download, MessageCircle, Instagram, Facebook, Music2 } from "lucide-react";
+import { Send, Phone, Video, MoreVertical, CheckCheck, Smile, Paperclip, FileText, Download, MessageCircle, Instagram, Facebook, Music2, MessageSquare, CalendarCheck, Clock } from "lucide-react";
 import listingAsset from "../../assets/media-listing.jpg.asset.json";
 import floorplanAsset from "../../assets/media-floorplan.jpg.asset.json";
 import brochureAsset from "../../assets/media-brochure.jpg.asset.json";
@@ -12,13 +12,23 @@ const channels = [
   { Icon: Music2, bg: "#000000", label: "TikTok" },
 ];
 
-const contacts = [
+type Contact = { name: string; msg: string; time: string; unread: number; color: string; initial: string; channel: string; active?: boolean };
+const contacts: Contact[] = [
   { name: "Jason Tan", msg: "Is the Bukit Timah unit still…", time: "2m", unread: 3, color: "hsl(var(--bubble-pink))", initial: "JT", active: true, channel: "wa" },
   { name: "Priya Lakshmanan", msg: "Can you schedule a viewing?", time: "9m", unread: 1, color: "hsl(var(--bubble-violet))", initial: "PL", channel: "ig" },
   { name: "Marcus Ho", msg: "What's the PSF for the 3BR?", time: "15m", unread: 2, color: "hsl(var(--bubble-amber))", initial: "MH", channel: "wa" },
   { name: "Sarah Fong", msg: "Send me the floor plan pls", time: "32m", unread: 0, color: "hsl(var(--bubble-teal))", initial: "SF", channel: "wa" },
   { name: "Rajan Kumar", msg: "Thanks, send me the floor plan", time: "1h", unread: 0, color: "hsl(var(--bubble-blue))", initial: "RK", channel: "tt" },
 ];
+
+const moreContacts: Contact[] = [
+  { name: "Aisha Rahman", msg: "Is the unit pet-friendly?", time: "2h", unread: 0, color: "hsl(var(--bubble-pink))", initial: "AR", channel: "fb" },
+  { name: "Daniel Lim", msg: "Can we negotiate the price?", time: "3h", unread: 0, color: "hsl(var(--bubble-amber))", initial: "DL", channel: "wa" },
+  { name: "Wei Ling", msg: "Sent over the docs, thanks!", time: "5h", unread: 0, color: "hsl(var(--bubble-violet))", initial: "WL", channel: "ig" },
+  { name: "Kenny Chua", msg: "Looking for a 2BR under $1.8M", time: "1d", unread: 0, color: "hsl(var(--bubble-teal))", initial: "KC", channel: "tt" },
+];
+
+const allContacts = [...contacts, ...moreContacts];
 
 const channelDot: Record<string, { bg: string; Icon: typeof MessageCircle }> = {
   wa: { bg: "#25D366", Icon: MessageCircle },
@@ -41,27 +51,26 @@ export const HeroDashboard = () => {
       </div>
 
       <div className="grid grid-cols-12 min-h-[520px]">
-        {/* Channel rail */}
-        <div className="hidden sm:flex col-span-1 lg:col-span-1 flex-col items-center gap-3 py-4 bg-secondary/50 border-r border-border/50">
-          {channels.map(({ Icon, bg, active, label }, i) => (
-            <div
-              key={i}
-              title={label}
-              className={`h-10 w-10 rounded-xl grid place-items-center text-white shadow-soft transition-smooth ${active ? "ring-2 ring-primary ring-offset-2 ring-offset-secondary scale-105" : "opacity-70 hover:opacity-100"}`}
-              style={{ background: bg }}
-            >
-              <Icon className="h-5 w-5" strokeWidth={2.2} />
-            </div>
-          ))}
-        </div>
-
         {/* Sidebar */}
-        <aside className="col-span-12 sm:col-span-4 lg:col-span-3 border-r border-border/50 bg-secondary/30">
-          <div className="p-4 border-b border-border/50">
+        <aside className="col-span-12 sm:col-span-5 lg:col-span-4 border-r border-border/50 bg-secondary/30">
+          {/* Channels on top */}
+          <div className="flex items-center gap-2 px-3 py-3 border-b border-border/50">
+            {channels.map(({ Icon, bg, active, label }, i) => (
+              <div
+                key={i}
+                title={label}
+                className={`h-9 w-9 rounded-xl grid place-items-center text-white shadow-soft transition-smooth ${active ? "ring-2 ring-primary ring-offset-2 ring-offset-secondary scale-105" : "opacity-70 hover:opacity-100"}`}
+                style={{ background: bg }}
+              >
+                <Icon className="h-4 w-4" strokeWidth={2.2} />
+              </div>
+            ))}
+          </div>
+          <div className="p-3 border-b border-border/50">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Search chats</p>
           </div>
           <ul className="divide-y divide-border/40 max-h-[460px] overflow-hidden">
-            {contacts.map((c, i) => (
+            {allContacts.map((c, i) => (
               <li key={i} className={`p-3 flex items-center gap-3 cursor-pointer ${c.active ? "bg-primary-soft/60" : "hover:bg-secondary/60"} transition-smooth`}>
                 <div className="relative shrink-0">
                   <div className="h-10 w-10 rounded-full grid place-items-center text-white text-xs font-bold" style={{ background: c.color }}>
@@ -181,27 +190,26 @@ export const HeroDashboard = () => {
         <aside className="hidden lg:flex col-span-3 flex-col gap-3 p-4 bg-card border-l border-border/50">
           <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Today</p>
 
-          <Metric label="Leads handled" value="84" trend="+22%" />
-          <Metric label="Viewings booked" value="17" trend="+14%" />
-          <Metric label="Avg response" value="<30s" />
+          <Metric label="Leads handled" value="84" trend="+22%" Icon={MessageSquare} iconColor="hsl(var(--bubble-teal))" />
+          <Metric label="Viewings booked" value="17" trend="+14%" Icon={CalendarCheck} iconColor="hsl(var(--bubble-blue))" />
+          <Metric label="Avg response" value="<30s" Icon={Clock} iconColor="hsl(var(--bubble-amber))" />
 
           <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mt-2">Media shared</p>
           <div className="grid grid-cols-3 gap-2">
             {[
-              { label: "Listing", sub: "PDF", img: listingAsset.url },
-              { label: "Floor plan", sub: "PDF", img: floorplanAsset.url },
-              { label: "Brochure", sub: "PDF", img: brochureAsset.url },
-              { label: "Living rm", sub: "JPG", img: livingAsset.url },
-              { label: "Balcony", sub: "JPG", img: balconyAsset.url },
+              { sub: "PDF", img: listingAsset.url },
+              { sub: "PDF", img: floorplanAsset.url },
+              { sub: "PDF", img: brochureAsset.url },
+              { sub: "JPG", img: livingAsset.url },
+              { sub: "JPG", img: balconyAsset.url },
               { label: "+12 more", sub: "" },
             ].map((m, i) => (
               <div key={i} className="aspect-square rounded-lg bg-secondary/60 border border-border/50 overflow-hidden relative group">
                 {m.img ? (
                   <>
-                    <img src={m.img} alt={m.label} loading="lazy" className="w-full h-full object-cover" />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-1.5 pt-4">
-                      <span className="text-[9px] font-semibold leading-tight truncate text-white block">{m.label}</span>
-                      <span className="text-[8px] text-white/80">{m.sub}</span>
+                    <img src={m.img} alt={m.sub} loading="lazy" className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 grid place-items-center bg-black/25">
+                      <span className="text-sm font-extrabold text-white tracking-wide drop-shadow">{m.sub}</span>
                     </div>
                   </>
                 ) : (
@@ -218,9 +226,14 @@ export const HeroDashboard = () => {
   );
 };
 
-const Metric = ({ label, value, trend }: { label: string; value: string; trend?: string }) => (
-  <div>
-    <p className="text-xs text-muted-foreground">{label}</p>
+const Metric = ({ label, value, trend, Icon, iconColor }: { label: string; value: string; trend?: string; Icon: typeof MessageCircle; iconColor: string }) => (
+  <div className="rounded-xl border border-border/60 bg-secondary/40 p-3">
+    <div className="flex items-center gap-2 mb-1">
+      <span className="h-6 w-6 rounded-md grid place-items-center" style={{ background: `${iconColor.replace('hsl(', 'hsla(').replace(')', ', 0.15)')}`, color: iconColor }}>
+        <Icon className="h-3.5 w-3.5" strokeWidth={2.4} />
+      </span>
+      <p className="text-xs text-muted-foreground">{label}</p>
+    </div>
     <div className="flex items-baseline gap-2">
       <span className="text-2xl font-bold tabular-nums">{value}</span>
       {trend && <span className="text-[11px] font-semibold text-primary">{trend}</span>}
