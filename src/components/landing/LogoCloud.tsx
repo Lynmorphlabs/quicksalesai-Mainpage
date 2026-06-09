@@ -14,7 +14,7 @@ import cfldLogo from "@/assets/logos/cfld.png.asset.json";
 import galaLogo from "@/assets/logos/gala.png.asset.json";
 import bitmartLogo from "@/assets/logos/bitmart.png.asset.json";
 
-const logos = [
+const logos: { src: string; alt: string; className: string; wrapperClass?: string }[] = [
   { src: viuLogo, alt: "Viu", className: "h-8 sm:h-10" },
   { src: huaweiLogo, alt: "Huawei", className: "h-9 sm:h-11" },
   { src: antGroupLogo, alt: "Ant Group", className: "h-8 sm:h-10" },
