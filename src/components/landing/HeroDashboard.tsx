@@ -20,7 +20,7 @@ const contacts = [
   { name: "Rajan Kumar", msg: "Thanks, send me the floor plan", time: "1h", unread: 0, color: "hsl(var(--bubble-blue))", initial: "RK", channel: "tt" },
 ];
 
-const moreContacts = [
+const moreContacts: typeof contacts = [
   { name: "Aisha Rahman", msg: "Is the unit pet-friendly?", time: "2h", unread: 0, color: "hsl(var(--bubble-pink))", initial: "AR", channel: "fb" },
   { name: "Daniel Lim", msg: "Can we negotiate the price?", time: "3h", unread: 0, color: "hsl(var(--bubble-amber))", initial: "DL", channel: "wa" },
   { name: "Wei Ling", msg: "Sent over the docs, thanks!", time: "5h", unread: 0, color: "hsl(var(--bubble-violet))", initial: "WL", channel: "ig" },
