@@ -18,12 +18,22 @@ import floorplanAsset from "../../assets/media-floorplan.jpg.asset.json";
 import brochureAsset from "../../assets/media-brochure.jpg.asset.json";
 import livingAsset from "../../assets/media-living.jpg.asset.json";
 import balconyAsset from "../../assets/media-balcony.jpg.asset.json";
+import tiktokBrand from "../../assets/logos/tiktok-brand.png.asset.json";
+import instagramBrand from "../../assets/logos/instagram-brand.png.asset.json";
+import facebookBrand from "../../assets/logos/facebook-brand.png.asset.json";
+
+const BrandImg = (src: string): ComponentType<{ className?: string }> => ({ className }) => (
+  <img src={src} alt="" className={className} />
+);
+const InstagramBrand = BrandImg(instagramBrand.url);
+const FacebookBrand = BrandImg(facebookBrand.url);
+const TikTokBrand = BrandImg(tiktokBrand.url);
 
 const channels = [
   { Icon: WhatsAppIcon, bg: "#25D366", active: true, label: "WhatsApp" },
-  { Icon: Facebook, bg: "#0084FF", label: "Messenger" },
-  { Icon: Instagram, bg: "linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)", label: "Instagram" },
-  { Icon: TikTokIcon, bg: "#000000", label: "TikTok" },
+  { Icon: FacebookBrand, bg: "transparent", label: "Facebook", bare: true },
+  { Icon: InstagramBrand, bg: "transparent", label: "Instagram", bare: true },
+  { Icon: TikTokBrand, bg: "transparent", label: "TikTok", bare: true },
 ];
 
 type Contact = { name: string; msg: string; time: string; unread: number; color: string; initial: string; channel: string; active?: boolean };
@@ -46,8 +56,8 @@ const allContacts = [...contacts, ...moreContacts];
 
 const channelDot: Record<string, { bg: string; Icon: ComponentType<SVGProps<SVGSVGElement>> }> = {
   wa: { bg: "#25D366", Icon: WhatsAppIcon },
-  ig: { bg: "#d62976", Icon: Instagram },
-  fb: { bg: "#0084FF", Icon: Facebook },
+  ig: { bg: "#d62976", Icon: Instagram as unknown as ComponentType<SVGProps<SVGSVGElement>> },
+  fb: { bg: "#0084FF", Icon: Facebook as unknown as ComponentType<SVGProps<SVGSVGElement>> },
   tt: { bg: "#000000", Icon: TikTokIcon },
 };
 
@@ -69,14 +79,14 @@ export const HeroDashboard = () => {
         <aside className="col-span-12 sm:col-span-5 lg:col-span-4 border-r border-border/50 bg-secondary/30">
           {/* Channels on top */}
           <div className="flex items-center gap-2 px-3 py-3 border-b border-border/50">
-            {channels.map(({ Icon, bg, active, label }, i) => (
+            {channels.map(({ Icon, bg, active, label, bare }: any, i) => (
               <div
                 key={i}
                 title={label}
-                className={`h-9 w-9 rounded-xl grid place-items-center text-white shadow-soft transition-smooth ${active ? "ring-2 ring-primary ring-offset-2 ring-offset-secondary scale-105" : "opacity-70 hover:opacity-100"}`}
+                className={`h-9 w-9 rounded-xl overflow-hidden grid place-items-center text-white transition-smooth ${bare ? "" : "shadow-soft"} ${active ? "ring-2 ring-primary ring-offset-2 ring-offset-secondary scale-105" : "opacity-90 hover:opacity-100"}`}
                 style={{ background: bg }}
               >
-                <Icon className="h-4 w-4" />
+                <Icon className={bare ? "h-9 w-9 object-cover" : "h-4 w-4"} />
               </div>
             ))}
           </div>
