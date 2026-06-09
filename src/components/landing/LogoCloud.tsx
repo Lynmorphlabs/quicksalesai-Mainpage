@@ -20,7 +20,7 @@ const logos = [
   { src: antGroupLogo, alt: "Ant Group", className: "h-8 sm:h-10" },
   { src: stEngineeringLogo, alt: "ST Engineering", className: "h-7 sm:h-9" },
   { src: hpLogo.url, alt: "HP", className: "h-10 sm:h-12" },
-  { src: pgLogo.url, alt: "P&G", className: "h-[2.75rem] sm:h-[3.75rem]", wrapperClass: "-ml-2 sm:-ml-3" },
+  { src: pgLogo.url, alt: "P&G", className: "h-[2.75rem] sm:h-[3.75rem]" },
   { src: renwthLogo.url, alt: "Renwth Indonesia", className: "h-20 sm:h-24" },
   { src: foodyLogo.url, alt: "Foody.vn", className: "h-12 sm:h-14" },
   { src: lotteriaLogo.url, alt: "Lotteria", className: "h-20 sm:h-24 translate-y-3" },
