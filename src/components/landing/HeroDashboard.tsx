@@ -66,7 +66,7 @@ const channelDot: Record<string, { bg: string; Icon: ComponentType<SVGProps<SVGS
   ig: { bg: "#d62976", Icon: Instagram as unknown as ComponentType<SVGProps<SVGSVGElement>> },
   fb: { bg: "#0084FF", Icon: Facebook as unknown as ComponentType<SVGProps<SVGSVGElement>> },
   tt: { bg: "#000000", Icon: TikTokIcon },
-  wc: { bg: "#2DC100", Icon: WhatsAppIcon },
+  wc: { bg: "#2DC100", Icon: MessageSquare as unknown as ComponentType<SVGProps<SVGSVGElement>> },
 };
 
 export const HeroDashboard = () => {
