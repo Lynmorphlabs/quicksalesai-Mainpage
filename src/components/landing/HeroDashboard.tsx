@@ -76,6 +76,13 @@ const channelDot: Record<string, { bg: string; Icon: ComponentType<SVGProps<SVGS
   wc: { bg: "#2DC100", Icon: WeChatIcon },
 };
 
+const tagStyles: Record<Tag, string> = {
+  Buy: "border-blue-200 bg-blue-50 text-blue-700",
+  Sell: "border-amber-200 bg-amber-50 text-amber-700",
+  Rent: "border-violet-200 bg-violet-50 text-violet-700",
+  "Viewing Scheduled": "border-emerald-200 bg-emerald-50 text-emerald-700",
+};
+
 export const HeroDashboard = () => {
   return (
     <div className="relative rounded-[2rem] bg-card/90 backdrop-blur-xl border border-border/60 shadow-elevated overflow-hidden">
