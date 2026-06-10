@@ -29,7 +29,7 @@ const logos: { src: string; alt: string; className: string; wrapperClass?: strin
   { src: ongongLogo.url, alt: "Ong & Ong", className: "h-20 sm:h-24", wrapperClass: "ml-8 sm:ml-12" },
   { src: cfldLogo.url, alt: "CFLD", className: "h-8 sm:h-10" },
   { src: galaLogo.url, alt: "Gala", className: "h-8 sm:h-10 translate-y-2" },
-  { src: bitmartLogo.url, alt: "BitMart", className: "h-8 sm:h-10" },
+  { src: bitmartLogo.url, alt: "BitMart", className: "h-8 sm:h-10 translate-y-2" },
 ];
 
 export const LogoCloud = () => (
@@ -39,7 +39,7 @@ export const LogoCloud = () => (
         Trusted By Global Industry Leaders
       </p>
       <div className="relative overflow-hidden">
-        <div className="flex items-center gap-x-10 sm:gap-x-16 animate-marquee w-max">
+        <div className="flex items-center gap-x-6 sm:gap-x-10 animate-marquee w-max">
           {[...logos, ...logos].map((logo, i) => (
             <div
               key={`${logo.alt}-${i}`}
