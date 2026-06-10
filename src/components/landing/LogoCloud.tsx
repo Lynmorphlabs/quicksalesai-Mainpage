@@ -43,7 +43,7 @@ export const LogoCloud = () => (
           {[...logos, ...logos].map((logo, i) => (
             <div
               key={`${logo.alt}-${i}`}
-              className={`flex items-center justify-center shrink-0 w-[14vw] min-w-[140px] ${logo.wrapperClass || ""}`}
+              className={`flex items-center justify-center shrink-0 w-[18vw] min-w-[180px] ${logo.wrapperClass || ""}`}
             >
               <img
                 src={logo.src}
