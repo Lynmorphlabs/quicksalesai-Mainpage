@@ -96,7 +96,7 @@ export const HeroDashboard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-12 min-h-[520px]">
+      <div className="grid grid-cols-12 min-h-[440px]">
         {/* Sidebar */}
         <aside className="col-span-12 sm:col-span-5 lg:col-span-4 border-r border-border/50 bg-secondary/30">
           {/* Channels on top */}
