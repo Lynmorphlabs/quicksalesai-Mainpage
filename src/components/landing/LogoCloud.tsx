@@ -17,7 +17,7 @@ import bitmartLogo from "@/assets/logos/bitmart.png.asset.json";
 const logos: { src: string; alt: string; className: string; wrapperClass?: string }[] = [
   { src: viuLogo.url, alt: "Viu", className: "h-16 sm:h-20" },
   { src: huaweiLogo.url, alt: "Huawei", className: "h-14 sm:h-16" },
-  { src: antGroupLogo.url, alt: "Ant Group", className: "h-36 sm:h-44" },
+  { src: antGroupLogo.url, alt: "Ant Group", className: "h-44 sm:h-52" },
   { src: stEngineeringLogo.url, alt: "ST Engineering", className: "h-12 sm:h-14" },
   { src: hpLogo.url, alt: "HP", className: "h-14 sm:h-16" },
   { src: pgLogo.url, alt: "P&G", className: "h-[2.75rem] sm:h-[3.75rem]", wrapperClass: "w-[8vw] min-w-[80px] -ml-6 sm:-ml-10" },
@@ -27,7 +27,7 @@ const logos: { src: string; alt: string; className: string; wrapperClass?: strin
   { src: shopeeLogo.url, alt: "Shopee", className: "h-20 sm:h-24 -translate-y-2" },
   { src: hiltonLogo.url, alt: "Hilton Hotels & Resorts", className: "h-14 sm:h-16" },
   { src: ongongLogo.url, alt: "Ong & Ong", className: "h-20 sm:h-24", wrapperClass: "ml-8 sm:ml-12" },
-  { src: cfldLogo.url, alt: "CFLD", className: "h-12 sm:h-14" },
+  { src: cfldLogo.url, alt: "CFLD", className: "h-10 sm:h-12" },
   { src: galaLogo.url, alt: "Gala", className: "h-8 sm:h-10 -translate-y-1" },
   { src: bitmartLogo.url, alt: "BitMart", className: "h-8 sm:h-10" },
 ];
