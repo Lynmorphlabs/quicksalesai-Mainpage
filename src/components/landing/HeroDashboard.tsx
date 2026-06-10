@@ -51,22 +51,19 @@ const channels = [
   { Icon: TikTokBrand, bg: "transparent", label: "TikTok", bare: true },
 ];
 
-type Contact = { name: string; msg: string; time: string; unread: number; color: string; initial: string; channel: string; active?: boolean; avatar?: string };
+type Tag = "Buy" | "Sell" | "Rent" | "Viewing Scheduled";
+type Contact = { name: string; msg: string; time: string; unread: number; color: string; initial: string; channel: string; active?: boolean; avatar?: string; tags?: Tag[] };
 const contacts: Contact[] = [
-  { name: "Jason Tan", msg: "Is the Bukit Timah unit still…", time: "2m", unread: 3, color: "hsl(var(--bubble-pink))", initial: "JT", active: true, channel: "wa", avatar: jasonAvatar.url },
-  { name: "Priya Lakshmanan", msg: "Can you schedule a viewing?", time: "9m", unread: 1, color: "hsl(var(--bubble-violet))", initial: "PL", channel: "ig", avatar: priyaAvatar.url },
-  { name: "Marcus Ho", msg: "What's the PSF for the 3BR?", time: "15m", unread: 2, color: "hsl(var(--bubble-amber))", initial: "MH", channel: "wa" },
-  { name: "Sarah Fong", msg: "Send me the floor plan pls", time: "32m", unread: 0, color: "hsl(var(--bubble-teal))", initial: "SF", channel: "wc", avatar: sarahAvatar.url },
-  { name: "Rajan Kumar", msg: "Thanks, send me the floor plan", time: "1h", unread: 0, color: "hsl(var(--bubble-blue))", initial: "RK", channel: "tt" },
+  { name: "Jason Tan", msg: "Is the Bukit Timah unit still…", time: "2m", unread: 3, color: "hsl(var(--bubble-pink))", initial: "JT", active: true, channel: "wa", avatar: jasonAvatar.url, tags: ["Buy"] },
+  { name: "Priya Lakshmanan", msg: "Can you schedule a viewing?", time: "9m", unread: 1, color: "hsl(var(--bubble-violet))", initial: "PL", channel: "ig", avatar: priyaAvatar.url, tags: ["Buy", "Viewing Scheduled"] },
+  { name: "Marcus Ho", msg: "What's the PSF for the 3BR?", time: "15m", unread: 2, color: "hsl(var(--bubble-amber))", initial: "MH", channel: "wa", tags: ["Buy"] },
+  { name: "Sarah Fong", msg: "Send me the floor plan pls", time: "32m", unread: 0, color: "hsl(var(--bubble-teal))", initial: "SF", channel: "wc", avatar: sarahAvatar.url, tags: ["Rent"] },
+  { name: "Rajan Kumar", msg: "Thanks, send me the floor plan", time: "1h", unread: 0, color: "hsl(var(--bubble-blue))", initial: "RK", channel: "tt", tags: ["Sell"] },
 ];
 
 const moreContacts: Contact[] = [
-  { name: "Aisha Rahman", msg: "Is the unit pet-friendly?", time: "2h", unread: 0, color: "hsl(var(--bubble-pink))", initial: "AR", channel: "fb", avatar: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=120&h=120&fit=crop" },
-  { name: "Daniel Lim", msg: "Can we negotiate the price?", time: "3h", unread: 0, color: "hsl(var(--bubble-amber))", initial: "DL", channel: "wa" },
-  { name: "Wei Ling", msg: "Sent over the docs, thanks!", time: "5h", unread: 0, color: "hsl(var(--bubble-violet))", initial: "WL", channel: "wc", avatar: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=120&h=120&fit=crop" },
-  { name: "Kenny Chua", msg: "Looking for a 2BR under $1.8M", time: "1d", unread: 0, color: "hsl(var(--bubble-teal))", initial: "KC", channel: "tt" },
-  { name: "Mei Ling Tan", msg: "Can I view this weekend?", time: "1d", unread: 0, color: "hsl(var(--bubble-blue))", initial: "ML", channel: "ig", avatar: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?w=120&h=120&fit=crop" },
-  { name: "Ravi Subramaniam", msg: "Is parking included?", time: "2d", unread: 0, color: "hsl(var(--bubble-amber))", initial: "RS", channel: "fb", avatar: "https://images.unsplash.com/photo-1608889476561-6242cfdbf622?w=120&h=120&fit=crop" },
+  { name: "Aisha Rahman", msg: "Is the unit pet-friendly?", time: "2h", unread: 0, color: "hsl(var(--bubble-pink))", initial: "AR", channel: "fb", avatar: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=120&h=120&fit=crop", tags: ["Rent", "Viewing Scheduled"] },
+  { name: "Daniel Lim", msg: "Can we negotiate the price?", time: "3h", unread: 0, color: "hsl(var(--bubble-amber))", initial: "DL", channel: "wa", tags: ["Buy"] },
 ];
 
 const allContacts = [...contacts, ...moreContacts];
@@ -135,6 +132,15 @@ export const HeroDashboard = () => {
                     <span className="text-[10px] text-muted-foreground">{c.time}</span>
                   </div>
                   <p className="text-xs text-muted-foreground truncate">{c.msg}</p>
+                  {c.tags && c.tags.length > 0 && (
+                    <div className="mt-1 flex flex-wrap gap-1">
+                      {c.tags.map((t) => (
+                        <span key={t} className={`text-[9px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full border ${tagStyles[t]}`}>
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 {c.unread > 0 && (
                   <span className="h-5 w-5 rounded-full text-white text-[10px] font-bold grid place-items-center" style={{ background: channelDot[c.channel].bg }}>{c.unread}</span>
