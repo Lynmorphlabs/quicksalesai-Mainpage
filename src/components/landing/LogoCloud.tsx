@@ -27,7 +27,7 @@ const logos: { src: string; alt: string; className: string; wrapperClass?: strin
   { src: shopeeLogo.url, alt: "Shopee", className: "h-20 sm:h-24 -translate-y-2" },
   { src: hiltonLogo.url, alt: "Hilton Hotels & Resorts", className: "h-14 sm:h-16" },
   { src: ongongLogo.url, alt: "Ong & Ong", className: "h-20 sm:h-24", wrapperClass: "ml-8 sm:ml-12" },
-  { src: cfldLogo.url, alt: "CFLD", className: "h-10 sm:h-12", wrapperClass: "!w-[24vw] !min-w-[280px] px-3 sm:px-4" },
+  { src: cfldLogo.url, alt: "CFLD", className: "h-14 sm:h-16" },
   { src: galaLogo.url, alt: "Gala", className: "h-8 sm:h-10 -translate-y-1" },
   { src: bitmartLogo.url, alt: "BitMart", className: "h-8 sm:h-10" },
 ];
