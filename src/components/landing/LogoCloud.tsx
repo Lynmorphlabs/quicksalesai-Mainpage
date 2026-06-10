@@ -17,7 +17,7 @@ import bitmartLogo from "@/assets/logos/bitmart.png.asset.json";
 const logos: { src: string; alt: string; className: string; wrapperClass?: string }[] = [
   { src: viuLogo.url, alt: "Viu", className: "h-16 sm:h-20" },
   { src: huaweiLogo.url, alt: "Huawei", className: "h-14 sm:h-16" },
-  { src: antGroupLogo.url, alt: "Ant Group", className: "h-24 sm:h-28", wrapperClass: "w-[18vw] min-w-[200px]" },
+  { src: antGroupLogo.url, alt: "Ant Group", className: "h-28 sm:h-32", wrapperClass: "w-[18vw] min-w-[200px]" },
   { src: stEngineeringLogo.url, alt: "ST Engineering", className: "h-12 sm:h-14" },
   { src: hpLogo.url, alt: "HP", className: "h-14 sm:h-16" },
   { src: pgLogo.url, alt: "P&G", className: "h-[2.75rem] sm:h-[3.75rem]", wrapperClass: "w-[8vw] min-w-[80px] -ml-6 sm:-ml-10" },
