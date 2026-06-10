@@ -58,12 +58,12 @@ const contacts: Contact[] = [
   { name: "Priya Lakshmanan", msg: "Can you schedule a viewing?", time: "9m", unread: 1, color: "hsl(var(--bubble-violet))", initial: "PL", channel: "ig", avatar: priyaAvatar.url, tags: ["Buy"] },
   { name: "Marcus Ho", msg: "What's the PSF for the 3BR?", time: "15m", unread: 2, color: "hsl(var(--bubble-amber))", initial: "MH", channel: "wa", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=faces", tags: ["Buy"] },
   { name: "Sarah Fong", msg: "Send me the floor plan pls", time: "32m", unread: 0, color: "hsl(var(--bubble-teal))", initial: "SF", channel: "wc", avatar: sarahAvatar.url, tags: ["Buy"] },
-  { name: "Rajan Kumar", msg: "Ready to list my Tiong Bahru unit", time: "1h", unread: 0, color: "hsl(var(--bubble-blue))", initial: "RK", channel: "tt", avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=160&h=160&fit=crop&crop=faces", tags: ["Sell"] },
+  { name: "Rajan Kumar", msg: "Ready to list my Tiong Bahru unit", time: "1h", unread: 0, color: "hsl(var(--bubble-blue))", initial: "RK", channel: "tt", avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=160&h=160&fit=crop&crop=faces", tags: ["Buy"] },
 ];
 
 const moreContacts: Contact[] = [
   { name: "Aisha Rahman", msg: "Is the unit pet-friendly?", time: "2h", unread: 0, color: "hsl(var(--bubble-pink))", initial: "AR", channel: "fb", avatar: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=120&h=120&fit=crop", tags: ["Rent", "Viewing Scheduled"] },
-  { name: "Daniel Lim", msg: "Confirmed for Saturday 2pm viewing", time: "3h", unread: 0, color: "hsl(var(--bubble-amber))", initial: "DL", channel: "wa", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&fit=crop&crop=faces", tags: ["Buy", "Viewing Scheduled"] },
+  { name: "Daniel Lim", msg: "Confirmed for Saturday 2pm viewing", time: "3h", unread: 0, color: "hsl(var(--bubble-amber))", initial: "DL", channel: "wa", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&fit=crop&crop=faces", tags: ["Sell", "Viewing Scheduled"] },
 ];
 
 const allContacts = [...contacts, ...moreContacts];
