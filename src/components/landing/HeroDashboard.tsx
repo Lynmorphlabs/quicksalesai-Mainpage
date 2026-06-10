@@ -161,7 +161,7 @@ export const HeroDashboard = () => {
         <section className="col-span-12 sm:col-span-7 lg:col-span-5 flex flex-col bg-[hsl(60_30%_97%)]">
           <header className="flex items-center justify-between px-5 py-3 border-b border-border/50 bg-card">
             <div className="flex items-center gap-3">
-              <div className="h-9 w-9 rounded-full grid place-items-center text-white text-xs font-bold" style={{ background: "hsl(var(--bubble-pink))" }}>JT</div>
+              <img src={jasonAvatar.url} alt="Jason Tan" className="h-9 w-9 rounded-full object-cover" />
               <div>
                 <p className="text-sm font-semibold">Jason Tan</p>
                 <p className="text-[11px] text-muted-foreground flex items-center gap-1.5">
