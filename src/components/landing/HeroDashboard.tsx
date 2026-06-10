@@ -55,15 +55,15 @@ type Tag = "Buy" | "Sell" | "Rent" | "Viewing Scheduled";
 type Contact = { name: string; msg: string; time: string; unread: number; color: string; initial: string; channel: string; active?: boolean; avatar?: string; tags?: Tag[] };
 const contacts: Contact[] = [
   { name: "Jason Tan", msg: "Is the Bukit Timah unit still…", time: "2m", unread: 3, color: "hsl(var(--bubble-pink))", initial: "JT", active: true, channel: "wa", avatar: jasonAvatar.url, tags: ["Buy"] },
-  { name: "Priya Lakshmanan", msg: "Can you schedule a viewing?", time: "9m", unread: 1, color: "hsl(var(--bubble-violet))", initial: "PL", channel: "ig", avatar: priyaAvatar.url, tags: ["Buy", "Viewing Scheduled"] },
-  { name: "Marcus Ho", msg: "What's the PSF for the 3BR?", time: "15m", unread: 2, color: "hsl(var(--bubble-amber))", initial: "MH", channel: "wa", tags: ["Buy"] },
-  { name: "Sarah Fong", msg: "Send me the floor plan pls", time: "32m", unread: 0, color: "hsl(var(--bubble-teal))", initial: "SF", channel: "wc", avatar: sarahAvatar.url, tags: ["Rent"] },
-  { name: "Rajan Kumar", msg: "Thanks, send me the floor plan", time: "1h", unread: 0, color: "hsl(var(--bubble-blue))", initial: "RK", channel: "tt", tags: ["Sell"] },
+  { name: "Priya Lakshmanan", msg: "Can you schedule a viewing?", time: "9m", unread: 1, color: "hsl(var(--bubble-violet))", initial: "PL", channel: "ig", avatar: priyaAvatar.url, tags: ["Buy"] },
+  { name: "Marcus Ho", msg: "What's the PSF for the 3BR?", time: "15m", unread: 2, color: "hsl(var(--bubble-amber))", initial: "MH", channel: "wa", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=faces", tags: ["Buy"] },
+  { name: "Sarah Fong", msg: "Send me the floor plan pls", time: "32m", unread: 0, color: "hsl(var(--bubble-teal))", initial: "SF", channel: "wc", avatar: sarahAvatar.url, tags: ["Buy"] },
+  { name: "Rajan Kumar", msg: "Ready to list my Tiong Bahru unit", time: "1h", unread: 0, color: "hsl(var(--bubble-blue))", initial: "RK", channel: "tt", avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=160&h=160&fit=crop&crop=faces", tags: ["Sell"] },
 ];
 
 const moreContacts: Contact[] = [
   { name: "Aisha Rahman", msg: "Is the unit pet-friendly?", time: "2h", unread: 0, color: "hsl(var(--bubble-pink))", initial: "AR", channel: "fb", avatar: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=120&h=120&fit=crop", tags: ["Rent", "Viewing Scheduled"] },
-  { name: "Daniel Lim", msg: "Can we negotiate the price?", time: "3h", unread: 0, color: "hsl(var(--bubble-amber))", initial: "DL", channel: "wa", tags: ["Buy"] },
+  { name: "Daniel Lim", msg: "Confirmed for Saturday 2pm viewing", time: "3h", unread: 0, color: "hsl(var(--bubble-amber))", initial: "DL", channel: "wa", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&fit=crop&crop=faces", tags: ["Buy", "Viewing Scheduled"] },
 ];
 
 const allContacts = [...contacts, ...moreContacts];
@@ -251,7 +251,6 @@ export const HeroDashboard = () => {
 
           <Metric label="Leads handled" value="84" trend="+22%" Icon={MessageSquare} iconColor="hsl(var(--bubble-teal))" />
           <Metric label="Viewings booked" value="17" trend="+14%" Icon={CalendarCheck} iconColor="hsl(var(--bubble-blue))" />
-          <Metric label="Avg response" value="<30s" Icon={Clock} iconColor="hsl(var(--bubble-amber))" />
 
           <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mt-2">Media shared</p>
           <div className="grid grid-cols-3 gap-2">
