@@ -5,32 +5,64 @@ const plans = [
   {
     name: "Starter",
     price: "$99",
-    desc: "Launch your first AI Sales Agent on WhatsApp.",
-    features: ["1 WhatsApp number", "AI Sales Agent", "Smart FAQ handling", "AI Knowledge Base", "Basic analytics"],
+    desc: "Get your first AI agent live and start converting leads 24/7.",
+    features: [
+      "1 WhatsApp number",
+      "24/7 AI Sales Agent",
+      "Multilingual AI Agent",
+      "FAQ & Knowledge Base",
+      "Reads voice messages & images",
+      "Appointment scheduling",
+      "Basic analytics",
+      "Guided onboarding",
+    ],
+    footnote: "Go live today. Start closing leads tonight, automatically.",
     cta: "Get Started",
     featured: false,
   },
   {
     name: "Growth",
     price: "$149",
-    desc: "Automate conversations & scale your outreach.",
-    features: ["3 WhatsApp numbers", "Workflow automation", "WhatsApp templates", "Bulk messaging", "Lead engagement", "Advanced analytics"],
+    desc: "Scale your outreach and never miss a lead again.",
+    features: [
+      "3 WhatsApp numbers",
+      "Everything in Starter",
+      "Broadcast messaging",
+      "WhatsApp templates",
+      "Automated follow-ups",
+      "Priority support & onboarding",
+    ],
+    footnote: "Most businesses see returns within their first week.",
     cta: "Get Started",
     featured: true,
   },
   {
     name: "Pro",
-    price: "$249",
-    desc: "Run multiple AI agents & generate new leads.",
-    features: ["Multi AI agents", "WhatsApp detection", "Lead Finder & Qualification", "CRM integration", "Priority support"],
+    price: "$199",
+    desc: "Automate your entire sales process, end to end.",
+    features: [
+      "Everything in Growth",
+      "Multiple AI agents",
+      "Workflow automation",
+      "Lead Finder",
+      "Priority support & onboarding",
+    ],
+    footnote: "Businesses on Pro close 3x more leads with the same headcount.",
     cta: "Get Started",
     featured: false,
   },
   {
     name: "Scale",
     price: "$399",
-    desc: "Connect your entire business with AI automation.",
-    features: ["Everything in Pro", "Webhooks & API access", "Custom integrations", "Dedicated CSM", "Premium SLA"],
+    desc: "The full stack for high-volume sales operations.",
+    features: [
+      "Everything in Pro",
+      "Custom integrations",
+      "Webhooks & API access",
+      "Dedicated CSM",
+      "Hands-on onboarding & setup",
+    ],
+    footnote: "For businesses running sales across multiple locations or product lines.",
     cta: "Get Started",
     featured: false,
   },
@@ -78,9 +110,14 @@ export const Pricing = () => (
                 </li>
               ))}
             </ul>
+            {p.footnote && (
+              <p className={`mt-5 text-xs italic ${p.featured ? "opacity-90" : "text-muted-foreground"}`}>
+                {p.footnote}
+              </p>
+            )}
             <Button
               size="lg"
-              className={`mt-7 rounded-full w-full ${
+              className={`mt-5 rounded-full w-full ${
                 p.featured
                   ? "bg-white text-primary hover:bg-white/90"
                   : "bg-foreground text-background hover:opacity-90"

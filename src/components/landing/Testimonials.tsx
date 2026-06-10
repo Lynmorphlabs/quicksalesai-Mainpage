@@ -2,11 +2,9 @@ import { Quote } from "lucide-react";
 import asiatokenfundLogo from "@/assets/logos/asiatokenfund.jpeg";
 import ascentisLogo from "@/assets/logos/ascentis.png";
 import pestwerkzLogo from "@/assets/logos/pestwerkz.jpg";
-import eyechampLogo from "@/assets/logos/eyechamp.jpg";
 import lckLogo from "@/assets/logos/lck.jpg";
 import pengemsLogo from "@/assets/logos/pengems.jpg";
 import glasshouseLogo from "@/assets/logos/glasshouse.jpg";
-import desireeGemsLogo from "@/assets/logos/desiree-gems.png";
 
 const testimonials = [
   {
@@ -41,14 +39,6 @@ const testimonials = [
       "I tried the lead scraper feature and within the first week I already had more than 20 new enquiries coming in that I didn't go and find myself, and impressive AI customer support!",
   },
   {
-    name: "Andrew Tan",
-    role: "EyeChamp Optometrist",
-    initials: "AT",
-    logo: eyechampLogo,
-    quote:
-      "I always call every single customers to remind them to collect their contact lenses. Now the AI sends the reminders for me and they just show up. Saves me so much time.",
-  },
-  {
     name: "Brian Lee",
     role: "LCK Aluminum",
     initials: "BL",
@@ -70,14 +60,6 @@ const testimonials = [
     initials: "WZ",
     quote:
       "I was in a viewing once and missed 3 enquiries. Lost all of them. Now I never miss one because AI replies while I'm with another client. Wish I had this earlier!! Cheapest & smartest assistant!",
-  },
-  {
-    name: "Bernard Philip",
-    role: "Desiree Gems Jewelry Retailer",
-    initials: "BP",
-    logo: desireeGemsLogo,
-    quote:
-      "I couldn't reply fast enough occasionally. After I set this up, everything gets answered and booked automatically. Appointments went up.",
   },
   {
     name: "Toh Wee Leong",
