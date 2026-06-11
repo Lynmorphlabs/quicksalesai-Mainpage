@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-full.png";
-import { Link } from "react-router-dom";
 
 const links: { label: string; hash: string }[] = [
   { label: "Home", hash: "" },
@@ -10,21 +9,38 @@ const links: { label: string; hash: string }[] = [
   { label: "Contact", hash: "#contact" },
 ];
 
+const handleNavClick = (hash: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+  if (!hash) {
+    event.preventDefault();
+    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+
+  const target = document.querySelector(hash);
+  if (!target) return;
+
+  event.preventDefault();
+  window.history.replaceState(null, "", `${window.location.pathname}${hash}`);
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
 export const Navbar = () => (
   <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/70 border-b border-border/40">
     <nav className="container flex items-center justify-between h-16">
-      <Link to="/" className="relative flex items-center h-16 w-32 md:w-64 shrink-0">
+      <a href="/" className="relative flex items-center h-16 w-32 md:w-64 shrink-0" onClick={handleNavClick("")}>
         <img src={logo} alt="Quicksales.ai logo" className="pointer-events-none absolute left-0 top-1/2 h-24 md:h-40 w-auto max-w-none [transform:translateY(calc(-50%+0.5rem))] md:[transform:translateY(calc(-50%+0.75rem))]" />
-      </Link>
+      </a>
       <ul className="hidden md:flex items-center gap-1 bg-card/60 border border-border/60 rounded-full px-2 py-1 shadow-soft">
         {links.map((l) => (
           <li key={l.label}>
-            <Link
-              to={`/${l.hash}`}
+            <a
+              href={l.hash || "/"}
+              onClick={handleNavClick(l.hash)}
               className="px-4 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground rounded-full hover:bg-secondary transition-smooth"
             >
               {l.label}
-            </Link>
+            </a>
           </li>
         ))}
       </ul>
