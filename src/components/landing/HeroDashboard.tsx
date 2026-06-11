@@ -63,7 +63,7 @@ const contacts: Contact[] = [
 
 const moreContacts: Contact[] = [
   { name: "Aisha Rahman", msg: "Is the unit pet-friendly?", time: "2h", unread: 0, color: "hsl(var(--bubble-pink))", initial: "AR", channel: "fb", avatar: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=120&h=120&fit=crop", tags: ["Rent", "Viewing Scheduled"] },
-  { name: "Daniel Lim", msg: "Confirmed for Saturday 2pm viewing", time: "3h", unread: 0, color: "hsl(var(--bubble-amber))", initial: "DL", channel: "wa", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&fit=crop&crop=faces", tags: ["Sell", "Viewing Scheduled"] },
+  { name: "Daniel Lim", msg: "Confirmed for Saturday 2pm viewing", time: "3h", unread: 0, color: "hsl(var(--bubble-amber))", initial: "DL", channel: "wa", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&fit=crop&crop=faces", tags: ["Sell"] },
 ];
 
 const allContacts = [...contacts, ...moreContacts];
