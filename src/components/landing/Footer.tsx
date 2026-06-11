@@ -21,7 +21,7 @@ const cols = [
   {
     title: "Resources",
     links: [
-      { label: "Testimonials", href: "#", disabled: true },
+      { label: "Testimonials", href: "/#testimonials", disabled: false },
       { label: "FAQ", href: "#", disabled: true },
     ],
   },
