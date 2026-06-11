@@ -14,7 +14,7 @@ export const Navbar = () => (
   <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/70 border-b border-border/40">
     <nav className="container flex items-center justify-between h-16">
       <Link to="/" className="relative flex items-center h-16 w-32 md:w-64 shrink-0">
-        <img src={logo} alt="Quicksales.ai logo" className="absolute left-0 top-1/2 h-24 md:h-40 w-auto max-w-none [transform:translateY(calc(-50%+0.5rem))] md:[transform:translateY(calc(-50%+0.75rem))]" />
+        <img src={logo} alt="Quicksales.ai logo" className="pointer-events-none absolute left-0 top-1/2 h-24 md:h-40 w-auto max-w-none [transform:translateY(calc(-50%+0.5rem))] md:[transform:translateY(calc(-50%+0.75rem))]" />
       </Link>
       <ul className="hidden md:flex items-center gap-1 bg-card/60 border border-border/60 rounded-full px-2 py-1 shadow-soft">
         {links.map((l) => (
