@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-full.png";
+import type { MouseEvent } from "react";
 
 const links: { label: string; hash: string }[] = [
   { label: "Home", hash: "" },
@@ -9,7 +10,7 @@ const links: { label: string; hash: string }[] = [
   { label: "Contact", hash: "#contact" },
 ];
 
-const handleNavClick = (hash: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+const handleNavClick = (hash: string) => (event: MouseEvent<HTMLAnchorElement>) => {
   if (!hash) {
     event.preventDefault();
     window.history.replaceState(null, "", window.location.pathname + window.location.search);
