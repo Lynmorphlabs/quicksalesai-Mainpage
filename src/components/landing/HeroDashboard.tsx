@@ -58,7 +58,7 @@ const contacts: Contact[] = [
   { name: "Priya Lakshmanan", msg: "Can you schedule a viewing?", time: "9m", unread: 1, color: "hsl(var(--bubble-violet))", initial: "PL", channel: "ig", avatar: priyaAvatar.url, tags: ["Buy"] },
   { name: "Marcus Ho", msg: "What's the PSF for the 3BR?", time: "15m", unread: 2, color: "hsl(var(--bubble-amber))", initial: "MH", channel: "wa", avatar: "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=160&h=160&fit=crop&crop=faces", tags: ["Buy"] },
   { name: "Sarah Fong", msg: "Send me the floor plan pls", time: "32m", unread: 0, color: "hsl(var(--bubble-teal))", initial: "SF", channel: "wc", avatar: sarahAvatar.url, tags: ["Buy"] },
-  { name: "Rajan Kumar", msg: "Ready to list my Tiong Bahru unit", time: "1h", unread: 0, color: "hsl(var(--bubble-blue))", initial: "RK", channel: "tt", avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=160&h=160&fit=crop&crop=faces", tags: ["Buy"] },
+  { name: "Rajan Kumar", msg: "Ready to list my Tiong Bahru unit", time: "1h", unread: 0, color: "hsl(var(--bubble-blue))", initial: "RK", channel: "tt", avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=160&h=160&fit=crop&crop=faces", tags: ["Sell"] },
 ];
 
 const moreContacts: Contact[] = [
