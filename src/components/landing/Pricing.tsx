@@ -115,7 +115,7 @@ export const Pricing = () => (
                 {p.footnote}
               </p>
             )}
-            <Button
+            <Button asChild
               size="lg"
               className={`mt-5 rounded-full w-full ${
                 p.featured
@@ -123,7 +123,9 @@ export const Pricing = () => (
                   : "bg-foreground text-background hover:opacity-90"
               }`}
             >
-              {p.cta}
+              <a href="https://quicksales.ai/auth/login" target="_blank" rel="noopener noreferrer">
+                {p.cta}
+              </a>
             </Button>
           </div>
         ))}
