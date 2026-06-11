@@ -11,7 +11,7 @@ import { CTA } from "@/components/landing/CTA";
 import { Footer } from "@/components/landing/Footer";
 
 const Index = () => (
-  <main className="min-h-screen bg-background">
+  <main id="top" className="min-h-screen bg-background">
     <Navbar />
     <h1 className="sr-only">Quicksales.ai — Trusted WhatsApp Sales Platform for Growing Businesses</h1>
     <Hero />
