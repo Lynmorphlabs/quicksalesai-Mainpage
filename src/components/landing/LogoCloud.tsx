@@ -13,6 +13,7 @@ import ongongLogo from "@/assets/logos/ongong.png.asset.json";
 import cfldLogo from "@/assets/logos/cfld.png.asset.json";
 import galaLogo from "@/assets/logos/gala.png.asset.json";
 import bitmartLogo from "@/assets/logos/bitmart.png.asset.json";
+import { resolveAssetUrl } from "@/lib/utils";
 
 const logos: { src: string; alt: string; className: string; wrapperClass?: string }[] = [
   { src: viuLogo.url, alt: "Viu", className: "h-16 sm:h-20 translate-y-2" },
@@ -46,7 +47,7 @@ export const LogoCloud = () => (
               className={`flex items-center justify-center shrink-0 w-[14vw] min-w-[140px] py-4 ${logo.wrapperClass || ""}`}
             >
               <img
-                src={logo.src}
+                src={resolveAssetUrl(logo.src)}
                 alt={logo.alt}
                 className={`${logo.className} w-auto max-w-full object-contain object-left transition-opacity`}
                 loading="lazy"

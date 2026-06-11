@@ -1,5 +1,7 @@
 import { Send, Phone, Video, MoreVertical, CheckCheck, Smile, Paperclip, FileText, Download, Instagram, Facebook, MessageSquare, CalendarCheck, Clock } from "lucide-react";
 import type { ComponentType, SVGProps } from "react";
+import { resolveAssetUrl } from "@/lib/utils";
+
 
 const WhatsAppIcon: ComponentType<SVGProps<SVGSVGElement>> = (props) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -37,11 +39,11 @@ import sarahAvatar from "../../assets/avatars/sarah.jpg.asset.json";
 const BrandImg = (src: string): ComponentType<{ className?: string }> => ({ className }) => (
   <img src={src} alt="" className={className} />
 );
-const InstagramBrand = BrandImg(instagramBrand.url);
-const FacebookBrand = BrandImg(facebookBrand.url);
-const TikTokBrand = BrandImg(tiktokBrand.url);
-const WhatsAppBrand = BrandImg(whatsappBrand.url);
-const WeChatBrand = BrandImg(wechatBrand.url);
+const InstagramBrand = BrandImg(resolveAssetUrl(instagramBrand.url));
+const FacebookBrand = BrandImg(resolveAssetUrl(facebookBrand.url));
+const TikTokBrand = BrandImg(resolveAssetUrl(tiktokBrand.url));
+const WhatsAppBrand = BrandImg(resolveAssetUrl(whatsappBrand.url));
+const WeChatBrand = BrandImg(resolveAssetUrl(wechatBrand.url));
 
 const channels = [
   { Icon: WhatsAppBrand, bg: "transparent", active: true, label: "WhatsApp", bare: true },
@@ -54,10 +56,10 @@ const channels = [
 type Tag = "Buy" | "Sell" | "Rent" | "Viewing Scheduled";
 type Contact = { name: string; msg: string; time: string; unread: number; color: string; initial: string; channel: string; active?: boolean; avatar?: string; tags?: Tag[] };
 const contacts: Contact[] = [
-  { name: "Jason Tan", msg: "Is the Bukit Timah unit still…", time: "2m", unread: 3, color: "hsl(var(--bubble-pink))", initial: "JT", active: true, channel: "wa", avatar: jasonAvatar.url, tags: ["Buy"] },
-  { name: "Priya Lakshmanan", msg: "Can you schedule a viewing?", time: "9m", unread: 1, color: "hsl(var(--bubble-violet))", initial: "PL", channel: "ig", avatar: priyaAvatar.url, tags: ["Buy"] },
+  { name: "Jason Tan", msg: "Is the Bukit Timah unit still…", time: "2m", unread: 3, color: "hsl(var(--bubble-pink))", initial: "JT", active: true, channel: "wa", avatar: resolveAssetUrl(jasonAvatar.url), tags: ["Buy"] },
+  { name: "Priya Lakshmanan", msg: "Can you schedule a viewing?", time: "9m", unread: 1, color: "hsl(var(--bubble-violet))", initial: "PL", channel: "ig", avatar: resolveAssetUrl(priyaAvatar.url), tags: ["Buy"] },
   { name: "Marcus Ho", msg: "What's the PSF for the 3BR?", time: "15m", unread: 2, color: "hsl(var(--bubble-amber))", initial: "MH", channel: "wa", avatar: "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=160&h=160&fit=crop&crop=faces", tags: ["Buy"] },
-  { name: "Sarah Fong", msg: "Send me the floor plan pls", time: "32m", unread: 0, color: "hsl(var(--bubble-teal))", initial: "SF", channel: "wc", avatar: sarahAvatar.url, tags: ["Buy"] },
+  { name: "Sarah Fong", msg: "Send me the floor plan pls", time: "32m", unread: 0, color: "hsl(var(--bubble-teal))", initial: "SF", channel: "wc", avatar: resolveAssetUrl(sarahAvatar.url), tags: ["Buy"] },
   { name: "Rajan Kumar", msg: "Ready to list my Tiong Bahru unit", time: "1h", unread: 0, color: "hsl(var(--bubble-blue))", initial: "RK", channel: "tt", avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=160&h=160&fit=crop&crop=faces", tags: ["Sell"] },
 ];
 
@@ -161,7 +163,7 @@ export const HeroDashboard = () => {
         <section className="col-span-12 sm:col-span-7 lg:col-span-5 flex flex-col bg-[hsl(60_30%_97%)]">
           <header className="flex items-center justify-between px-5 py-3 border-b border-border/50 bg-card">
             <div className="flex items-center gap-3">
-              <img src={jasonAvatar.url} alt="Jason Tan" className="h-9 w-9 rounded-full object-cover" />
+              <img src={resolveAssetUrl(jasonAvatar.url)} alt="Jason Tan" className="h-9 w-9 rounded-full object-cover" />
               <div>
                 <p className="text-sm font-semibold">Jason Tan</p>
                 <p className="text-[11px] text-muted-foreground flex items-center gap-1.5">
@@ -265,7 +267,7 @@ export const HeroDashboard = () => {
               <div key={i} className="aspect-square rounded-lg bg-secondary/60 border border-border/50 overflow-hidden relative group">
                 {m.img ? (
                   <>
-                    <img src={m.img} alt={m.sub} loading="lazy" className="w-full h-full object-cover" />
+                    <img src={resolveAssetUrl(m.img)} alt={m.sub} loading="lazy" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 grid place-items-center bg-black/25">
                       <span className="text-sm font-extrabold text-white tracking-wide drop-shadow">{m.sub}</span>
                     </div>
