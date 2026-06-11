@@ -32,11 +32,9 @@ export const Hero = () => {
         </p>
 
         <div className="mt-9 flex items-center justify-center gap-3 animate-fade-in-up [animation-delay:360ms]">
-          <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 shadow-elevated rounded-full px-7 text-base h-12 group">
-            <a href="https://quicksales.ai/dashboard" target="_blank" rel="noopener noreferrer">
-              Get Started
-              <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-            </a>
+          <Button size="lg" className="bg-gradient-primary hover:opacity-90 shadow-elevated rounded-full px-7 text-base h-12 group">
+            Get Started
+            <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
           </Button>
           <Button asChild size="lg" variant="outline" className="rounded-full px-7 text-base h-12 border-border/80">
             <a

@@ -28,10 +28,8 @@ export const Navbar = () => (
         ))}
       </ul>
       <div className="flex items-center gap-2">
-        <Button asChild size="sm" className="bg-gradient-primary hover:opacity-90 shadow-soft rounded-full px-5">
-          <a href="https://quicksales.ai/dashboard" target="_blank" rel="noopener noreferrer">
-            Get Started
-          </a>
+        <Button size="sm" className="bg-gradient-primary hover:opacity-90 shadow-soft rounded-full px-5">
+          Get Started
         </Button>
       </div>
     </nav>
