@@ -250,7 +250,7 @@ export const HeroDashboard = () => {
           <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Today</p>
 
           <Metric label="Leads handled" value="84" trend="+22%" Icon={MessageSquare} iconColor="hsl(var(--bubble-teal))" />
-          <Metric label="Viewings booked" value="17" trend="+14%" Icon={CalendarCheck} iconColor="hsl(var(--bubble-blue))" />
+          <Metric label="Viewing Scheduled" value="17" trend="+14%" Icon={CalendarCheck} iconColor="hsl(var(--bubble-blue))" />
 
           <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mt-2">Media shared</p>
           <div className="grid grid-cols-3 gap-2">
