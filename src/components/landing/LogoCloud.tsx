@@ -39,24 +39,20 @@ export const LogoCloud = () => (
       <p className="text-center text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-10">
         Trusted By Global Industry Leaders
       </p>
-      <div className="relative overflow-hidden">
-        <div className="flex items-center gap-x-6 sm:gap-x-10 animate-marquee w-max">
-          {[...logos, ...logos].map((logo, i) => (
-            <div
-              key={`${logo.alt}-${i}`}
-              className={`flex items-center justify-center shrink-0 w-[14vw] min-w-[140px] py-4 ${logo.wrapperClass || ""}`}
-            >
-              <img
-                src={resolveAssetUrl(logo.src)}
-                alt={logo.alt}
-                className={`${logo.className} w-auto max-w-full object-contain object-left transition-opacity`}
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-card/80 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-card/80 to-transparent" />
+      <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12">
+        {logos.map((logo) => (
+          <div
+            key={logo.alt}
+            className={`flex items-center justify-center py-2 ${logo.wrapperClass || ""}`}
+          >
+            <img
+              src={resolveAssetUrl(logo.src)}
+              alt={logo.alt}
+              className={`${logo.className} w-auto max-w-full object-contain object-left`}
+              loading="lazy"
+            />
+          </div>
+        ))}
       </div>
     </div>
   </section>
