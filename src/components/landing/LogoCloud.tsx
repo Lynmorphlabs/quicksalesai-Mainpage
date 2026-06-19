@@ -18,7 +18,7 @@ import { resolveAssetUrl } from "@/lib/utils";
 const logos: { src: string; alt: string; className: string }[] = [
   { src: viuLogo.url, alt: "Viu", className: "h-10 sm:h-12" },
   { src: huaweiLogo.url, alt: "Huawei", className: "h-10 sm:h-12" },
-  { src: antGroupLogo, alt: "Ant Group", className: "h-10 sm:h-12" },
+  { src: antGroupLogo as unknown as string, alt: "Ant Group", className: "h-10 sm:h-12" },
   { src: stEngineeringLogo.url, alt: "ST Engineering", className: "h-10 sm:h-12" },
   { src: hpLogo.url, alt: "HP", className: "h-10 sm:h-12" },
   { src: pgLogo.url, alt: "P&G", className: "h-10 sm:h-12" },
