@@ -26,7 +26,7 @@ const logos: { src: string; alt: string; className: string }[] = [
   { src: foodyLogo.url, alt: "Foody.vn", className: "h-10 sm:h-12" },
   { src: lotteriaLogo.url, alt: "Lotteria", className: "h-10 sm:h-12" },
   { src: shopeeLogo.url, alt: "Shopee", className: "h-10 sm:h-12" },
-  { src: hiltonLogo.url, alt: "Hilton Hotels & Resorts", className: "h-10 sm:h-12"Click" },
+  { src: hiltonLogo.url, alt: "Hilton Hotels & Resorts", className: "h-10 sm:h-12" },
   { src: ongongLogo.url, alt: "Ong & Ong", className: "h-10 sm:h-12" },
   { src: cfldLogo.url, alt: "CFLD", className: "h-10 sm:h-12" },
   { src: galaLogo.url, alt: "Gala", className: "h-10 sm:h-12" },
