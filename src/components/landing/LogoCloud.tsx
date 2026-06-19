@@ -39,16 +39,16 @@ export const LogoCloud = () => (
       <p className="text-center text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-10">
         Trusted By Global Industry Leaders
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12">
+      <div className="grid grid-cols-3 sm:grid-cols-5 gap-6 sm:gap-8 items-center">
         {logos.map((logo) => (
           <div
             key={logo.alt}
-            className={`flex items-center justify-center py-2 ${logo.wrapperClass || ""}`}
+            className="flex items-center justify-center h-20 sm:h-24 px-2"
           >
             <img
               src={resolveAssetUrl(logo.src)}
               alt={logo.alt}
-              className={`${logo.className} w-auto max-w-full object-contain object-left`}
+              className={`${logo.className} w-auto max-w-full object-contain`}
               loading="lazy"
             />
           </div>
