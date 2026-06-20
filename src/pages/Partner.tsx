@@ -255,18 +255,9 @@ const Partner = () => {
               </span>
             </label>
 
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+            <div className="pt-2">
               <Button type="submit" size="lg" disabled={submitting} className="bg-gradient-primary">
                 {submitting ? "Submitting..." : "Submit application"}
-              </Button>
-              <Button type="button" variant="outline" size="lg" asChild>
-                <a
-                  href={`https://api.whatsapp.com/send/?phone=${WHATSAPP_NUMBER}&text&type=phone_number&app_absent=0`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Talk to partnerships on WhatsApp
-                </a>
               </Button>
             </div>
           </form>
