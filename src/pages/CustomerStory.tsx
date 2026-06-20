@@ -11,6 +11,30 @@ const details: Record<string, {
   results: string[];
   quote: { text: string; author: string; role: string };
 }> = {
+  "greystone": {
+    challenge:
+      "Loan enquiries are complex and time-sensitive. Customers may not know which loan category applies — secured business loan, refinancing with cash-out, bridging, second charge or personal financing. Greystone's team had to repeatedly ask the same qualification questions, while loan packages, rates and document requirements kept changing across multiple internal documents.",
+    solution: [
+      "WhatsApp AI Agent that identifies loan category: Business, Property or Personal",
+      "Structured conversation flows per loan type (e.g. new purchase, refinancing, 2nd charge, bridging)",
+      "Google Drive synced knowledge base — update a doc, sync from dashboard, AI reflects the latest packages",
+      "Lead dashboard for advisors with customer details, loan type, documents collected and assignment",
+      "Clear next steps at handoff: Upload Documents, Speak to Advisor, Request Callback",
+    ],
+    results: [
+      "Faster loan enquiry qualification on WhatsApp",
+      "More complete lead information before advisor review",
+      "Less repetitive manual work for the team",
+      "Easier loan package updates via Google Drive sync",
+      "Cleaner advisor handoff with documents collected upfront",
+      "More consistent customer replies across loan products",
+    ],
+    quote: {
+      text: "Our advisors no longer restart conversations from zero. By the time a lead reaches them, the loan type, purpose and documents are already captured.",
+      author: "Greystone Operations",
+      role: "Loan Brokerage Team",
+    },
+  },
   "foody-asia": {
     challenge:
       "Foody Asia's 14 delivery brands juggled WhatsApp, Instagram DMs and webchat in separate apps. Order confirmations slipped through, peak-hour wait times stretched past 12 minutes and weekend staff burnout was rising.",
@@ -30,27 +54,6 @@ const details: Record<string, {
       text: "We used to lose orders every Friday night. Now Quicksales.ai answers in seconds and our staff focus on the cases that actually need them.",
       author: "Marcus Tan",
       role: "Head of Operations, Foody Asia",
-    },
-  },
-  "hilton-concierge": {
-    challenge:
-      "Hilton's APAC concierge teams fielded thousands of guest requests across 12 properties in 8 languages. Night shifts couldn't keep up, and repetitive questions about pool hours, spa bookings and room service were eating into high-touch service time.",
-    solution: [
-      "Deployed a multilingual AI concierge on WhatsApp and in-room QR chat",
-      "Integrated with PMS for live booking, billing and room status",
-      "Built escalation paths to human concierge for VIPs and complaints",
-      "Created branded broadcast journeys for pre-arrival and post-stay",
-    ],
-    results: [
-      "73% of guest chats resolved without human intervention",
-      "24/7 coverage across 8 languages with zero added headcount",
-      "Guest NPS for digital concierge up by 18 points",
-      "Spa & dining attach-rate from chat upsells up 29%",
-    ],
-    quote: {
-      text: "Quicksales.ai gives every guest a concierge in their pocket — and gives our team room to deliver the moments only humans can.",
-      author: "Priya Raman",
-      role: "Director of Guest Experience, Hilton APAC",
     },
   },
 };
