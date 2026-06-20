@@ -1,10 +1,28 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Quote } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
-import { Button } from "@/components/ui/button";
+import storyGreystone from "@/assets/story-greystone.jpg";
+import storyFoody from "@/assets/story-foody.jpg";
 
 export const stories = [
+  {
+    slug: "greystone",
+    company: "Greystone",
+    industry: "Financial Services",
+    region: "Loan Brokerage",
+    headline:
+      "Greystone Qualifies Loan Enquiries Faster with WhatsApp AI, Google Drive Sync and a Lead Dashboard",
+    summary:
+      "A WhatsApp AI Agent guides customers to the right loan category, collects documents earlier and hands cleaner leads to advisors — all from one dashboard.",
+    image: storyGreystone,
+    metrics: [
+      { value: "3×", label: "Faster lead qualification" },
+      { value: "100%", label: "Structured lead capture" },
+      { value: "1", label: "Source of truth (Drive)" },
+    ],
+    color: "from-sky-500/20 to-indigo-500/10",
+  },
   {
     slug: "foody-asia",
     company: "Foody Asia",
@@ -13,6 +31,7 @@ export const stories = [
     headline: "Foody Asia cut response time by 82% across 14 outlets with Quicksales.ai",
     summary:
       "By unifying WhatsApp, Instagram and webchat under one AI inbox, Foody Asia handles 6× more orders without adding headcount.",
+    image: storyFoody,
     metrics: [
       { value: "82%", label: "Faster first response" },
       { value: "6×", label: "Order volume handled" },
@@ -20,93 +39,115 @@ export const stories = [
     ],
     color: "from-amber-500/20 to-rose-500/10",
   },
-  {
-    slug: "hilton-concierge",
-    company: "Hilton Concierge APAC",
-    industry: "Hospitality · Guest services",
-    region: "Asia Pacific",
-    headline: "Hilton's APAC concierge runs 24/7 in 8 languages on Quicksales.ai",
-    summary:
-      "An AI concierge handles bookings, room service and FAQs around the clock, escalating to human staff only when guests need a personal touch.",
-    metrics: [
-      { value: "24/7", label: "Multilingual coverage" },
-      { value: "73%", label: "Auto-resolved chats" },
-      { value: "+18 NPS", label: "Guest satisfaction lift" },
-    ],
-    color: "from-sky-500/20 to-indigo-500/10",
-  },
 ];
 
-const Customers = () => (
-  <div className="min-h-screen bg-background">
-    <Navbar />
-    <main>
-      <section className="container pt-20 pb-12 text-center">
-        <span className="inline-block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-          Customer stories
-        </span>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-          Teams growing faster with Quicksales.ai
-        </h1>
-        <p className="mt-5 max-w-2xl mx-auto text-muted-foreground text-lg">
-          See how customer-facing teams use one AI-powered inbox to convert more conversations into revenue.
-        </p>
-      </section>
+const Customers = () => {
+  const featured = stories[0];
+  const rest = stories.slice(1);
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        {/* Dark hero */}
+        <section className="bg-black text-white">
+          <div className="container py-20 md:py-24 text-center">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+              🎉 Customer stories
+            </h1>
+            <p className="mt-5 max-w-2xl mx-auto text-white/70 text-lg">
+              Hear from our customers about their experiences using Quicksales.ai
+              and the impact it has had on their business.
+            </p>
+          </div>
+        </section>
 
-      <section className="container pb-24 grid gap-6 md:grid-cols-2">
-        {stories.map((s) => (
+        {/* Featured story */}
+        <section className="container py-16 md:py-20">
           <Link
-            key={s.slug}
-            to={`/customers/${s.slug}`}
-            className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card/50 p-8 hover:border-primary/40 hover:shadow-soft transition-smooth"
+            to={`/customers/${featured.slug}`}
+            className="group grid gap-10 md:grid-cols-2 md:items-center"
           >
-            <div
-              className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${s.color} opacity-60`}
-            />
-            <div className="relative">
-              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                {s.industry} · {s.region}
+            <div className="overflow-hidden rounded-2xl">
+              <img
+                src={featured.image}
+                alt={featured.company}
+                width={1024}
+                height={1024}
+                className="w-full h-full object-cover aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-primary">
+                {featured.industry}
               </p>
-              <h2 className="mt-3 text-2xl font-semibold leading-snug">
-                {s.headline}
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight leading-tight">
+                {featured.headline}
               </h2>
-              <p className="mt-4 text-muted-foreground">{s.summary}</p>
-              <div className="mt-6 grid grid-cols-3 gap-4">
-                {s.metrics.map((m) => (
-                  <div key={m.label}>
-                    <div className="text-2xl font-bold">{m.value}</div>
-                    <div className="text-xs text-muted-foreground mt-1">
-                      {m.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 inline-flex items-center text-sm font-medium text-primary">
-                Read the {s.company} story
+              <p className="mt-5 text-muted-foreground text-lg">
+                {featured.summary}
+              </p>
+              <span className="mt-6 inline-flex items-center text-sm font-medium text-primary">
+                Read the story
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </div>
+              </span>
             </div>
           </Link>
-        ))}
-      </section>
+        </section>
 
-      <section className="container pb-24">
-        <div className="rounded-2xl border border-border/60 bg-card/50 p-10 text-center">
-          <Quote className="h-8 w-8 text-primary mx-auto mb-4" />
-          <p className="text-xl md:text-2xl font-medium max-w-3xl mx-auto">
-            "Quicksales.ai replaced four separate tools and gave our team back hours every day."
-          </p>
-          <p className="mt-4 text-sm text-muted-foreground">
-            — Operations leaders across F&B, hospitality and retail
-          </p>
-          <Button asChild className="mt-8 bg-gradient-primary hover:opacity-90 rounded-full px-6">
-            <a href="/#pricing">Start your story</a>
-          </Button>
-        </div>
-      </section>
-    </main>
-    <Footer />
-  </div>
-);
+        {/* KPI strip */}
+        <section className="bg-muted/40 border-y border-border/40">
+          <div className="container py-10 grid gap-8 md:grid-cols-4 items-center">
+            <h3 className="text-xl font-semibold">
+              Why teams choose Quicksales.ai
+            </h3>
+            {[
+              { v: "80k+", l: "Channels Connected" },
+              { v: "622m+", l: "Messages Sent" },
+              { v: "18m+", l: "Conversations Closed" },
+            ].map((k) => (
+              <div key={k.l} className="border-l border-border/60 pl-6">
+                <div className="text-3xl md:text-4xl font-bold text-primary">
+                  {k.v}
+                </div>
+                <div className="text-sm text-muted-foreground mt-1">{k.l}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* All stories grid */}
+        <section className="container py-16 md:py-20">
+          <div className="grid gap-8 md:grid-cols-3">
+            {rest.map((s) => (
+              <Link
+                key={s.slug}
+                to={`/customers/${s.slug}`}
+                className="group flex flex-col"
+              >
+                <div className="overflow-hidden rounded-xl">
+                  <img
+                    src={s.image}
+                    alt={s.company}
+                    width={1024}
+                    height={1024}
+                    loading="lazy"
+                    className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <p className="mt-4 text-sm font-semibold text-primary">
+                  {s.industry}
+                </p>
+                <h3 className="mt-2 text-xl font-semibold leading-snug">
+                  {s.headline}
+                </h3>
+              </Link>
+            ))}
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
 
 export default Customers;
