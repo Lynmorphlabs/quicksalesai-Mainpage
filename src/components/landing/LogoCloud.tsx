@@ -37,7 +37,7 @@ export const LogoCloud = () => (
   <section className="py-14 border-y border-border/40 bg-card/40">
     <div className="container">
       <p className="text-center text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-10">
-        Trusted By Global Industry Leaders
+        Team Experience
       </p>
       <div className="grid grid-cols-3 sm:grid-cols-5 gap-6 sm:gap-8 items-center">
         {logos.map((logo) => (
