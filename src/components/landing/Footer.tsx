@@ -23,9 +23,7 @@ const cols = [
     title: "Resources",
     links: [
       { label: "Testimonials", href: "/#testimonials", disabled: false },
-      { label: "Customers", href: "/customers", disabled: false },
-      { label: "Foody Asia story", href: "/customers/foody-asia", disabled: false },
-      { label: "Hilton Concierge story", href: "/customers/hilton-concierge", disabled: false },
+      { label: "Customer Stories", href: "/customers", disabled: false },
       { label: "FAQ", href: "#", disabled: true },
     ],
   },
