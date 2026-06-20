@@ -115,7 +115,7 @@ const Partner = () => {
             <Handshake className="h-4 w-4" /> Partner Program
           </span>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-4 max-w-3xl">
-            Become a Quicksales.ai Partner
+            Because Our Partner
           </h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl">
             Resell, refer or build with the AI sales platform trusted by global teams. Grow recurring
