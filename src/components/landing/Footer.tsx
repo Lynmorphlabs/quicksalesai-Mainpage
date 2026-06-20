@@ -16,6 +16,7 @@ const cols = [
         disabled: false,
         external: true,
       },
+      { label: "Become a Partner", href: "/partner", disabled: false },
     ],
   },
   {
