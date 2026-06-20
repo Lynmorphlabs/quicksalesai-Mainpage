@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, BadgeCheck, Handshake, Rocket, TrendingUp, Users } from "lucide-react";
+import { BadgeCheck, Handshake, Rocket, TrendingUp, Users } from "lucide-react";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
@@ -105,12 +105,6 @@ const Partner = () => {
       {/* Hero */}
       <section className="relative overflow-hidden bg-hero border-b border-border/40">
         <div className="container py-16 md:py-24">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-smooth mb-4"
-          >
-            <ArrowLeft className="h-4 w-4" /> Back to home
-          </Link>
           <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-4">
             <Handshake className="h-4 w-4" /> Partner Program
           </span>
