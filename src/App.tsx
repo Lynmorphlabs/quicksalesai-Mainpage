@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import Terms from "./pages/Terms.tsx";
 import AcceptableUse from "./pages/AcceptableUse.tsx";
+import Partner from "./pages/Partner.tsx";
 import { WhatsAppFloat } from "./components/landing/WhatsAppFloat";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/acceptable-use" element={<AcceptableUse />} />
+          <Route path="/partner" element={<Partner />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
