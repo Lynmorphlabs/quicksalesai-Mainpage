@@ -212,26 +212,36 @@ const CustomerStory = () => {
       <main>
         {/* Hero */}
         <section className={`relative overflow-hidden border-b border-border/40 bg-gradient-to-br ${story.color}`}>
-          <div className="container py-16 md:py-20">
-            <Link
-              to="/customers"
-              className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-smooth"
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" /> All customer stories
-            </Link>
-            <p className="mt-6 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              {story.industry} · {story.region}
-            </p>
-            <h1 className="mt-3 text-4xl md:text-5xl font-bold tracking-tight max-w-3xl">
-              {story.headline}
-            </h1>
-            <div className="mt-10 grid grid-cols-3 gap-6 max-w-2xl">
-              {story.metrics.map((m) => (
-                <div key={m.label}>
-                  <div className="text-3xl md:text-4xl font-bold">{m.value}</div>
-                  <div className="text-xs text-muted-foreground mt-1">{m.label}</div>
-                </div>
-              ))}
+          <div className="container py-16 md:py-20 grid gap-10 md:grid-cols-2 md:items-center">
+            <div>
+              <Link
+                to="/customers"
+                className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-smooth"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" /> All customer stories
+              </Link>
+              <p className="mt-6 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                {story.industry} · {story.region}
+              </p>
+              <h1 className="mt-3 text-4xl md:text-5xl font-bold tracking-tight">
+                {story.headline}
+              </h1>
+              <div className="mt-10 grid grid-cols-3 gap-6 max-w-2xl">
+                {story.metrics.map((m) => (
+                  <div key={m.label}>
+                    <div className="text-3xl md:text-4xl font-bold">{m.value}</div>
+                    <div className="text-xs text-muted-foreground mt-1">{m.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src={story.image}
+                alt={story.headline}
+                className="w-full h-auto rounded-3xl shadow-elevated object-cover aspect-[4/3]"
+                loading="eager"
+              />
             </div>
           </div>
         </section>
