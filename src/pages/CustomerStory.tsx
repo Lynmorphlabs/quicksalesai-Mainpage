@@ -4,12 +4,15 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { stories } from "./Customers";
+import greystoneDashboard from "@/assets/greystone-dashboard.png.asset.json";
+import greystoneWhatsapp from "@/assets/greystone-whatsapp.png.asset.json";
 
 const details: Record<string, {
   challenge: string;
   solution: string[];
   results: string[];
   quote: { text: string; author: string; role: string };
+  screenshots?: { src: string; alt: string; caption: string }[];
 }> = {
   "greystone": {
     challenge:
@@ -34,6 +37,18 @@ const details: Record<string, {
       author: "Greystone Operations",
       role: "Loan Brokerage Team",
     },
+    screenshots: [
+      {
+        src: greystoneWhatsapp.url,
+        alt: "Greystone WhatsApp AI Agent qualifying a business loan enquiry",
+        caption: "WhatsApp AI Agent qualifies the loan type, captures details and replies with the latest loan package terms.",
+      },
+      {
+        src: greystoneDashboard.url,
+        alt: "Greystone vector knowledge base dashboard synced with Google Drive",
+        caption: "Lead dashboard with Google Drive synced knowledge base — update a doc, sync, and the AI reflects the latest packages.",
+      },
+    ],
   },
   "foody-asia": {
     challenge:
