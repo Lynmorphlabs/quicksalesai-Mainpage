@@ -350,31 +350,6 @@ const CustomerStory = () => {
               </div>
             )}
 
-            {/* Example Flow */}
-            {detail.exampleFlow.length > 0 && (
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Example WhatsApp Flow</h3>
-                <div className="rounded-2xl border border-border/60 bg-card p-6 space-y-4 shadow-soft">
-                  {detail.exampleFlow.map((msg, i) => (
-                    <div key={i} className={msg.speaker === "Customer" ? "text-right" : ""}>
-                      <div
-                        className={`inline-block max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-line ${
-                          msg.speaker === "Customer"
-                            ? "bg-primary text-primary-foreground rounded-br-md"
-                            : "bg-muted rounded-bl-md text-foreground"
-                        }`}
-                      >
-                        {msg.text}
-                      </div>
-                      <p className={`text-[10px] text-muted-foreground mt-1 ${msg.speaker === "Customer" ? "text-right" : ""}`}>
-                        {msg.speaker}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
             {/* Screenshot Gallery */}
             {detail.screenshots && detail.screenshots.length > 0 && (
               <div>
