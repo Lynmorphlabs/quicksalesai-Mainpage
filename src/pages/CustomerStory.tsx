@@ -139,6 +139,29 @@ const CustomerStory = () => {
                 ))}
               </ul>
             </div>
+            {detail.screenshots && detail.screenshots.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">Inside the system</h2>
+                <div className="grid gap-6 sm:grid-cols-2">
+                  {detail.screenshots.map((shot) => (
+                    <figure
+                      key={shot.src}
+                      className="rounded-2xl border border-border/60 bg-card overflow-hidden shadow-soft"
+                    >
+                      <img
+                        src={shot.src}
+                        alt={shot.alt}
+                        loading="lazy"
+                        className="w-full h-auto block"
+                      />
+                      <figcaption className="px-4 py-3 text-xs text-muted-foreground border-t border-border/60">
+                        {shot.caption}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            )}
             <div>
               <h2 className="text-2xl font-semibold mb-4">The results</h2>
               <ul className="space-y-3">
