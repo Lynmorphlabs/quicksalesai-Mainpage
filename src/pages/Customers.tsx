@@ -48,13 +48,17 @@ const Customers = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        {/* Dark hero */}
-        <section className="bg-black text-white">
-          <div className="container py-20 md:py-24 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              🎉 Customer stories
+        {/* Hero */}
+        <section className="relative overflow-hidden bg-hero pt-20 pb-24 md:pt-28 md:pb-32">
+          <div className="container relative z-10 text-center max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-soft border border-primary/20 text-primary text-xs font-semibold tracking-wide uppercase mb-8 animate-fade-in-up shadow-soft">
+              <Sparkles className="h-3.5 w-3.5" />
+              Customer Stories
+            </div>
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground animate-fade-in-up [animation-delay:120ms]">
+              See How Teams Win with Quicksales.ai
             </h1>
-            <p className="mt-5 max-w-2xl mx-auto text-white/70 text-lg">
+            <p className="mt-6 max-w-2xl mx-auto text-muted-foreground text-lg animate-fade-in-up [animation-delay:240ms]">
               Hear from our customers about their experiences using Quicksales.ai
               and the impact it has had on their business.
             </p>
@@ -65,7 +69,7 @@ const Customers = () => {
         <section className="container py-16 md:py-20">
           <Link
             to={`/customers/${featured.slug}`}
-            className="group grid gap-10 md:grid-cols-2 md:items-center"
+            className="group grid gap-10 md:grid-cols-2 md:items-center bg-card rounded-3xl border border-border/60 shadow-soft overflow-hidden p-6 md:p-10 transition-smooth hover:shadow-elevated"
           >
             <div className="overflow-hidden rounded-2xl">
               <img
@@ -95,36 +99,42 @@ const Customers = () => {
         </section>
 
         {/* KPI strip */}
-        <section className="bg-muted/40 border-y border-border/40">
-          <div className="container py-10 grid gap-8 md:grid-cols-4 items-center">
-            <h3 className="text-xl font-semibold">
-              Why teams choose Quicksales.ai
-            </h3>
-            {[
-              { v: "80k+", l: "Channels Connected" },
-              { v: "622m+", l: "Messages Sent" },
-              { v: "18m+", l: "Conversations Closed" },
-            ].map((k) => (
-              <div key={k.l} className="border-l border-border/60 pl-6">
-                <div className="text-3xl md:text-4xl font-bold text-primary">
-                  {k.v}
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">{k.l}</div>
+        <section className="py-12 md:py-16">
+          <div className="container">
+            <div className="rounded-3xl bg-gradient-primary text-primary-foreground p-8 sm:p-12 shadow-elevated relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 h-60 w-60 rounded-full bg-white/10 blur-3xl" />
+              <div className="absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-white/10 blur-3xl" />
+              <div className="relative grid gap-8 md:grid-cols-4 items-center">
+                <h3 className="text-xl font-semibold">
+                  Why teams choose Quicksales.ai
+                </h3>
+                {[
+                  { v: "80k+", l: "Channels Connected" },
+                  { v: "622m+", l: "Messages Sent" },
+                  { v: "18m+", l: "Conversations Closed" },
+                ].map((k) => (
+                  <div key={k.l} className="border-l border-white/20 pl-6">
+                    <div className="text-3xl md:text-4xl font-extrabold tracking-tight">
+                      {k.v}
+                    </div>
+                    <div className="text-sm opacity-90 mt-1">{k.l}</div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </section>
 
         {/* All stories grid */}
         <section className="container py-16 md:py-20">
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {rest.map((s) => (
               <Link
                 key={s.slug}
                 to={`/customers/${s.slug}`}
-                className="group flex flex-col"
+                className="group flex flex-col bg-card rounded-2xl border border-border/60 shadow-soft overflow-hidden transition-smooth hover:shadow-elevated"
               >
-                <div className="overflow-hidden rounded-xl">
+                <div className="overflow-hidden">
                   <img
                     src={s.image}
                     alt={s.company}
@@ -134,12 +144,14 @@ const Customers = () => {
                     className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <p className="mt-4 text-sm font-semibold text-primary">
-                  {s.industry}
-                </p>
-                <h3 className="mt-2 text-xl font-semibold leading-snug">
-                  {s.headline}
-                </h3>
+                <div className="p-6 flex flex-col flex-1">
+                  <p className="text-sm font-semibold text-primary">
+                    {s.industry}
+                  </p>
+                  <h3 className="mt-2 text-xl font-semibold leading-snug">
+                    {s.headline}
+                  </h3>
+                </div>
               </Link>
             ))}
           </div>
