@@ -4,12 +4,15 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { stories } from "./Customers";
+import greystoneDashboard from "@/assets/greystone-dashboard.png.asset.json";
+import greystoneWhatsapp from "@/assets/greystone-whatsapp.png.asset.json";
 
 const details: Record<string, {
   challenge: string;
   solution: string[];
   results: string[];
   quote: { text: string; author: string; role: string };
+  screenshots?: { src: string; alt: string; caption: string }[];
 }> = {
   "greystone": {
     challenge:
@@ -34,6 +37,18 @@ const details: Record<string, {
       author: "Greystone Operations",
       role: "Loan Brokerage Team",
     },
+    screenshots: [
+      {
+        src: greystoneWhatsapp.url,
+        alt: "Greystone WhatsApp AI Agent qualifying a business loan enquiry",
+        caption: "WhatsApp AI Agent qualifies the loan type, captures details and replies with the latest loan package terms.",
+      },
+      {
+        src: greystoneDashboard.url,
+        alt: "Greystone vector knowledge base dashboard synced with Google Drive",
+        caption: "Lead dashboard with Google Drive synced knowledge base — update a doc, sync, and the AI reflects the latest packages.",
+      },
+    ],
   },
   "foody-asia": {
     challenge:
@@ -124,6 +139,29 @@ const CustomerStory = () => {
                 ))}
               </ul>
             </div>
+            {detail.screenshots && detail.screenshots.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">Inside the system</h2>
+                <div className="grid gap-6 sm:grid-cols-2">
+                  {detail.screenshots.map((shot) => (
+                    <figure
+                      key={shot.src}
+                      className="rounded-2xl border border-border/60 bg-card overflow-hidden shadow-soft"
+                    >
+                      <img
+                        src={shot.src}
+                        alt={shot.alt}
+                        loading="lazy"
+                        className="w-full h-auto block"
+                      />
+                      <figcaption className="px-4 py-3 text-xs text-muted-foreground border-t border-border/60">
+                        {shot.caption}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            )}
             <div>
               <h2 className="text-2xl font-semibold mb-4">The results</h2>
               <ul className="space-y-3">
