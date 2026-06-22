@@ -379,7 +379,10 @@ const CustomerStory = () => {
             {/* Knowledge Base */}
             {detail.knowledgeBase.length > 0 && (
               <div>
-                <h3 className="text-xl font-semibold mb-3">Google Drive Synced Knowledge Base</h3>
+                <h3 className="text-xl font-semibold mb-3">{labels.kb}</h3>
+                {labels.kbIntro && (
+                  <p className="text-muted-foreground leading-relaxed mb-4">{labels.kbIntro}</p>
+                )}
                 <ul className="space-y-3">
                   {detail.knowledgeBase.map((item) => (
                     <li key={item} className="flex gap-3 text-muted-foreground">
@@ -394,13 +397,10 @@ const CustomerStory = () => {
             {/* Lead Dashboard */}
             {detail.leadDashboard.length > 0 && (
               <div>
-                <h3 className="text-xl font-semibold mb-3">Lead Dashboard</h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Greystone also has a dashboard to manage leads and customer conversations. Instead of leaving every enquiry inside WhatsApp, the dashboard helps the team view incoming leads, staff assignment, customer details and knowledge base status in one place.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  This gives Greystone better visibility over the full process:
-                </p>
+                <h3 className="text-xl font-semibold mb-3">{labels.dashboard}</h3>
+                {labels.dashboardIntro && (
+                  <p className="text-muted-foreground leading-relaxed mb-4">{labels.dashboardIntro}</p>
+                )}
                 <ul className="space-y-3">
                   {detail.leadDashboard.map((item) => (
                     <li key={item} className="flex gap-3 text-muted-foreground">
@@ -423,7 +423,7 @@ const CustomerStory = () => {
             {/* Advisor Handoff */}
             {detail.handoff.length > 0 && (
               <div>
-                <h3 className="text-xl font-semibold mb-3">Advisor Handoff</h3>
+                <h3 className="text-xl font-semibold mb-3">{labels.handoff}</h3>
                 <ul className="space-y-3">
                   {detail.handoff.map((item) => (
                     <li key={item} className="flex gap-3 text-muted-foreground">
