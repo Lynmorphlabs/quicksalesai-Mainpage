@@ -239,6 +239,23 @@ const CustomerStory = () => {
   const story = stories.find((s) => s.slug === slug);
   const detail = slug ? details[slug] : undefined;
 
+  const labels = slug === "foody-asia"
+    ? {
+        kb: "Connection Flow",
+        kbIntro: "Alex understands natural language requests and guides users when a search is too narrow:",
+        dashboard: "Events & Membership",
+        dashboardIntro: "The same WhatsApp AI Concierge supports event discovery, RSVPs and membership enquiries:",
+        handoff: "Human Handoff",
+      }
+    : {
+        kb: "Google Drive Synced Knowledge Base",
+        kbIntro: "",
+        dashboard: "Lead Dashboard",
+        dashboardIntro:
+          "Greystone also has a dashboard to manage leads and customer conversations. Instead of leaving every enquiry inside WhatsApp, the dashboard helps the team view incoming leads, staff assignment, customer details and knowledge base status in one place.",
+        handoff: "Advisor Handoff",
+      };
+
   if (!story || !detail) {
     return (
       <div className="min-h-screen bg-background">
