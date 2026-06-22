@@ -330,7 +330,7 @@ const CustomerStory = () => {
               <div>
                 <h2 className="text-2xl font-semibold mb-4">Goals</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Greystone wanted to:
+                  {story.company} wanted to:
                 </p>
                 <ul className="space-y-3">
                   {detail.goals.map((item) => (
@@ -348,9 +348,6 @@ const CustomerStory = () => {
               <div>
                 <h2 className="text-2xl font-semibold mb-3">The QuickSales AI Solution</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">{detail.solutionIntro}</p>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  When a customer messages Greystone on WhatsApp, the AI Agent starts by identifying the customer's loan category:
-                </p>
                 <ul className="space-y-3 mb-6">
                   {detail.solution.map((item) => (
                     <li key={item} className="flex gap-3 text-muted-foreground">
