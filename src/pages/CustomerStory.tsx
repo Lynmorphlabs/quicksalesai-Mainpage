@@ -175,7 +175,7 @@ const details: Record<string, {
       {
         src: asiaCeoConnect.url,
         alt: "Asia CEO Community WhatsApp concierge suggesting F&B leadership matches",
-        caption: "Alex broadens an F&B CEO search to F&B leaders across Singapore and logs the introduction request with purpose.",
+        caption: "The AI concierge broadens an F&B CEO search to F&B leaders across Singapore and logs the introduction request with purpose.",
       },
       {
         src: asiaCeoEvents.url,
