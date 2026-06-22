@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import storyGreystone from "@/assets/story-greystone.jpg";
-import asiaCeoConnect from "@/assets/asiaceo-connect.png.asset.json";
+import storyAsiaCeo from "@/assets/story-asiaceo.jpg";
 
 export const stories = [
   {
@@ -32,7 +32,7 @@ export const stories = [
       "Asia CEO Community Connects Members, Manages Events and Captures Membership Interest with a WhatsApp AI Concierge",
     summary:
       "A WhatsApp AI Concierge named Alex helps members search for connections, request introductions, RSVP for events and explore membership — directly in chat.",
-    image: asiaCeoConnect.url,
+    image: storyAsiaCeo,
     metrics: [
       { value: "24/7", label: "Concierge availability" },
       { value: "1", label: "Channel for connect, events & membership" },
