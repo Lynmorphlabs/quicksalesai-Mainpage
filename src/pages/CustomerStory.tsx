@@ -110,7 +110,7 @@ const details: Record<string, {
   },
   "foody-asia": {
     intro:
-      "Asia CEO Community is a business network for CEOs, founders, investors and senior executives across Asia. Members join the community to build high-value connections, attend exclusive events, explore partnerships and access leadership opportunities.\n\nAs the community grows, WhatsApp becomes an important channel for member engagement. People want quick answers, relevant introductions and event information without going through long forms or waiting for manual replies.\n\nTo support this, Asia CEO Community uses a WhatsApp AI Concierge named Alex to help members and prospects search for business connections, request introductions, check upcoming events, RSVP and ask about membership benefits.",
+      "Asia CEO Community is a business network for CEOs, founders, investors and senior executives across Asia. Members join the community to build high-value connections, attend exclusive events, explore partnerships and access leadership opportunities.\n\nAs the community grows, WhatsApp becomes an important channel for member engagement. People want quick answers, relevant introductions and event information without going through long forms or waiting for manual replies.\n\nTo support this, Asia CEO Community uses a WhatsApp AI Concierge to help members and prospects search for business connections, request introductions, check upcoming events, RSVP and ask about membership benefits.",
     problem:
       "For a premium business community, the experience needs to feel personal and fast.\n\nMembers and prospects may message the team with many different requests:",
     problemPoints: [
