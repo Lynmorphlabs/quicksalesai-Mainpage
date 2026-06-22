@@ -110,7 +110,7 @@ const details: Record<string, {
   },
   "foody-asia": {
     intro:
-      "Asia CEO Community is a business network for CEOs, founders, investors and senior executives across Asia. Members join the community to build high-value connections, attend exclusive events, explore partnerships and access leadership opportunities.\n\nAs the community grows, WhatsApp becomes an important channel for member engagement. People want quick answers, relevant introductions and event information without going through long forms or waiting for manual replies.\n\nTo support this, Asia CEO Community uses a WhatsApp AI Concierge named Alex to help members and prospects search for business connections, request introductions, check upcoming events, RSVP and ask about membership benefits.",
+      "Asia CEO Community is a business network for CEOs, founders, investors and senior executives across Asia. Members join the community to build high-value connections, attend exclusive events, explore partnerships and access leadership opportunities.\n\nAs the community grows, WhatsApp becomes an important channel for member engagement. People want quick answers, relevant introductions and event information without going through long forms or waiting for manual replies.\n\nTo support this, Asia CEO Community uses a WhatsApp AI Concierge to help members and prospects search for business connections, request introductions, check upcoming events, RSVP and ask about membership benefits.",
     problem:
       "For a premium business community, the experience needs to feel personal and fast.\n\nMembers and prospects may message the team with many different requests:",
     problemPoints: [
@@ -131,7 +131,7 @@ const details: Record<string, {
       "Keep human review for important actions like introductions and membership follow-up.",
     ],
     solutionIntro:
-      "Asia CEO Community implemented a WhatsApp AI Concierge that acts as the first point of contact for members and prospects. When someone messages the WhatsApp number, the AI introduces itself as Alex, the Asia CEO Community concierge.",
+      "Asia CEO Community implemented a WhatsApp AI Concierge that acts as the first point of contact for members and prospects. When someone messages the WhatsApp number, the AI concierge greets them and helps with their request.",
     solution: [
       "Find relevant business connections.",
       "Show upcoming events and RSVP options.",
@@ -167,7 +167,7 @@ const details: Record<string, {
       "Better premium member experience",
     ],
     quote: {
-      text: "Alex feels like a real concierge for our members. Introductions, events and membership enquiries all come in with the right context — our team just follows up.",
+      text: "The AI concierge feels like a real assistant for our members. Introductions, events and membership enquiries all come in with the right context — our team just follows up.",
       author: "Asia CEO Community",
       role: "Membership & Events Team",
     },
@@ -175,7 +175,7 @@ const details: Record<string, {
       {
         src: asiaCeoConnect.url,
         alt: "Asia CEO Community WhatsApp concierge suggesting F&B leadership matches",
-        caption: "Alex broadens an F&B CEO search to F&B leaders across Singapore and logs the introduction request with purpose.",
+        caption: "The AI concierge broadens an F&B CEO search to F&B leaders across Singapore and logs the introduction request with purpose.",
       },
       {
         src: asiaCeoEvents.url,
@@ -242,7 +242,7 @@ const CustomerStory = () => {
   const labels = slug === "foody-asia"
     ? {
         kb: "Connection Flow",
-        kbIntro: "Alex understands natural language requests and guides users when a search is too narrow:",
+        kbIntro: "The AI concierge understands natural language requests and guides users when a search is too narrow:",
         dashboard: "Events & Membership",
         dashboardIntro: "The same WhatsApp AI Concierge supports event discovery, RSVPs and membership enquiries:",
         handoff: "Human Handoff",
