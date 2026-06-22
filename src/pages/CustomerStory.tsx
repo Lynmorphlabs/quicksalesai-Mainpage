@@ -109,34 +109,80 @@ const details: Record<string, {
     ],
   },
   "foody-asia": {
-    intro: "",
+    intro:
+      "Asia CEO Community is a business network for CEOs, founders, investors and senior executives across Asia. Members join the community to build high-value connections, attend exclusive events, explore partnerships and access leadership opportunities.\n\nAs the community grows, WhatsApp becomes an important channel for member engagement. People want quick answers, relevant introductions and event information without going through long forms or waiting for manual replies.\n\nTo support this, Asia CEO Community uses a WhatsApp AI Concierge named Alex to help members and prospects search for business connections, request introductions, check upcoming events, RSVP and ask about membership benefits.",
     problem:
-      "Foody Asia's 14 delivery brands juggled WhatsApp, Instagram DMs and webchat in separate apps. Order confirmations slipped through, peak-hour wait times stretched past 12 minutes and weekend staff burnout was rising.",
-    problemPoints: [],
-    goals: [],
-    solutionIntro: "",
-    solution: [
-      "Unified every channel into a single AI-powered inbox",
-      "Trained an AI agent on menus, modifiers and store hours per outlet",
-      "Auto-routed delivery, refund and reservation intents to the right team",
-      "Connected to existing POS for live order status replies",
+      "For a premium business community, the experience needs to feel personal and fast.\n\nMembers and prospects may message the team with many different requests:",
+    problemPoints: [
+      "Can you connect me with F&B CEOs in Singapore?",
+      "Are there any upcoming CEO events?",
+      "Can I RSVP for this event?",
+      "What are the membership benefits?",
+      "Can someone explain the membership packages?",
     ],
-    knowledgeBase: [],
-    leadDashboard: [],
+    goals: [
+      "Give members and prospects instant support through WhatsApp.",
+      "Help users find relevant CEOs, investors, founders and executives.",
+      "Guide users when a search is too narrow.",
+      "Allow introduction requests to be logged clearly.",
+      "Show upcoming events and support RSVP requests.",
+      "Explain membership benefits in a simple way.",
+      "Capture high-intent membership leads for the team.",
+      "Keep human review for important actions like introductions and membership follow-up.",
+    ],
+    solutionIntro:
+      "Asia CEO Community implemented a WhatsApp AI Concierge that acts as the first point of contact for members and prospects. When someone messages the WhatsApp number, the AI introduces itself as Alex, the Asia CEO Community concierge.",
+    solution: [
+      "Find relevant business connections.",
+      "Show upcoming events and RSVP options.",
+      "Assist with membership and benefits.",
+    ],
+    knowledgeBase: [
+      "If a user asks to connect with F&B CEOs in Singapore and there are no exact matches, the AI suggests broadening to food and beverage founders, senior leadership or hospitality leaders.",
+      "It can also expand the location across Southeast Asia — Singapore, Hong Kong and Malaysia — to surface relevant matches.",
+      "When the user broadens the request, the AI returns matches such as managing directors or managing partners in the F&B industry.",
+      "Introduction requests are logged with the purpose of the connection (partnership, distribution or investment) so the team has context before facilitating.",
+    ],
+    leadDashboard: [
+      "Users can ask 'What are your upcoming events?' and the AI replies with name, date, time and location.",
+      "Examples include the New Year Dinner in Singapore, Startup Valuation Workshop in Hong Kong and business dialogues in Kuala Lumpur.",
+      "Users RSVP directly in chat by providing their name and selecting the event.",
+      "The AI logs the RSVP and passes details to the events team for confirmation — fewer back-and-forth messages.",
+      "For membership questions, the AI explains benefits like unlimited searches, exclusive events, thought leadership exposure and priority introductions, and captures qualified leads for the membership team.",
+    ],
     exampleFlow: [],
-    handoff: [],
-    results: "",
+    handoff: [
+      "The AI prepares the request, captures the user's intent and hands it over to the right team member.",
+      "For sensitive or high-value actions like business introductions, RSVP confirmation or membership package discussion, the AI logs the request and lets the human team follow up.",
+      "This keeps the experience professional while reducing repetitive admin work.",
+    ],
+    results:
+      "With the WhatsApp AI Concierge, Asia CEO Community delivers a faster and more structured member experience. Members and prospects can search for relevant connections, request introductions, discover events, RSVP and ask about membership benefits — all directly through WhatsApp.",
     resultsPoints: [
-      "First-response time dropped from 11m to under 2m",
-      "AI now handles 71% of inbound chats end-to-end",
-      "Saturday order volume grew 6× without new hires",
-      "CSAT for chat support climbed from 4.1 to 4.8 / 5",
+      "Faster response to member enquiries",
+      "More structured introduction requests",
+      "Easier event RSVP capture",
+      "More qualified membership leads",
+      "Less repetitive admin work",
+      "Better premium member experience",
     ],
     quote: {
-      text: "We used to lose orders every Friday night. Now Quicksales.ai answers in seconds and our staff focus on the cases that actually need them.",
-      author: "Marcus Tan",
-      role: "Head of Operations, Foody Asia",
+      text: "Alex feels like a real concierge for our members. Introductions, events and membership enquiries all come in with the right context — our team just follows up.",
+      author: "Asia CEO Community",
+      role: "Membership & Events Team",
     },
+    screenshots: [
+      {
+        src: asiaCeoConnect.url,
+        alt: "Asia CEO Community WhatsApp concierge suggesting F&B leadership matches",
+        caption: "Alex broadens an F&B CEO search to F&B leaders across Singapore and logs the introduction request with purpose.",
+      },
+      {
+        src: asiaCeoEvents.url,
+        alt: "Asia CEO Community WhatsApp concierge handling an event RSVP",
+        caption: "Members can browse upcoming events and RSVP directly in WhatsApp — the AI logs details for the events team.",
+      },
+    ],
   },
 };
 
