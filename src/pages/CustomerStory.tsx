@@ -167,7 +167,7 @@ const details: Record<string, {
       "Better premium member experience",
     ],
     quote: {
-      text: "Alex feels like a real concierge for our members. Introductions, events and membership enquiries all come in with the right context — our team just follows up.",
+      text: "The AI concierge feels like a real assistant for our members. Introductions, events and membership enquiries all come in with the right context — our team just follows up.",
       author: "Asia CEO Community",
       role: "Membership & Events Team",
     },
