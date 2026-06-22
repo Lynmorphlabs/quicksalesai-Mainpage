@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import storyGreystone from "@/assets/story-greystone.jpg";
-import storyFoody from "@/assets/story-foody.jpg";
+import asiaCeoConnect from "@/assets/asiaceo-connect.png.asset.json";
 
 export const stories = [
   {
@@ -25,19 +25,20 @@ export const stories = [
   },
   {
     slug: "foody-asia",
-    company: "Foody Asia",
-    industry: "F&B · Multi-brand delivery",
-    region: "Singapore & Malaysia",
-    headline: "Foody Asia cut response time by 82% across 14 outlets with Quicksales.ai",
+    company: "Asia CEO Community",
+    industry: "Business Network · CEOs & Founders",
+    region: "Asia",
+    headline:
+      "Asia CEO Community Connects Members, Manages Events and Captures Membership Interest with a WhatsApp AI Concierge",
     summary:
-      "By unifying WhatsApp, Instagram and webchat under one AI inbox, Foody Asia handles 6× more orders without adding headcount.",
-    image: storyFoody,
+      "A WhatsApp AI Concierge named Alex helps members search for connections, request introductions, RSVP for events and explore membership — directly in chat.",
+    image: asiaCeoConnect.url,
     metrics: [
-      { value: "82%", label: "Faster first response" },
-      { value: "6×", label: "Order volume handled" },
-      { value: "$0", label: "Extra hires needed" },
+      { value: "24/7", label: "Concierge availability" },
+      { value: "1", label: "Channel for connect, events & membership" },
+      { value: "↑", label: "Qualified membership leads" },
     ],
-    color: "from-amber-500/20 to-rose-500/10",
+    color: "from-emerald-500/20 to-sky-500/10",
   },
 ];
 
