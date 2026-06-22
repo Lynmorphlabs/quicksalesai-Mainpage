@@ -131,7 +131,7 @@ const details: Record<string, {
       "Keep human review for important actions like introductions and membership follow-up.",
     ],
     solutionIntro:
-      "Asia CEO Community implemented a WhatsApp AI Concierge that acts as the first point of contact for members and prospects. When someone messages the WhatsApp number, the AI introduces itself as Alex, the Asia CEO Community concierge.",
+      "Asia CEO Community implemented a WhatsApp AI Concierge that acts as the first point of contact for members and prospects. When someone messages the WhatsApp number, the AI concierge greets them and helps with their request.",
     solution: [
       "Find relevant business connections.",
       "Show upcoming events and RSVP options.",
