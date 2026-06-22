@@ -242,7 +242,7 @@ const CustomerStory = () => {
   const labels = slug === "foody-asia"
     ? {
         kb: "Connection Flow",
-        kbIntro: "Alex understands natural language requests and guides users when a search is too narrow:",
+        kbIntro: "The AI concierge understands natural language requests and guides users when a search is too narrow:",
         dashboard: "Events & Membership",
         dashboardIntro: "The same WhatsApp AI Concierge supports event discovery, RSVPs and membership enquiries:",
         handoff: "Human Handoff",
