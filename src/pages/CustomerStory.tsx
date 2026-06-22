@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { stories } from "./Customers";
 import greystoneDashboard from "@/assets/greystone-dashboard.png.asset.json";
 import greystoneWhatsapp from "@/assets/greystone-whatsapp.png.asset.json";
+import asiaCeoConnect from "@/assets/asiaceo-connect.png.asset.json";
+import asiaCeoEvents from "@/assets/asiaceo-events.png.asset.json";
 
 const details: Record<string, {
   intro: string;
