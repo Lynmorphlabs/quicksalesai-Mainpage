@@ -6,6 +6,7 @@ const links: { label: string; hash: string }[] = [
   { label: "Product", hash: "/#product" },
   { label: "Platform", hash: "/#platform" },
   { label: "Pricing", hash: "/#pricing" },
+  { label: "Customer Journey", hash: "/customers" },
   { label: "Contact", hash: "/#contact" },
 ];
 
