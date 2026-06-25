@@ -1,139 +1,294 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import {
+  Check,
+  Info,
+  Languages,
+  Mic,
+  BookOpen,
+  CalendarCheck,
+  Sparkles,
+  X,
+} from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
-const plans = [
+const baseline = [
+  { icon: Languages, label: "Multilingual AI Agent" },
+  { icon: Mic, label: "Reads Voice Messages & Images" },
+  { icon: BookOpen, label: "FAQ & Knowledge Base" },
+  { icon: CalendarCheck, label: "Appointment Scheduling" },
+];
+
+type Plan = {
+  name: string;
+  price: string;
+  priceSuffix?: string;
+  desc: string;
+  inheritsFrom?: string;
+  features: { label: string; hasInfo?: boolean }[];
+  cta: string;
+  featured?: boolean;
+  setupTag?: string;
+};
+
+const plans: Plan[] = [
   {
     name: "Starter",
-    price: "$99",
-    desc: "Get your first AI agent live and start converting leads 24/7.",
+    price: "S$99",
+    priceSuffix: "/month",
+    desc: "Launch your first AI Agent and start qualifying leads on WhatsApp.",
     features: [
-      "1 WhatsApp number",
-      "24/7 AI Sales Agent",
-      "Multilingual AI Agent",
-      "FAQ & Knowledge Base",
-      "Reads voice messages & images",
-      "Appointment scheduling",
-      "Basic analytics",
-      "Guided onboarding",
+      { label: "100 Monthly Active Contacts", hasInfo: true },
+      { label: "1 User Account" },
+      { label: "1 AI Agent" },
+      { label: "Usage & Analytics Dashboard" },
+      { label: "Priority Support & Onboarding" },
     ],
-    footnote: "Go live today. Start closing leads tonight, automatically.",
     cta: "Get Started",
-    featured: false,
+    setupTag: "Free Setup",
   },
   {
     name: "Growth",
-    price: "$149",
-    desc: "Scale your outreach and never miss a lead again.",
+    price: "S$149",
+    priceSuffix: "/month",
+    desc: "Scale outreach with broadcast, templates and automated follow-ups.",
+    inheritsFrom: "Starter",
     features: [
-      "3 WhatsApp numbers",
-      "Everything in Starter",
-      "Broadcast messaging",
-      "WhatsApp templates",
-      "Automated follow-ups",
-      "Priority support & onboarding",
+      { label: "300 Monthly Active Contacts", hasInfo: true },
+      { label: "3 User Accounts" },
+      { label: "2 AI Agents" },
+      { label: "Broadcast Messaging" },
+      { label: "WABA Templates" },
+      { label: "Automated Follow-ups" },
     ],
-    footnote: "Most businesses see returns within their first week.",
     cta: "Get Started",
     featured: true,
+    setupTag: "Free Setup",
   },
   {
     name: "Pro",
-    price: "$199",
-    desc: "Automate your entire sales process, end to end.",
+    price: "S$299",
+    priceSuffix: "/month",
+    desc: "Multi-workspace, automation and lead intelligence for growing teams.",
+    inheritsFrom: "Growth",
     features: [
-      "Everything in Growth",
-      "Multiple AI agents",
-      "Workflow automation",
-      "Lead Finder",
-      "Priority support & onboarding",
+      { label: "1,000 Monthly Active Contacts", hasInfo: true },
+      { label: "5 User Accounts" },
+      { label: "3 AI Agents" },
+      { label: "Multiple Workspaces" },
+      { label: "Workflow Automation" },
+      { label: "Lead Finder" },
+      { label: "WhatsApp Number Checker" },
     ],
-    footnote: "Businesses on Pro close 3x more leads with the same headcount.",
     cta: "Get Started",
-    featured: false,
+    setupTag: "Free Setup",
   },
   {
-    name: "Scale",
-    price: "$399",
-    desc: "The full stack for high-volume sales operations.",
+    name: "Custom",
+    price: "Let's talk",
+    desc: "Bespoke scale, integrations and dedicated support for enterprise.",
+    inheritsFrom: "Pro",
     features: [
-      "Everything in Pro",
-      "Custom integrations",
-      "Webhooks & API access",
-      "Dedicated CSM",
-      "Hands-on onboarding & setup",
+      { label: "Custom Monthly Active Contacts" },
+      { label: "Custom User Accounts & AI Agents" },
+      { label: "Custom Integrations" },
+      { label: "Webhooks & API Access" },
+      { label: "Dedicated Customer Success Manager" },
+      { label: "Hands-on Onboarding & Setup" },
     ],
-    footnote: "For businesses running sales across multiple locations or product lines.",
-    cta: "Get Started",
-    featured: false,
+    cta: "Contact Us",
+    setupTag: "One-time Setup Fee",
   },
 ];
 
-export const Pricing = () => (
-  <section id="pricing" className="py-24 sm:py-32">
-    <div className="container">
-      <div className="text-center max-w-2xl mx-auto mb-14">
-        <span className="inline-block text-xs font-bold tracking-widest text-primary uppercase mb-3">Plans</span>
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
-          Plans built for <span className="italic font-serif text-primary">every</span> business
-        </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Choose a plan that fits your needs and start scaling your WhatsApp marketing.
-        </p>
+const MacDialog = ({ children }: { children: React.ReactNode }) => (
+  <Dialog>
+    <DialogTrigger asChild>{children}</DialogTrigger>
+    <DialogContent className="max-w-4xl p-0 gap-0 overflow-hidden rounded-3xl border-border/60">
+      <DialogHeader className="px-8 pt-8">
+        <DialogTitle className="text-2xl font-extrabold tracking-tight flex items-center gap-2">
+          <Sparkles className="h-5 w-5 text-primary" />
+          Store Unlimited Contacts, Only Pay for Those Who Engage
+        </DialogTitle>
+        <DialogDescription className="text-base">
+          You can store all your contacts for free. You only pay for contacts you actively engage with each billing month.
+        </DialogDescription>
+      </DialogHeader>
+      <div className="grid md:grid-cols-2 gap-6 p-8">
+        <div>
+          <h4 className="font-bold mb-3">What counts as an Active Contact</h4>
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              { ok: true, t: "A contact who sends any message to you." },
+              { ok: true, t: "A contact who receives a message from you via Inbox, AI Agent, API or WhatsApp." },
+              { ok: false, t: "A contact who receives a one-way broadcast but does not reply." },
+              { ok: false, t: "A contact only stored in your database (imported or synced from a CRM)." },
+            ].map((it, i) => (
+              <div key={i} className="rounded-2xl border border-border/60 bg-muted/40 p-4 text-xs">
+                <div className={`inline-flex items-center justify-center h-6 w-6 rounded-full mb-2 ${it.ok ? "bg-emerald-500/15 text-emerald-600" : "bg-rose-500/15 text-rose-600"}`}>
+                  {it.ok ? <Check className="h-3.5 w-3.5" strokeWidth={3} /> : <X className="h-3.5 w-3.5" strokeWidth={3} />}
+                </div>
+                <p className="leading-snug text-foreground/80">{it.t}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h4 className="font-bold mb-3">How to estimate your MAC</h4>
+          <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-primary/5 to-muted/40 p-5 space-y-2.5">
+            {[
+              { d: "1 Jun", who: "Amily messaged You", tag: "+1 MAC", on: true },
+              { d: "10 Jun", who: "Jason messaged You", tag: "+1 MAC", on: true },
+              { d: "18 Jun", who: "You messaged Amily", tag: "+0 MAC", on: false },
+            ].map((r, i) => (
+              <div key={i} className="flex items-center justify-between bg-background/80 rounded-xl px-3 py-2 text-xs">
+                <div className="flex items-center gap-2">
+                  <span className="text-muted-foreground w-12">{r.d}</span>
+                  <span className="font-medium">{r.who}</span>
+                </div>
+                <span className={`text-[10px] font-bold px-2 py-1 rounded-full ${r.on ? "bg-emerald-500 text-white" : "bg-foreground/70 text-background"}`}>{r.tag}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-xs text-muted-foreground leading-relaxed">
+            Each customer is counted once per month, no matter how many conversations you have. Need more? You can purchase add-ons or upgrade your plan anytime.
+          </p>
+        </div>
       </div>
+    </DialogContent>
+  </Dialog>
+);
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-        {plans.map((p) => (
-          <div
-            key={p.name}
-            className={`rounded-3xl p-8 border transition-smooth flex flex-col ${
-              p.featured
-                ? "bg-gradient-primary text-primary-foreground border-transparent shadow-elevated md:scale-105"
-                : "bg-card border-border/60 shadow-soft hover:shadow-elevated"
-            }`}
-          >
-            {p.featured && (
-              <span className="self-start text-[10px] font-bold uppercase tracking-widest bg-white/20 px-2.5 py-1 rounded-full mb-4">
-                Most popular
+export const Pricing = () => {
+  return (
+    <section id="pricing" className="py-24 sm:py-32">
+      <div className="container">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="inline-block text-xs font-bold tracking-widest text-primary uppercase mb-3">Plans</span>
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
+            One AI Agent base. <span className="italic font-serif text-primary">Scale</span> when you're ready.
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Every paid plan ships with the same powerful AI Agent. Pick a tier based on capacity and team size.
+          </p>
+        </div>
+
+        {/* Shared baseline strip */}
+        <div className="max-w-5xl mx-auto mb-12">
+          <div className="rounded-3xl border border-border/60 bg-gradient-to-br from-primary/5 via-background to-background p-6 sm:p-8 shadow-soft">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-5">
+              <div>
+                <div className="text-[11px] font-bold tracking-widest text-primary uppercase">Included in every paid plan</div>
+                <h3 className="text-xl font-bold mt-1">The Core AI Agent</h3>
+              </div>
+              <span className="self-start md:self-auto inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                <Check className="h-3.5 w-3.5" strokeWidth={3} /> Free Setup · No Setup Fee
               </span>
-            )}
-            <h3 className="text-xl font-bold">{p.name}</h3>
-            <p className={`text-sm mt-1 ${p.featured ? "opacity-90" : "text-muted-foreground"}`}>{p.desc}</p>
-            <div className="mt-5 flex items-baseline gap-1">
-              <span className="text-5xl font-extrabold tracking-tight">{p.price}</span>
-              <span className={`text-sm ${p.featured ? "opacity-80" : "text-muted-foreground"}`}>/mo</span>
             </div>
-            <ul className="mt-6 space-y-2.5 flex-1">
-              {p.features.map((f) => (
-                <li key={f} className="flex items-start gap-2 text-sm">
-                  <Check className={`h-4 w-4 mt-0.5 shrink-0 ${p.featured ? "" : "text-primary"}`} strokeWidth={3} />
-                  {f}
-                </li>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {baseline.map((b) => (
+                <div key={b.label} className="flex items-center gap-3 rounded-2xl bg-background border border-border/60 px-4 py-3">
+                  <div className="h-9 w-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <b.icon className="h-4 w-4" />
+                  </div>
+                  <span className="text-sm font-medium leading-tight">{b.label}</span>
+                </div>
               ))}
-            </ul>
-            {p.footnote && (
-              <p className={`mt-5 text-xs italic ${p.featured ? "opacity-90" : "text-muted-foreground"}`}>
-                {p.footnote}
-              </p>
-            )}
-            <Button asChild
-              size="lg"
-              className={`mt-5 rounded-full w-full ${
+            </div>
+          </div>
+        </div>
+
+        {/* Tier cards — only what changes */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto items-stretch">
+          {plans.map((p) => (
+            <div
+              key={p.name}
+              className={`relative rounded-3xl border transition-smooth flex flex-col ${
                 p.featured
-                  ? "bg-white text-primary hover:bg-white/90"
-                  : "bg-foreground text-background hover:opacity-90"
+                  ? "bg-card border-primary shadow-elevated lg:-mt-4 lg:mb-0"
+                  : "bg-card border-border/60 shadow-soft hover:shadow-elevated hover:-translate-y-0.5"
               }`}
             >
-              <a href="https://quicksales.ai/auth/login" target="_blank" rel="noopener noreferrer">
-                {p.cta}
-              </a>
-            </Button>
-          </div>
-        ))}
-      </div>
+              {p.featured && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold uppercase tracking-widest bg-gradient-primary text-primary-foreground px-3 py-1 rounded-full shadow-md">
+                  Most Popular
+                </div>
+              )}
+              <div className="p-7 flex flex-col flex-1">
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="text-xl font-bold">{p.name}</h3>
+                  {p.setupTag && (
+                    <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full whitespace-nowrap ${
+                      p.setupTag === "Free Setup"
+                        ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20"
+                        : "bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20"
+                    }`}>
+                      {p.setupTag}
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm text-muted-foreground mt-1.5 min-h-[40px]">{p.desc}</p>
 
-      <p className="mt-10 text-center text-sm text-muted-foreground">
-        Please contact us for customised solution.
-      </p>
-    </div>
-  </section>
-);
+                <div className="mt-5 flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold tracking-tight">{p.price}</span>
+                  {p.priceSuffix && <span className="text-sm text-muted-foreground">{p.priceSuffix}</span>}
+                </div>
+
+                <Button asChild
+                  size="lg"
+                  className={`mt-5 rounded-full w-full ${
+                    p.featured
+                      ? "bg-gradient-primary text-primary-foreground hover:opacity-90"
+                      : "bg-foreground text-background hover:opacity-90"
+                  }`}
+                >
+                  <a href="https://quicksales.ai/auth/login" target="_blank" rel="noopener noreferrer">
+                    {p.cta}
+                  </a>
+                </Button>
+
+                <div className="mt-6 pt-6 border-t border-border/60 flex-1">
+                  {p.inheritsFrom ? (
+                    <p className="text-xs font-semibold text-foreground mb-3">
+                      Everything in <span className="text-primary">{p.inheritsFrom}</span>, plus:
+                    </p>
+                  ) : (
+                    <p className="text-xs font-semibold text-foreground mb-3">What's included:</p>
+                  )}
+                  <ul className="space-y-2.5">
+                    {p.features.map((f) => (
+                      <li key={f.label} className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 mt-0.5 shrink-0 text-primary" strokeWidth={3} />
+                        <span className="leading-snug">
+                          {f.label}
+                          {f.hasInfo && (
+                            <MacDialog>
+                              <button type="button" className="ml-1 inline-flex items-center align-middle text-primary hover:text-primary/80" aria-label="What is a Monthly Active Contact?">
+                                <Info className="h-3.5 w-3.5" />
+                              </button>
+                            </MacDialog>
+                          )}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-10 text-center text-sm text-muted-foreground">
+          Need a tailored setup? <a href="#contact" className="text-primary font-semibold hover:underline">Talk to our team</a> for a custom solution.
+        </p>
+      </div>
+    </section>
+  );
+};
