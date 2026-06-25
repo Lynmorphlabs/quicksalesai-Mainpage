@@ -266,16 +266,21 @@ export const Pricing = () => {
                     {p.features.map((f) => (
                       <li key={f.label} className="flex items-start gap-2 text-sm">
                         <Check className="h-4 w-4 mt-0.5 shrink-0 text-primary" strokeWidth={3} />
-                        <span className="leading-snug">
-                          {f.label}
-                          {f.hasInfo && (
+                        {f.hasInfo ? (
+                          <span className="leading-snug">
+                            {f.label.replace(/Monthly Active Contacts?/, "").trim()}{" "}
                             <MacDialog>
-                              <button type="button" className="ml-1 inline-flex items-center align-middle text-primary hover:text-primary/80" aria-label="What is a Monthly Active Contact?">
-                                <Info className="h-3.5 w-3.5" />
+                              <button
+                                type="button"
+                                className="text-primary font-medium underline underline-offset-2 decoration-dotted hover:decoration-solid"
+                              >
+                                Monthly Active Contact{f.label.includes("Contacts") ? "s" : ""}
                               </button>
                             </MacDialog>
-                          )}
-                        </span>
+                          </span>
+                        ) : (
+                          <span className="leading-snug">{f.label}</span>
+                        )}
                       </li>
                     ))}
                   </ul>
