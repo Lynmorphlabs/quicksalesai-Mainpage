@@ -223,16 +223,12 @@ export const Pricing = () => {
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="text-xl font-bold">{p.name}</h3>
                   {p.setupTag && (
-                    <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full text-center leading-tight ${
+                    <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full whitespace-nowrap ${
                       p.setupTag?.startsWith("Free Setup")
                         ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20"
                         : "bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20"
                     }`}>
-                      {p.setupTag === "Free Setup & Priority Support" ? (
-                        <>Free Setup<br />& Priority Support</>
-                      ) : (
-                        p.setupTag
-                      )}
+                      {p.setupTag}
                     </span>
                   )}
                 </div>
