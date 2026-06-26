@@ -48,10 +48,9 @@ const plans: Plan[] = [
       { label: "1 User Account" },
       { label: "1 AI Agent" },
       { label: "Usage & Analytics Dashboard" },
-      { label: "Priority Support & Onboarding" },
     ],
     cta: "Get Started",
-    setupTag: "Free Setup",
+    setupTag: "Free Setup & Priority Support",
   },
   {
     name: "Growth",
@@ -69,7 +68,7 @@ const plans: Plan[] = [
     ],
     cta: "Get Started",
     featured: true,
-    setupTag: "Free Setup",
+    setupTag: "Free Setup & Priority Support",
   },
   {
     name: "Pro",
@@ -87,7 +86,7 @@ const plans: Plan[] = [
       { label: "WhatsApp Number Checker" },
     ],
     cta: "Get Started",
-    setupTag: "Free Setup",
+    setupTag: "Free Setup & Priority Support",
   },
   {
     name: "Custom",
@@ -225,7 +224,7 @@ export const Pricing = () => {
                   <h3 className="text-xl font-bold">{p.name}</h3>
                   {p.setupTag && (
                     <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full whitespace-nowrap ${
-                      p.setupTag === "Free Setup"
+                      p.setupTag?.startsWith("Free Setup")
                         ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20"
                         : "bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20"
                     }`}>
