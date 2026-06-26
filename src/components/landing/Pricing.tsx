@@ -20,7 +20,7 @@ import {
 
 const baseline = [
   { icon: Languages, label: "Multilingual AI Agent" },
-  { icon: Mic, label: "Reads Voice Messages & Images" },
+  { icon: Mic, label: "Understands Images & Voice Messages" },
   { icon: BookOpen, label: "FAQ & Knowledge Base" },
   { icon: CalendarCheck, label: "Appointment Scheduling" },
 ];
