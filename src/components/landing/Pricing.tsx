@@ -220,23 +220,18 @@ export const Pricing = () => {
                 </div>
               )}
               <div className="p-7 flex flex-col flex-1">
-                <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-xl font-bold">{p.name}</h3>
-                  {p.setupTag && (
-                    <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full text-center leading-tight ${
-                      p.setupTag?.startsWith("Free Setup")
-                        ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20"
-                        : "bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20"
-                    }`}>
-                      {p.setupTag === "Free Setup & Priority Support" ? (
-                        <>Free Setup &<br />Priority Support</>
-                      ) : (
-                        p.setupTag
-                      )}
-                    </span>
-                  )}
-                </div>
-                <p className="text-sm text-muted-foreground mt-4 min-h-[40px]">{p.desc}</p>
+                <h3 className="text-xl font-bold">{p.name}</h3>
+                {p.setupTag && (
+                  <span className={`mt-2 self-start inline-flex items-center gap-1 text-[10px] font-semibold px-2.5 py-1 rounded-full whitespace-nowrap ${
+                    p.setupTag.startsWith("Free Setup")
+                      ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20"
+                      : "bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20"
+                  }`}>
+                    {p.setupTag.startsWith("Free Setup") && <Check className="h-3 w-3" strokeWidth={3} />}
+                    {p.setupTag}
+                  </span>
+                )}
+                <p className="text-sm text-muted-foreground mt-3 min-h-[40px]">{p.desc}</p>
 
                 <div className="mt-5 flex items-baseline gap-1">
                   <span className="text-4xl font-extrabold tracking-tight">{p.price}</span>
