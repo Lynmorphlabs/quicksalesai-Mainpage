@@ -99,7 +99,6 @@ const plans: Plan[] = [
       { label: "Custom Integrations" },
       { label: "Webhooks & API Access" },
       { label: "Dedicated Customer Success Manager" },
-      { label: "Hands-on Onboarding & Setup" },
     ],
     cta: "Contact Us",
     setupTag: "One-time Setup Fee",
