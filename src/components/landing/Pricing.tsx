@@ -219,7 +219,7 @@ export const Pricing = () => {
                 </div>
               )}
               <div className="p-7 flex flex-col flex-1">
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex items-start justify-between gap-2 min-h-[44px]">
                   <h3 className="text-xl font-bold">{p.name}</h3>
                   {p.setupTag && (
                     <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full text-center leading-tight ${
@@ -235,7 +235,7 @@ export const Pricing = () => {
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-muted-foreground mt-4 min-h-[40px]">{p.desc}</p>
+                <p className="text-sm text-muted-foreground mt-5 min-h-[60px]">{p.desc}</p>
 
                 <div className="mt-5 flex items-baseline gap-1">
                   <span className="text-4xl font-extrabold tracking-tight">{p.price}</span>
