@@ -219,10 +219,10 @@ export const Pricing = () => {
                 </div>
               )}
               <div className="p-7 flex flex-col flex-1">
-                <div className="flex items-start justify-between gap-2 min-h-[44px]">
-                  <h3 className="text-xl font-bold">{p.name}</h3>
+                <div className="flex items-start justify-between gap-2 min-h-[48px]">
+                  <h3 className="text-xl font-bold leading-tight pt-1">{p.name}</h3>
                   {p.setupTag && (
-                    <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full text-center leading-tight ${
+                    <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full text-center leading-[1.3] inline-flex items-center justify-center min-h-[34px] ${
                       p.setupTag?.startsWith("Free Setup")
                         ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20"
                         : "bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20"
@@ -235,7 +235,7 @@ export const Pricing = () => {
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-muted-foreground mt-5 min-h-[60px]">{p.desc}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mt-6 min-h-[60px]">{p.desc}</p>
 
                 <div className="mt-5 flex items-baseline gap-1">
                   <span className="text-4xl font-extrabold tracking-tight">{p.price}</span>
