@@ -99,7 +99,6 @@ const plans: Plan[] = [
       { label: "Custom Integrations" },
       { label: "Webhooks & API Access" },
       { label: "Dedicated Customer Success Manager" },
-      { label: "Hands-on Onboarding & Setup" },
     ],
     cta: "Contact Us",
     setupTag: "One-time Setup Fee",
@@ -292,9 +291,14 @@ export const Pricing = () => {
           ))}
         </div>
 
-        <p className="mt-10 text-center text-sm text-muted-foreground">
-          Need a tailored setup? <a href="#contact" className="text-primary font-semibold hover:underline">Talk to our team</a> for a custom solution.
-        </p>
+        <div className="mt-12 max-w-3xl mx-auto text-center">
+          <p className="text-xl sm:text-2xl font-bold tracking-tight bg-gradient-to-r from-primary to-emerald-500 bg-clip-text text-transparent leading-snug">
+            Get hands-on onboarding from a dedicated Customer Success Specialist, supporting your setup and business success from day one.
+          </p>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Need a tailored setup? <a href="#contact" className="text-primary font-semibold hover:underline">Talk to our team</a> for a custom solution.
+          </p>
+        </div>
       </div>
     </section>
   );
