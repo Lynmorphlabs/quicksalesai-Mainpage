@@ -229,14 +229,14 @@ export const Pricing = () => {
                         : "bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20"
                     }`}>
                       {p.setupTag === "Free Setup & Priority Support" ? (
-                        <>Free Setup<br />& Priority Support</>
+                        <>Free Setup &<br />Priority Support</>
                       ) : (
                         p.setupTag
                       )}
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-muted-foreground mt-1.5 min-h-[40px]">{p.desc}</p>
+                <p className="text-sm text-muted-foreground mt-4 min-h-[40px]">{p.desc}</p>
 
                 <div className="mt-5 flex items-baseline gap-1">
                   <span className="text-4xl font-extrabold tracking-tight">{p.price}</span>
