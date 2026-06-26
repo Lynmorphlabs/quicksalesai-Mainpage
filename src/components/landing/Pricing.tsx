@@ -185,9 +185,6 @@ export const Pricing = () => {
                 <div className="text-[11px] font-bold tracking-widest text-primary uppercase">Included in every paid plan</div>
                 <h3 className="text-xl font-bold mt-1">The Core AI Agent</h3>
               </div>
-              <span className="self-start md:self-auto inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
-                <Check className="h-3.5 w-3.5" strokeWidth={3} /> Free Setup · No Setup Fee
-              </span>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {baseline.map((b) => (
