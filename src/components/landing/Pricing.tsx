@@ -95,10 +95,11 @@ const plans: Plan[] = [
     inheritsFrom: "Pro",
     features: [
       { label: "Custom Monthly Active Contacts" },
-      { label: "Custom User Accounts & AI Agents" },
+      { label: "Custom User Accounts" },
+      { label: "Custom AI Agents" },
       { label: "Custom Integrations" },
       { label: "Webhooks & API Access" },
-      { label: "Dedicated Customer Success Manager" },
+      { label: "Dedicated Customer Success Specialist" },
     ],
     cta: "Contact Us",
     setupTag: "One-time Setup Fee",
