@@ -59,6 +59,23 @@ export const stories = [
     ],
     color: "from-amber-400/25 to-sky-400/10",
   },
+  {
+    slug: "soq",
+    company: "SOQ Training Centre",
+    industry: "Training & Education",
+    region: "Malaysia",
+    headline:
+      "How SOQ Uses a WhatsApp AI Course Advisor to Match Learners With the Right AI Courses and Book Consultations",
+    summary:
+      "A WhatsApp AI Course Advisor helps learners explore AI courses, narrow down their goals and book consultations with SOQ consultants — all from one chat.",
+    image: soqAsset.url,
+    metrics: [
+      { value: "WhatsApp", label: "Primary enquiry channel" },
+      { value: "24/7", label: "Course guidance" },
+      { value: "Faster", label: "Qualified consultations" },
+    ],
+    color: "from-emerald-500/20 to-amber-400/10",
+  },
 ];
 
 const Customers = () => {
