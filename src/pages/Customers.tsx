@@ -96,7 +96,9 @@ const Customers = () => {
                 alt={featured.company}
                 width={1024}
                 height={1024}
-                className="w-full h-full object-cover aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
+                className={`w-full h-full object-cover aspect-[4/3] transition-transform duration-500 group-hover:scale-105 ${
+                  featured.slug === "toaping" ? "object-[75%_50%]" : ""
+                }`}
               />
             </div>
             <div>
@@ -160,7 +162,9 @@ const Customers = () => {
                     width={1024}
                     height={1024}
                     loading="lazy"
-                    className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
+                    className={`w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105 ${
+                      s.slug === "toaping" ? "object-[75%_50%]" : ""
+                    }`}
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
