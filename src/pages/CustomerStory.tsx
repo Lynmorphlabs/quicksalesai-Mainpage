@@ -394,7 +394,9 @@ const CustomerStory = () => {
               <img
                 src={story.image}
                 alt={story.headline}
-                className="w-full h-auto rounded-3xl shadow-elevated object-cover aspect-[4/3]"
+                className={`w-full h-auto rounded-3xl shadow-elevated object-cover aspect-[4/3] ${
+                  story.slug === "toaping" ? "object-[75%_50%]" : ""
+                }`}
                 loading="eager"
               />
             </div>
