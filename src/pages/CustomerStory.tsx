@@ -394,7 +394,17 @@ const CustomerStory = () => {
   const story = stories.find((s) => s.slug === slug);
   const detail = slug ? details[slug] : undefined;
 
-  const labels = slug === "toaping"
+  const labels = slug === "soq"
+    ? {
+        kb: "Course Matching Flow",
+        kbIntro:
+          "The AI Course Advisor asks a few structured questions and recommends a suitable course direction based on the learner's profile:",
+        dashboard: "Consultation Booking",
+        dashboardIntro:
+          "When the learner is ready, the same WhatsApp conversation continues into appointment booking and lead capture:",
+        handoff: "Consultant Handoff",
+      }
+    : slug === "toaping"
     ? {
         kb: "Membership Recommendation Flow",
         kbIntro:
