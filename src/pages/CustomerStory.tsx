@@ -319,7 +319,17 @@ const CustomerStory = () => {
   const story = stories.find((s) => s.slug === slug);
   const detail = slug ? details[slug] : undefined;
 
-  const labels = slug === "foody-asia"
+  const labels = slug === "toaping"
+    ? {
+        kb: "Membership Recommendation Flow",
+        kbIntro:
+          "The AI assistant asks a few structured questions and recommends a suitable membership tier based on the answers:",
+        dashboard: "Smart Reconnect™ & Appointments",
+        dashboardIntro:
+          "TOAPING re-engages users who don't complete onboarding, and lets customers book consultant appointments in chat:",
+        handoff: "Human Support & Escalation",
+      }
+    : slug === "foody-asia"
     ? {
         kb: "Connection Flow",
         kbIntro: "The AI concierge understands natural language requests and guides users when a search is too narrow:",
