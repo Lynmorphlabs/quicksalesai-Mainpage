@@ -4,7 +4,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import storyGreystone from "@/assets/story-greystone.jpg";
 import storyAsiaCeo from "@/assets/story-asiaceo.jpg";
-import storyToaping from "@/assets/story-toaping.jpg";
+import storyToaping from "@/assets/toaping-graphic.png.asset.json";
 
 export const stories = [
   {
@@ -50,7 +50,7 @@ export const stories = [
       "How TOAPING Uses a KakaoTalk AI Assistant to Automate Onboarding, Sales and Customer Engagement",
     summary:
       "A KakaoTalk AI assistant onboards learners, recommends memberships, books consultants, sends Smart Reconnect™ reminders and supports English, Korean and voice messages.",
-    image: storyToaping,
+    image: storyToaping.url,
     metrics: [
       { value: "KakaoTalk", label: "Primary engagement channel" },
       { value: "EN · KO", label: "Multilingual + voice input" },
