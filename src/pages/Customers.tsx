@@ -4,7 +4,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import storyGreystone from "@/assets/story-greystone.jpg";
 import storyAsiaCeo from "@/assets/story-asiaceo.jpg";
-import storyToaping from "@/assets/toaping-graphic.png.asset.json";
+import toapingBanner from "@/assets/toaping-banner.png.asset.json";
 import soqAsset from "@/assets/soq-graphic.png.asset.json";
 
 export const stories = [
@@ -26,6 +26,23 @@ export const stories = [
     color: "from-sky-500/20 to-indigo-500/10",
   },
   {
+    slug: "toaping",
+    company: "TOAPING",
+    industry: "Learning & Skills Validation",
+    region: "Korea · Asia",
+    headline:
+      "How TOAPING Uses a KakaoTalk AI Assistant to Automate Onboarding, Sales and Customer Engagement",
+    summary:
+      "A KakaoTalk AI assistant onboards learners, recommends memberships, books consultants, sends Smart Reconnect™ reminders and supports English, Korean and voice messages.",
+    image: toapingBanner.url,
+    metrics: [
+      { value: "KakaoTalk", label: "Primary engagement channel" },
+      { value: "EN · KO", label: "Multilingual + voice input" },
+      { value: "Smart", label: "Reconnect™ for abandoned signups" },
+    ],
+    color: "from-amber-400/25 to-sky-400/10",
+  },
+  {
     slug: "foody-asia",
     company: "Asia CEO Community",
     industry: "Business Network · CEOs & Founders",
@@ -41,23 +58,6 @@ export const stories = [
       { value: "↑", label: "Qualified membership leads" },
     ],
     color: "from-emerald-500/20 to-sky-500/10",
-  },
-  {
-    slug: "toaping",
-    company: "TOAPING",
-    industry: "Learning & Skills Validation",
-    region: "Korea · Asia",
-    headline:
-      "How TOAPING Uses a KakaoTalk AI Assistant to Automate Onboarding, Sales and Customer Engagement",
-    summary:
-      "A KakaoTalk AI assistant onboards learners, recommends memberships, books consultants, sends Smart Reconnect™ reminders and supports English, Korean and voice messages.",
-    image: storyToaping.url,
-    metrics: [
-      { value: "KakaoTalk", label: "Primary engagement channel" },
-      { value: "EN · KO", label: "Multilingual + voice input" },
-      { value: "Smart", label: "Reconnect™ for abandoned signups" },
-    ],
-    color: "from-amber-400/25 to-sky-400/10",
   },
   {
     slug: "soq",
@@ -114,9 +114,7 @@ const Customers = () => {
                 alt={featured.company}
                 width={1024}
                 height={1024}
-                className={`w-full h-full object-cover aspect-[4/3] transition-transform duration-500 group-hover:scale-105 ${
-                  featured.slug === "toaping" ? "object-[75%_50%]" : ""
-                }`}
+                className="w-full h-full object-cover aspect-[4/3] transition-transform duration-500 group-hover:scale-105 object-center"
               />
             </div>
             <div>
@@ -180,9 +178,7 @@ const Customers = () => {
                     width={1024}
                     height={1024}
                     loading="lazy"
-                    className={`w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105 ${
-                      s.slug === "toaping" ? "object-[75%_50%]" : ""
-                    }`}
+                    className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105 object-center"
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
