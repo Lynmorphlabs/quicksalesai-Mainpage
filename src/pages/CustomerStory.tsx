@@ -186,6 +186,81 @@ const details: Record<string, {
   },
 };
 
+details["soq"] = {
+  intro:
+    "SOQ Training Centre is a regional training provider offering business and skills-based programmes. As part of its next phase, SOQ is launching a series of AI courses in Malaysia to help business owners, professionals and corporate teams apply AI in real business scenarios.\n\nThe goal is to make AI learning practical, accessible and relevant. Instead of only teaching AI as a theory topic, SOQ helps learners understand how AI can support areas such as sales, marketing, customer service, operations and workflow automation.\n\nTo support course enquiries and enrolment, SOQ uses a customised WhatsApp AI Course Advisor that can understand learner needs, recommend suitable courses and help users book appointments with consultants.",
+  problem:
+    "AI course enquiries often need proper guidance before a learner is ready to enrol.\n\nSome customers are business owners who want to use AI to improve sales or customer support. Some are corporate teams looking for staff training. Others are individuals who want to upskill but are unsure which course is suitable for them.",
+  problemPoints: [
+    "Which AI course is suitable for me?",
+    "Is this course beginner-friendly?",
+    "Can my company send a team for training?",
+    "What is the course schedule and fee?",
+    "Can I speak to a consultant before enrolling?",
+  ],
+  goals: [
+    "Respond to WhatsApp enquiries faster.",
+    "Match learners with suitable AI courses.",
+    "Ask the right questions before recommending a course.",
+    "Capture learner and company details clearly.",
+    "Help interested learners book appointments with consultants.",
+    "Guide learners from enquiry to consultation smoothly.",
+    "Reduce repetitive manual follow-up for the SOQ team.",
+    "Give consultants better-qualified leads before the call.",
+  ],
+  solutionIntro:
+    "SOQ implemented a customised WhatsApp AI Course Advisor for course enquiries and consultation booking.",
+  solution: [
+    "Understands the learner's enquiry and asks follow-up questions.",
+    "Identifies whether the user is an individual learner, business owner or corporate team.",
+    "Narrows down the user's learning goals and AI use cases.",
+    "Recommends a suitable course direction instead of a generic list.",
+    "Continues the same conversation into appointment booking.",
+  ],
+  knowledgeBase: [
+    "The AI Course Advisor asks about the learner's profile: individual, business owner or corporate team.",
+    "It then explores the learner's goals, such as sales, marketing, customer support, operations or workflow automation.",
+    "Based on the answers, the AI recommends a practical AI business course covering relevant use cases.",
+    "The conversation does not stop at recommendation — it continues to consultation booking when the learner shows interest.",
+  ],
+  leadDashboard: [
+    "When the learner is ready to book a consultation, the AI captures the preferred date and time.",
+    "It also collects the learner's name, company name and contact email.",
+    "The SOQ team receives the appointment request with the full enquiry context.",
+    "Consultants can review the lead before the call instead of starting from zero.",
+  ],
+  exampleFlow: [
+    { speaker: "Learner", text: "Hi, I want to join an AI course but I'm not sure which one is suitable." },
+    { speaker: "AI Advisor", text: "Sure, I can help. Are you joining as an individual learner, business owner or corporate team?" },
+    { speaker: "Learner", text: "Business owner." },
+    { speaker: "AI Advisor", text: "Great. What would you like to use AI for? Sales, marketing, customer support, operations or workflow automation?" },
+    { speaker: "Learner", text: "Sales and customer support." },
+    { speaker: "AI Advisor", text: "Based on your goal, a practical AI business course may be suitable. It can cover use cases such as WhatsApp sales automation, customer enquiry handling and AI workflow tools.\n\nWould you like to book a consultation with our course consultant to confirm the best course option for you?" },
+    { speaker: "Learner", text: "Yes." },
+    { speaker: "AI Advisor", text: "Sure. May I have your preferred date and time?" },
+    { speaker: "Learner", text: "Tomorrow afternoon." },
+    { speaker: "AI Advisor", text: "Got it. I'll help arrange a consultation with the SOQ team. Please share your name, company name and contact email so the consultant can follow up." },
+  ],
+  handoff: [
+    "Once the appointment request is captured, the SOQ team receives the learner's details and enquiry context.",
+    "This includes the learner type, main AI use case, course direction, preferred consultation time and contact details.",
+    "Consultants can continue the conversation with context instead of starting from zero.",
+  ],
+  results:
+    "With the customised WhatsApp AI Course Advisor, SOQ can turn course enquiries into a more structured enrolment journey.",
+  resultsPoints: [
+    "Learners receive faster guidance and better course recommendations.",
+    "Consultants receive more qualified leads with learner goals and business context already captured.",
+    "Appointment booking becomes part of the same WhatsApp conversation, reducing back-and-forth follow-up.",
+    "WhatsApp becomes a course matchmaking, consultation booking and enrolment support system.",
+  ],
+  quote: {
+    text: "Our WhatsApp AI Course Advisor turns every course enquiry into a guided conversation. Learners get the right course direction, and our consultants walk into calls with full context.",
+    author: "SOQ Training Centre",
+    role: "Course Advisory Team",
+  },
+};
+
 details["toaping"] = {
   intro:
     "TOAPING is a professional services and learning solutions company focused on helping individuals and organisations build, validate and demonstrate future-ready skills. Its goal is to turn learning and experience into trusted, verifiable proof of skills.\n\nAs TOAPING grows, customer conversations are not limited to simple FAQs. New users may need help with onboarding, learning preferences, membership selection, subscription questions, consultant appointments and support requests. Some users may also abandon the signup or purchase process halfway and need timely follow-up.\n\nTo support this, TOAPING uses an AI-powered KakaoTalk solution that combines conversational AI, membership recommendation, appointment booking, multilingual support, voice message recognition and Smart Reconnect™ reminders.",
