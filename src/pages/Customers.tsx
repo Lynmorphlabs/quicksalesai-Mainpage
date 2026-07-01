@@ -5,6 +5,7 @@ import { Footer } from "@/components/landing/Footer";
 import storyGreystone from "@/assets/story-greystone.jpg";
 import storyAsiaCeo from "@/assets/story-asiaceo.jpg";
 import storyToaping from "@/assets/toaping-graphic.png.asset.json";
+import soqAsset from "@/assets/soq-graphic.png.asset.json";
 
 export const stories = [
   {
