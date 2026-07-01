@@ -186,6 +186,86 @@ const details: Record<string, {
   },
 };
 
+details["toaping"] = {
+  intro:
+    "TOAPING is a professional services and learning solutions company focused on helping individuals and organisations build, validate and demonstrate future-ready skills. Its goal is to turn learning and experience into trusted, verifiable proof of skills.\n\nAs TOAPING grows, customer conversations are not limited to simple FAQs. New users may need help with onboarding, learning preferences, membership selection, subscription questions, consultant appointments and support requests. Some users may also abandon the signup or purchase process halfway and need timely follow-up.\n\nTo support this, TOAPING uses an AI-powered KakaoTalk solution that combines conversational AI, membership recommendation, appointment booking, multilingual support, voice message recognition and Smart Reconnect™ reminders.",
+  problem:
+    "TOAPING needed a better way to handle onboarding, sales enquiries and customer support through KakaoTalk.\n\nCustomers may ask:",
+  problemPoints: [
+    "How do I get started?",
+    "Which membership tier is suitable for me?",
+    "Can I speak to a consultant?",
+    "Can I book an appointment?",
+    "Can I continue my signup later?",
+    "Can I ask in Korean?",
+    "Can I send a voice message instead of typing?",
+  ],
+  goals: [
+    "Automate onboarding for new users.",
+    "Capture user objectives, learning interests and preferences.",
+    "Answer customer enquiries about TOAPING memberships.",
+    "Recommend suitable membership tiers based on user needs.",
+    "Guide users toward subscription selection and payment completion.",
+    "Detect abandoned onboarding or membership registration.",
+    "Send Smart Reconnect™ reminders through KakaoTalk.",
+    "Allow users to book appointments with consultants.",
+    "Escalate complaints or human support requests to assigned consultants.",
+    "Support English and Korean conversations.",
+    "Recognise voice messages and convert them for AI processing.",
+  ],
+  solutionIntro:
+    "TOAPING implemented an AI-powered KakaoTalk assistant as the first layer of customer interaction. It helps users through onboarding, explains memberships, guides subscription selection, and escalates to human consultants when needed. Smart Reconnect™ re-engages users who abandon onboarding or registration.",
+  solution: [
+    "Onboard new users and capture learning goals, interests and preferences.",
+    "Explain membership tiers and guide users toward subscription and payment.",
+    "Detect incomplete signups and trigger Smart Reconnect™ follow-ups on KakaoTalk.",
+    "Book consultant appointments and sync with Google Calendar.",
+    "Handle English and Korean, including voice-to-text for voice messages.",
+  ],
+  knowledgeBase: [
+    "The assistant asks about learning goals, individual vs organisation, skills to build or validate, need for consultant support, and expected usage frequency.",
+    "Based on the answers, the recommendation engine suggests the most suitable membership tier.",
+    "Recommendations update dynamically as the user's behaviour or needs change.",
+    "Users choose the right option faster instead of reading every membership plan manually.",
+  ],
+  leadDashboard: [
+    "If a user starts onboarding or registration but doesn't complete it, Smart Reconnect™ sends a KakaoTalk reminder.",
+    "Example: 'Hi, you started your TOAPING membership registration earlier but did not complete it. Would you like to continue from where you left off?'",
+    "The user resumes from where they left off instead of restarting from scratch.",
+    "This helps TOAPING recover abandoned signups and purchases.",
+    "Consultant appointments can be booked in chat and synced to Google Calendar for the consultant's schedule.",
+  ],
+  exampleFlow: [
+    { speaker: "User", text: "Hi, I want to know how TOAPING works." },
+    { speaker: "AI Assistant", text: "Welcome to TOAPING. I can help you get started. Are you joining as an individual learner or as an organisation?" },
+    { speaker: "User", text: "Individual learner." },
+    { speaker: "AI Assistant", text: "Great. What is your main goal? Are you looking to build new skills, validate your experience or prepare proof of your learning achievements?" },
+    { speaker: "User", text: "I want to validate my skills." },
+    { speaker: "AI Assistant", text: "Understood. Based on your goal, I can recommend a suitable membership option and help you book a consultation if you would like to speak with our consultant." },
+  ],
+  handoff: [
+    "The AI handles common onboarding, sales and support conversations, but does not replace human consultants.",
+    "When a user asks for human support, submits a complaint or has a request the AI cannot confidently handle, the system notifies the assigned consultant through KakaoTalk.",
+    "The assistant also supports voice messages — converting voice input to text for AI understanding — and escalates if the request is unclear.",
+    "This ensures important issues are never missed and human support steps in at the right moment.",
+  ],
+  results:
+    "With the AI-powered KakaoTalk solution, TOAPING manages onboarding, sales enquiries and customer engagement more efficiently. KakaoTalk becomes an automated engagement channel that supports onboarding, conversion, support and long-term user engagement.",
+  resultsPoints: [
+    "New users receive faster guidance on KakaoTalk.",
+    "Membership enquiries are more structured with clearer intent.",
+    "Consultants receive cleaner support requests and appointment bookings.",
+    "Smart Reconnect™ re-engages users who abandoned onboarding or purchase.",
+    "English, Korean and voice messages are supported natively.",
+    "Less manual follow-up, more automated conversion and engagement.",
+  ],
+  quote: {
+    text: "KakaoTalk is now more than a support channel — it onboards learners, recommends the right membership, books consultants and reconnects users who didn't finish signing up.",
+    author: "TOAPING",
+    role: "Customer Engagement Team",
+  },
+};
+
 function ScreenshotCarousel({ shots }: { shots: { src: string; alt: string; caption: string }[] }) {
   const [index, setIndex] = useState(0);
   const prev = () => setIndex((i) => (i === 0 ? shots.length - 1 : i - 1));
