@@ -4,6 +4,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import storyGreystone from "@/assets/story-greystone.jpg";
 import storyAsiaCeo from "@/assets/story-asiaceo.jpg";
+import storyToaping from "@/assets/story-toaping.jpg";
 
 export const stories = [
   {
@@ -31,7 +32,7 @@ export const stories = [
     headline:
       "Asia CEO Community Connects Members, Manages Events and Captures Membership Interest with a WhatsApp AI Concierge",
     summary:
-      "A WhatsApp AI Concierge named Alex helps members search for connections, request introductions, RSVP for events and explore membership — directly in chat.",
+      "A WhatsApp AI Concierge helps members search for connections, request introductions, RSVP for events and explore membership — directly in chat.",
     image: storyAsiaCeo,
     metrics: [
       { value: "24/7", label: "Concierge availability" },
@@ -39,6 +40,23 @@ export const stories = [
       { value: "↑", label: "Qualified membership leads" },
     ],
     color: "from-emerald-500/20 to-sky-500/10",
+  },
+  {
+    slug: "toaping",
+    company: "TOAPING",
+    industry: "Learning & Skills Validation",
+    region: "Korea · Asia",
+    headline:
+      "How TOAPING Uses a KakaoTalk AI Assistant to Automate Onboarding, Sales and Customer Engagement",
+    summary:
+      "A KakaoTalk AI assistant onboards learners, recommends memberships, books consultants, sends Smart Reconnect™ reminders and supports English, Korean and voice messages.",
+    image: storyToaping,
+    metrics: [
+      { value: "KakaoTalk", label: "Primary engagement channel" },
+      { value: "EN · KO", label: "Multilingual + voice input" },
+      { value: "Smart", label: "Reconnect™ for abandoned signups" },
+    ],
+    color: "from-amber-400/25 to-sky-400/10",
   },
 ];
 
