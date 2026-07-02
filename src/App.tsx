@@ -22,9 +22,9 @@ const LegacyCustomerStoryRedirect = () => {
   return <Navigate to={`/customers/${slug ?? ""}`} replace />;
 };
 
-// Vite BASE_URL is "/landing/"; react-router expects a basename without a
-// trailing slash, otherwise generated hrefs get malformed (e.g. "/landing//x").
-const routerBasename = import.meta.env.BASE_URL.replace(/\/+$/, "");
+// Marketing site lives under the /landing path prefix. Vite serves at "/" so
+// asset URLs (e.g. /__l5e/...) resolve correctly on the CDN in production.
+const routerBasename = "/landing";
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
