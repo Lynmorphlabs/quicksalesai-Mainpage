@@ -131,7 +131,7 @@ Deno.serve(async (req) => {
           "X-Connection-Api-Key": RESEND_API_KEY,
         },
         body: JSON.stringify({
-          from: "Quicksales.ai <zen@quicksales.ai>",
+          from: "Quicksales.ai <onboarding@resend.dev>",
           to: [data.email],
           reply_to: "zen@quicksales.ai",
           subject: "Your Quicksales.ai partner application has been received",
