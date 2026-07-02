@@ -105,7 +105,7 @@ const Customers = () => {
         {/* Featured story */}
         <section className="container py-16 md:py-20">
           <Link
-            to={`/customers/${featured.slug}`}
+            to={`/landing/customers/${featured.slug}`}
             className="group grid gap-10 md:grid-cols-2 md:items-center bg-card rounded-3xl border border-border/60 shadow-soft overflow-hidden p-6 md:p-10 transition-smooth hover:shadow-elevated"
           >
             <div className="overflow-hidden rounded-2xl">
@@ -168,7 +168,7 @@ const Customers = () => {
             {rest.map((s) => (
               <Link
                 key={s.slug}
-                to={`/customers/${s.slug}`}
+                to={`/landing/customers/${s.slug}`}
                 className="group flex flex-col bg-card rounded-2xl border border-border/60 shadow-soft overflow-hidden transition-smooth hover:shadow-elevated"
               >
                 <div className="overflow-hidden">

@@ -2,9 +2,9 @@ const cols = [
   {
     title: "Product",
     links: [
-      { label: "Features", href: "#product", disabled: false },
-      { label: "Platform", href: "#platform", disabled: false },
-      { label: "Pricing", href: "#pricing", disabled: false },
+      { label: "Features", href: "/landing#product", disabled: false },
+      { label: "Platform", href: "/landing#platform", disabled: false },
+      { label: "Pricing", href: "/landing#pricing", disabled: false },
     ],
   },
   {
@@ -16,23 +16,23 @@ const cols = [
         disabled: false,
         external: true,
       },
-      { label: "Become a Partner", href: "/partner", disabled: false },
+      { label: "Become a Partner", href: "/landing/partner", disabled: false },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Testimonials", href: "/#testimonials", disabled: false },
-      { label: "Customer Stories", href: "/customers", disabled: false },
+      { label: "Testimonials", href: "/landing#testimonials", disabled: false },
+      { label: "Customer Stories", href: "/landing/customers", disabled: false },
       { label: "FAQ", href: "#", disabled: true },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "Privacy Policy", href: "/privacy", disabled: false },
-      { label: "Terms & Conditions", href: "/terms", disabled: false },
-      { label: "Acceptable Use", href: "/acceptable-use", disabled: false },
+      { label: "Privacy Policy", href: "/landing/privacy-policy", disabled: false },
+      { label: "Terms & Conditions", href: "/landing/term-of-service", disabled: false },
+      { label: "Acceptable Use", href: "/landing/acceptable-use", disabled: false },
     ],
   },
 ];
