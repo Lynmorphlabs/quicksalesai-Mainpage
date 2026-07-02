@@ -16,8 +16,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-
-const WHATSAPP_NUMBER = "6580225588";
+import { supabase } from "@/integrations/supabase/client";
 
 const perks = [
   {
@@ -63,7 +62,7 @@ const Partner = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => setForm((f) => ({ ...f, [key]: e.target.value }));
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.agree) {
       toast({
@@ -74,28 +73,38 @@ const Partner = () => {
       return;
     }
     setSubmitting(true);
-    const lines = [
-      "Hi Quicksales.ai team, I'd like to apply to the Partner Program.",
-      "",
-      `• Name: ${form.fullName}`,
-      `• Email: ${form.email}`,
-      `• Phone: ${form.phone}`,
-      `• Company: ${form.company}`,
-      `• Website: ${form.website || "—"}`,
-      `• Country: ${form.country}`,
-      `• Partner type: ${form.type}`,
-      `• Audience / customer base: ${form.audience}`,
-      `• Experience: ${form.experience || "—"}`,
-      `• Why partner with us: ${form.motivation || "—"}`,
-    ];
-    const text = encodeURIComponent(lines.join("\n"));
-    const url = `https://api.whatsapp.com/send/?phone=${WHATSAPP_NUMBER}&text=${text}&type=phone_number&app_absent=0`;
-    window.open(url, "_blank", "noopener,noreferrer");
-    toast({
-      title: "Application ready",
-      description: "We've opened WhatsApp with your application. Hit send to reach our partnerships team.",
-    });
-    setSubmitting(false);
+    try {
+      const { error } = await supabase.functions.invoke("send-partner-application", {
+        body: form,
+      });
+      if (error) throw error;
+      toast({
+        title: "Application sent",
+        description: "Thanks! Our partnerships team will get back to you within 2 business days.",
+      });
+      setForm({
+        fullName: "",
+        email: "",
+        phone: "",
+        company: "",
+        website: "",
+        country: "",
+        type: "",
+        audience: "",
+        experience: "",
+        motivation: "",
+        agree: false,
+      });
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Something went wrong",
+        description: "We couldn't submit your application. Please try again or email zen@quicksales.ai.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
