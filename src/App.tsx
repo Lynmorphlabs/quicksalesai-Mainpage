@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useParams } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,6 +15,11 @@ import CustomerStory from "./pages/CustomerStory.tsx";
 import { WhatsAppFloat } from "./components/landing/WhatsAppFloat";
 
 const queryClient = new QueryClient();
+
+const LegacyCustomerStoryRedirect = () => {
+  const { slug } = useParams();
+  return <Navigate to={`/landing/customers/${slug ?? ""}`} replace />;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -38,7 +43,7 @@ const App = () => (
           <Route path="/acceptable-use" element={<Navigate to="/landing/acceptable-use" replace />} />
           <Route path="/partner" element={<Navigate to="/landing/partner" replace />} />
           <Route path="/customers" element={<Navigate to="/landing/customers" replace />} />
-          <Route path="/customers/:slug" element={<Navigate to="/landing/customers/:slug" replace />} />
+          <Route path="/customers/:slug" element={<LegacyCustomerStoryRedirect />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
