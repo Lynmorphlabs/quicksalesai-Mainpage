@@ -14,9 +14,9 @@ interface PolicyLayoutProps {
 }
 
 const policyTabs = [
-  { to: "/landing/privacy-policy", label: "Privacy Policy" },
-  { to: "/landing/term-of-service", label: "Terms & Conditions" },
-  { to: "/landing/acceptable-use", label: "Acceptable Use" },
+  { to: "/privacy-policy", label: "Privacy Policy" },
+  { to: "/term-of-service", label: "Terms & Conditions" },
+  { to: "/acceptable-use", label: "Acceptable Use" },
 ];
 
 export const PolicyLayout = ({ eyebrow, title, version, effective, jurisdictions, children }: PolicyLayoutProps) => {
@@ -51,7 +51,7 @@ export const PolicyLayout = ({ eyebrow, title, version, effective, jurisdictions
     <section className="relative overflow-hidden bg-hero border-b border-border/40">
       <div className="container py-16 md:py-24">
         <Link
-          to="/landing"
+          to="/"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-smooth mb-4"
         >
           <ArrowLeft className="h-4 w-4" /> Back to home

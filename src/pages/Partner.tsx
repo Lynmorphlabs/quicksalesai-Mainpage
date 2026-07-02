@@ -238,11 +238,11 @@ const Partner = () => {
               />
               <span className="text-sm text-muted-foreground">
                 I agree to be contacted by the Quicksales.ai partnerships team and have read the{" "}
-                <Link to="/landing/privacy-policy" className="text-primary hover:underline">
+                <Link to="/privacy-policy" className="text-primary hover:underline">
                   Privacy Policy
                 </Link>{" "}
                 and{" "}
-                <Link to="/landing/term-of-service" className="text-primary hover:underline">
+                <Link to="/term-of-service" className="text-primary hover:underline">
                   Terms
                 </Link>
                 .

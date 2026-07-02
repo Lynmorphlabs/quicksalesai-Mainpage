@@ -438,7 +438,7 @@ const CustomerStory = () => {
         <main className="container py-24 text-center">
           <h1 className="text-3xl font-bold">Story not found</h1>
           <Button asChild className="mt-6 rounded-full">
-            <Link to="/landing/customers">View all customer stories</Link>
+            <Link to="/customers">View all customer stories</Link>
           </Button>
         </main>
         <Footer />
@@ -455,7 +455,7 @@ const CustomerStory = () => {
           <div className="container py-16 md:py-20 grid gap-10 md:grid-cols-2 md:items-center">
             <div>
               <Link
-                to="/landing/customers"
+                to="/customers"
                 className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-smooth"
               >
                 <ArrowLeft className="mr-2 h-4 w-4" /> All customer stories
@@ -666,7 +666,7 @@ const CustomerStory = () => {
                 <p className="text-xs text-muted-foreground">{detail.quote.role}</p>
               </div>
               <Button asChild className="mt-6 w-full bg-gradient-primary hover:opacity-90 rounded-full">
-                <a href="/landing#pricing">Get the same results</a>
+                <Link to="/#pricing">Get the same results</Link>
               </Button>
             </div>
           </aside>

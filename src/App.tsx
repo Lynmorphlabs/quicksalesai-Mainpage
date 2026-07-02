@@ -13,37 +13,46 @@ import Partner from "./pages/Partner.tsx";
 import Customers from "./pages/Customers.tsx";
 import CustomerStory from "./pages/CustomerStory.tsx";
 import { WhatsAppFloat } from "./components/landing/WhatsAppFloat";
+import { ScrollToHash } from "./components/ScrollToHash";
 
 const queryClient = new QueryClient();
 
 const LegacyCustomerStoryRedirect = () => {
   const { slug } = useParams();
-  return <Navigate to={`/landing/customers/${slug ?? ""}`} replace />;
+  return <Navigate to={`/customers/${slug ?? ""}`} replace />;
 };
+
+// Vite BASE_URL is "/landing/"; react-router expects a basename without a
+// trailing slash, otherwise generated hrefs get malformed (e.g. "/landing//x").
+const routerBasename = import.meta.env.BASE_URL.replace(/\/+$/, "");
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter basename={routerBasename}>
+        <ScrollToHash />
         <Routes>
-          <Route path="/" element={<Navigate to="/landing" replace />} />
-          <Route path="/landing" element={<Index />} />
+          {/* basename ("/landing") is prepended automatically — routes must NOT repeat it */}
+          <Route path="/" element={<Index />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/landing/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/landing/term-of-service" element={<Terms />} />
-          <Route path="/landing/acceptable-use" element={<AcceptableUse />} />
-          <Route path="/landing/partner" element={<Partner />} />
-          <Route path="/landing/customers" element={<Customers />} />
-          <Route path="/landing/customers/:slug" element={<CustomerStory />} />
-          {/* Legacy redirects */}
-          <Route path="/privacy" element={<Navigate to="/landing/privacy-policy" replace />} />
-          <Route path="/terms" element={<Navigate to="/landing/term-of-service" replace />} />
-          <Route path="/acceptable-use" element={<Navigate to="/landing/acceptable-use" replace />} />
-          <Route path="/partner" element={<Navigate to="/landing/partner" replace />} />
-          <Route path="/customers" element={<Navigate to="/landing/customers" replace />} />
-          <Route path="/customers/:slug" element={<LegacyCustomerStoryRedirect />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/term-of-service" element={<Terms />} />
+          <Route path="/acceptable-use" element={<AcceptableUse />} />
+          <Route path="/partner" element={<Partner />} />
+          <Route path="/customers" element={<Customers />} />
+          <Route path="/customers/:slug" element={<CustomerStory />} />
+          {/* Legacy redirects (old double-prefixed and short URLs) */}
+          <Route path="/landing" element={<Navigate to="/" replace />} />
+          <Route path="/landing/privacy-policy" element={<Navigate to="/privacy-policy" replace />} />
+          <Route path="/landing/term-of-service" element={<Navigate to="/term-of-service" replace />} />
+          <Route path="/landing/acceptable-use" element={<Navigate to="/acceptable-use" replace />} />
+          <Route path="/landing/partner" element={<Navigate to="/partner" replace />} />
+          <Route path="/landing/customers" element={<Navigate to="/customers" replace />} />
+          <Route path="/landing/customers/:slug" element={<LegacyCustomerStoryRedirect />} />
+          <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
+          <Route path="/terms" element={<Navigate to="/term-of-service" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

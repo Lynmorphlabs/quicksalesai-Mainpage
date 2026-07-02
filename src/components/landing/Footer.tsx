@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
+
+// Router basename ("/landing") is prepended automatically — keep paths relative to it.
 const cols = [
   {
     title: "Product",
     links: [
-      { label: "Features", href: "/landing#product", disabled: false },
-      { label: "Platform", href: "/landing#platform", disabled: false },
-      { label: "Pricing", href: "/landing#pricing", disabled: false },
+      { label: "Features", href: "/#product", disabled: false },
+      { label: "Platform", href: "/#platform", disabled: false },
+      { label: "Pricing", href: "/#pricing", disabled: false },
     ],
   },
   {
@@ -16,23 +19,23 @@ const cols = [
         disabled: false,
         external: true,
       },
-      { label: "Become a Partner", href: "/landing/partner", disabled: false },
+      { label: "Become a Partner", href: "/partner", disabled: false },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Testimonials", href: "/landing#testimonials", disabled: false },
-      { label: "Customer Stories", href: "/landing/customers", disabled: false },
+      { label: "Testimonials", href: "/#testimonials", disabled: false },
+      { label: "Customer Stories", href: "/customers", disabled: false },
       { label: "FAQ", href: "#", disabled: true },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "Privacy Policy", href: "/landing/privacy-policy", disabled: false },
-      { label: "Terms & Conditions", href: "/landing/term-of-service", disabled: false },
-      { label: "Acceptable Use", href: "/landing/acceptable-use", disabled: false },
+      { label: "Privacy Policy", href: "/privacy-policy", disabled: false },
+      { label: "Terms & Conditions", href: "/term-of-service", disabled: false },
+      { label: "Acceptable Use", href: "/acceptable-use", disabled: false },
     ],
   },
 ];
@@ -53,16 +56,22 @@ export const Footer = () => (
                   >
                     {l.label}
                   </span>
-                ) : (
+                ) : (l as { external?: boolean }).external ? (
                   <a
                     href={l.href}
-                    {...((l as { external?: boolean }).external
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {})}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-muted-foreground hover:text-foreground transition-smooth"
                   >
                     {l.label}
                   </a>
+                ) : (
+                  <Link
+                    to={l.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-smooth"
+                  >
+                    {l.label}
+                  </Link>
                 )}
               </li>
             ))}
