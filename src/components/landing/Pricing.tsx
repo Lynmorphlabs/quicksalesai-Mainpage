@@ -296,7 +296,7 @@ export const Pricing = () => {
             {" "}supporting your setup and business success from day one.
           </p>
           <p className="mt-4 text-sm text-muted-foreground">
-            Need a tailored setup? <a href="#contact" className="text-primary font-semibold hover:underline">Talk to our team</a> for a custom solution.
+            Need a tailored setup? <a href="/landing#contact" className="text-primary font-semibold hover:underline">Talk to our team</a> for a custom solution.
           </p>
         </div>
       </div>
